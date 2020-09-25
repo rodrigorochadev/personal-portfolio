@@ -1,42 +1,32 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import { Container, Flex, NonStyledButton } from "../styles/globalStyles"
+import { HeaderNav, LogoContainer, ToggleBulb } from '../styles/componentStyles'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+import { Bulb, Logo } from '../assets/svg/svg'
 
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+
+  return(
+    
+      <HeaderNav id="home">
+      <Container>
+        <Flex spaceBetween noHeight>
+        <LogoContainer>
+            <Link to="/" aria-label="jamgoose">
+              <Logo />
+            </Link>
+           </LogoContainer>
+          <ToggleBulb>
+            <NonStyledButton onClick={() => console.log("toggleTheme")}>
+                <Bulb />
+            </NonStyledButton>
+          </ToggleBulb>
+        </Flex>
+      </Container>
+    </HeaderNav>
+  )
 }
 
 export default Header
