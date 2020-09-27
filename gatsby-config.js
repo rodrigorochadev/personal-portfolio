@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Rodrigo Rocha`,
-    description: `Welcome! Have a look at my portfolio. Get inspired and let's build something togehter.`,
+    description: `Welcome to my website. Get to know me a bit better. Take a look at my portfolio, get inspired and let's work together!`,
     author: `Rodrigo Rocha`,
     image: `https://firebasestorage.googleapis.com/v0/b/pathfinder-designs.appspot.com/o/social%2Fshare-rr.jpg?alt=media&token=d4ed10ef-b1d9-4f54-a2e2-93616cf1cfc0`,
     keywords: `Software Developer, Software Engineer, Responsive, Mobile, Websites, Apps, Web Development, Graphic Design, UI/UX, Digital Marketing, SEO`,
