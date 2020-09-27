@@ -150,7 +150,7 @@ export const BannerContainer = styled.div`
     row-gap: 40px;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
     
     @media ${SITE_CONFIG.media.small} {
@@ -234,23 +234,23 @@ export const AboutInfo = styled.div`
 
 export const AboutPicture = styled.div`
 
-    img {
+    /* img {
       outline: 3px solid var(--color-accent);
       outline-offset: -15px; 
 
       
-    }
+    } */
     
 
-    min-width: 500px;
+    min-width: 200px;
     height: auto;
 
     padding-bottom: 0px;
-    min-width: 200px;
-    max-width: 250px;
+    /* min-width: 200px;
+    max-width: 250px; */
 
     @media ${SITE_CONFIG.media.small} {
-        min-width: 400px;
+        max-width: 400px;
     }
 
     @media ${SITE_CONFIG.media.medium} {

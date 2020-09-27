@@ -87,6 +87,10 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `copyright`,
+          content: `Rodrigo Rocha © 2020 . All rights reserved.`
+        }
       ].concat(meta)}
     />
   )

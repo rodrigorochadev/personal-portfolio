@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: `https://rodrigorocha.pt`
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
