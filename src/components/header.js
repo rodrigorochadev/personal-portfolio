@@ -1,32 +1,36 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby'
 
-import { Container, Flex, NonStyledButton } from "../styles/globalStyles"
-import { HeaderNav, LogoContainer, ToggleBulb } from '../styles/componentStyles'
+import { SVGHolder, UnstyledButton, Container, Flex, HeaderNav, HeaderLogo } from '../styles/componentsStyles'
+import { Logo, Bulb } from '../assets/svg/svg'
+import { ThemeContext } from './ThemeContext';
 
-import { Bulb, Logo } from '../assets/svg/svg'
+export default () => {
 
-const Header = () => {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext);
 
-  return(
-    
-      <HeaderNav id="home">
+  if (!colorMode) {
+    return null;
+  }
+
+  return (
+    <HeaderNav id="home">
       <Container>
-        <Flex spaceBetween noHeight>
-        <LogoContainer>
-            <Link to="/" aria-label="jamgoose">
-              <Logo />
-            </Link>
-           </LogoContainer>
-          <ToggleBulb>
-            <NonStyledButton onClick={() => console.log("toggleTheme")}>
-                <Bulb />
-            </NonStyledButton>
-          </ToggleBulb>
-        </Flex>
+        <SVGHolder>
+          <Flex spaceBetween noHeight>
+            <HeaderLogo>
+              <Link to="/" aria-label="Rodrigo Rocha">
+                <Logo />
+              </Link>
+            </HeaderLogo>
+            <HeaderLogo>
+              <UnstyledButton aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+                  <Bulb />
+              </UnstyledButton>
+            </HeaderLogo>  
+          </Flex>
+        </SVGHolder>
       </Container>
     </HeaderNav>
-  )
-}
-
-export default Header
+  );
+};

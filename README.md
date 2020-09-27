@@ -1,1 +1,3 @@
-Rodrigo Rocha 2020
+# Rodrigo Rocha Website
+
+My personal website.

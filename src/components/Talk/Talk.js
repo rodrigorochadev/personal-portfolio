@@ -1,16 +1,14 @@
 import React from 'react'
-import { Container, Paragraph, Title } from '../../styles/globalStyles'
+import { Container, Description, Title, VerticalSpacing } from '../../styles/componentsStyles'
 
-const Talk = () => {
+export default () => {
 
     return(
         <Container>
-            <Title><h1>Let's build something togehter</h1></Title>
-            <Paragraph>Choose one of the platforms below and talk to me. I'll be glad to answer all your questions!</Paragraph>
+            <VerticalSpacing>
+                <Title>Get in touch.</Title>
+                <Description>Reach me in my social medias below or e-mail me: <a href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com</a> </Description>
+            </VerticalSpacing>
         </Container>
-
     )
 }
-
-
-export default Talk

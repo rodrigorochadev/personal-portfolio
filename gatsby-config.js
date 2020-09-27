@@ -8,16 +8,6 @@ module.exports = {
     siteUrl: `https://rodrigorocha.pt`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,10 +23,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `projects`,
         path: `${__dirname}/content/projects`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -46,7 +45,7 @@ module.exports = {
             variants: [`300`, '400', '700']
           },
           {
-            family: `Poppins`,
+            family: `Cormorant SC`,
             variants: [`400`]
           },
         ],
@@ -59,7 +58,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 400,
+              maxWidth: 500,
             },
           },
         ],
@@ -67,9 +66,10 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-preact`,
     // `gatsby-plugin-offline`,
   ],
-}
+};

@@ -1,10 +1,13 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { Button, Container, Title } from '../../styles/globalStyles'
-import { graphql, useStaticQuery } from "gatsby"
-import PortfolioItem from '../Cards/portfolioItem';
-import { PortfolioFlex } from '../../styles/componentStyles'
+import { Container, Title, VerticalSpacing, Button, PortfolioFlex, PortfolioSeeAll } from '../../styles/componentsStyles'
+import PortfolioItem from '../Cards/PortfolioItem'
 
-const Portfolio = () => {
+
+
+
+export default () => {
+    
     const data = useStaticQuery(graphql`
         query ProjectsQuery {
             allMarkdownRemark(
@@ -16,6 +19,7 @@ const Portfolio = () => {
                             id
                             name
                             description
+                            url
                             image {
                                 childImageSharp {
                                     fluid(maxWidth: 400, quality: 90) {
@@ -32,34 +36,34 @@ const Portfolio = () => {
 
     return(
         <Container>
-            <Title><h1>Some of my work</h1></Title>
-
-            <PortfolioFlex>
-                {data.allMarkdownRemark.edges.map(
-                    service => {
-                        return(
-                            <PortfolioItem
-                                key={service.node.frontmatter.id} 
-                                id={service.node.frontmatter.id} 
-                                name={service.node.frontmatter.name} 
-                                description={service.node.frontmatter.description} 
-                                image={service.node.frontmatter.image.childImageSharp.fluid} 
-                            />
-                        )
-                    }
-                )}
-            </PortfolioFlex>
-            
-            <a href="https://behance.net/rodrigo-rocha" target="_blank" rel="noreferrer">
-                <Button>
-                    <button>
-                        all projects
-                    </button>
-                </Button>
-            </a>
+            <VerticalSpacing>
+                <Title>Some of my work.</Title>
+                <PortfolioFlex>
+                    {data.allMarkdownRemark.edges.map(
+                        project => {
+                            return(
+                                <PortfolioItem
+                                    key={project.node.frontmatter.id} 
+                                    id={project.node.frontmatter.id} 
+                                    name={project.node.frontmatter.name} 
+                                    description={project.node.frontmatter.description} 
+                                    image={project.node.frontmatter.image.childImageSharp.fluid}
+                                    url={project.node.frontmatter.url}
+                                />
+                            )
+                        }
+                    )}
+                </PortfolioFlex>
+                
+                <PortfolioSeeAll>
+                    <a href="https://behance.net/rodrigo-rocha">
+                        <Button>
+                            See all Projects
+                        </Button>
+                    </a>
+                </PortfolioSeeAll>
+                
+            </VerticalSpacing>
         </Container>
-
     )
 }
-
-export default Portfolio

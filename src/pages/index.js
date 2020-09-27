@@ -1,39 +1,20 @@
-import React from "react"
-
-// import loadable from '@loadable/component'
-
-import Banner from '../components/Banner/Banner'
+import React from 'react'
 import About from '../components/About/About'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Portfolio from "../components/Portfolio/Portfolio"
-
-// const SEO = loadable(() => import('../components/seo'))
-// const Banner = loadable(() => import('../components/Banner/Banner'))
-// const About = loadable(() => import('../components/About/About'))
-// const Layout = loadable(() => import('../components/layout'))
-// const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'))
-
-import { Padding } from "../styles/globalStyles"
-import Talk from "../components/Talk/Talk"
+import Banner from '../components/Banner/Banner'
+import Layout from '../components/Layout'
+import Portfolio from '../components/Portfolio/Portfolio'
+import Talk from '../components/Talk/Talk'
+import SEO from '../components/Seo'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Welcome" description="Welcome to my website. Get to know me a bit better. Take a look at my portfolio, get inspered and let's work together!" />
     <Banner />
-
-    <Padding>
-      <About />
-    </Padding>
-
-    <Padding>
-      <Portfolio />
-    </Padding>
-    
-    <Padding>
-      <Talk />
-    </Padding>
+    <About />
+    <Portfolio />
+    <Talk />    
   </Layout>
-)
 
-export default IndexPage
+);
+
+export default IndexPage;

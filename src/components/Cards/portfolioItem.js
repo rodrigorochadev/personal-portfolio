@@ -1,7 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { PortfolioCard, PortfolioImage, PortfolioButton, PortfolioDetails } from '../../styles/componentStyles'
-import { Paragraph } from '../../styles/globalStyles'
+import { Description, PortfolioCard, PortfolioId, PortfolioName, PortfolioImage, PortfolioMoreInfo, PortfolioDetails } from '../../styles/componentsStyles'
 
 const PortfolioItem = (props) => {
 
@@ -13,19 +12,15 @@ const PortfolioItem = (props) => {
             </PortfolioImage>
 
             <PortfolioDetails>
-                <h1>/{props.id}.</h1>
-                <h2>{props.name}</h2>
-                <Paragraph>{props.description}</Paragraph>
+                <PortfolioId>/{props.id}.</PortfolioId>
+                <PortfolioName>{props.name}</PortfolioName>
+                <Description>{props.description}</Description>
 
-                <PortfolioButton>
-                    <a href={props.url}>
-                        <button>Learn More</button>
-                    </a>        
-                </PortfolioButton>
+                <PortfolioMoreInfo >
+                    <a href={props.url}>Learn More »</a>
+                </PortfolioMoreInfo>
+                
             </PortfolioDetails>
-
-            
-            
 
         </PortfolioCard>
     )
