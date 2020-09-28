@@ -24,13 +24,13 @@ export default () => {
         <Container>
             <VerticalSpacing>
                 <AboutFlex>
+                    <AboutPicture>
+                        <Img fluid={data.picture.childImageSharp.fluid} alt="Portrait" />
+                    </AboutPicture>
                     <AboutInfo>
                         <Title>A bit about me.</Title>
                         <Description>{TYPOGRAPHY.about.description}</Description>
                     </AboutInfo>
-                    <AboutPicture>
-                        <Img fluid={data.picture.childImageSharp.fluid} alt="Portrait" />
-                    </AboutPicture>
                 </AboutFlex>
             </VerticalSpacing>
             

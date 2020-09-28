@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby'
 
 import { SVGHolder, UnstyledButton, Container, Flex, HeaderNav, HeaderLogo } from '../styles/componentsStyles'
-import { Logo, Bulb } from '../assets/svg/svg'
+import { Logo, Bulb, BulbOn } from '../assets/svg/svg'
 import { ThemeContext } from './ThemeContext';
 
 export default () => {
@@ -25,7 +25,7 @@ export default () => {
             </HeaderLogo>
             <HeaderLogo>
               <UnstyledButton aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-                  <Bulb />
+                  {colorMode === 'light' ? <BulbOn /> : <Bulb />} 
               </UnstyledButton>
             </HeaderLogo>  
           </Flex>

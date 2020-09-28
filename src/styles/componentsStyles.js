@@ -48,9 +48,6 @@ export const SVGHolder = styled.div`
           cursor: pointer;
       }
     }
-    
-    
-    
 `
 
 export const Container = styled.div`
@@ -212,7 +209,7 @@ export const BannerSocialIcons = styled.div`
 export const AboutFlex = styled.div`
 
     display:flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: initial;
     column-gap: 50px;
     row-gap: 50px;
@@ -279,7 +276,7 @@ export const PortfolioFlex = styled.div`
 export const PortfolioSeeAll = styled.div`
 
     @media ${SITE_CONFIG.media.small} {
-      padding-top: 100px;
+      padding-top: 50px;
     }
 `
 
