@@ -11,7 +11,7 @@ export default () => {
         query {
             picture: file(relativePath: {eq: "portrait.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 90) {
+                    fluid(maxWidth: 500, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }  
                 }

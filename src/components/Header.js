@@ -18,12 +18,12 @@ export default () => {
       <Container>
         <SVGHolder>
           <Flex spaceBetween noHeight>
-            <HeaderLogo>
+            <HeaderLogo >
               <Link to="/" aria-label="Rodrigo Rocha">
                 <Logo />
               </Link>
             </HeaderLogo>
-            <HeaderLogo>
+            <HeaderLogo rotate bulb>
               <UnstyledButton aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
                   {colorMode === 'light' ? <BulbOn /> : <Bulb />} 
               </UnstyledButton>

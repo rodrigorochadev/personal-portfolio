@@ -41,11 +41,15 @@ export const UnstyledButton = styled.button`
 export const SVGHolder = styled.div`
     svg {
       fill: var(--color-text);
+      transition: ${SITE_CONFIG.transitions.default};
 
-      &:hover {
-          transition: ${SITE_CONFIG.transitions.default};
+      &:hover {    
           fill: var(--color-accent);
           cursor: pointer;
+      }
+
+      &:focus {
+        fill: var(--color-text);
       }
     }
 `
@@ -71,14 +75,7 @@ export const Container = styled.div`
     max-width: 1244px;
   }
 
-  ${props =>
-    props.fluid &&
-    css`
-      padding: 0;
-      margin: 0;
-      background: red;
-      max-width: 100% !important;
-    `}
+
 `
 
 export const Flex = styled.div`
@@ -121,10 +118,14 @@ export const HeaderNav = styled.div`
   height: 0px;
   width: 100%;
   position: absolute;
-  top: 62px;
+  top: 42px;
   right: 0;
   left: 0;
   z-index: 99;
+
+  @media ${SITE_CONFIG.media.small} {
+    top: 62px;
+  }
 `
 
 export const HeaderLogo = styled.div`
@@ -137,6 +138,18 @@ export const HeaderLogo = styled.div`
         height: 35px;
       }
     }  
+
+    ${props =>
+      props.bulb &&
+        css`
+          height: 35px;
+    `}
+
+    ${props =>
+      props.rotate &&
+        css`
+          transform: rotate(30deg);
+    `}
 `
 
 // *********************** Banner *********************** \\
@@ -147,7 +160,7 @@ export const BannerContainer = styled.div`
     row-gap: 40px;
     align-items: center;
     justify-content: center;
-    padding: 150px 0;
+    padding: 120px 0;
     text-align: center;
     
     @media ${SITE_CONFIG.media.small} {
@@ -281,7 +294,7 @@ export const PortfolioSeeAll = styled.div`
 `
 
 export const PortfolioMoreInfo = styled.div`
-    margin-top: 50px;
+    margin-top: 30px;
 
     a {
       color: var(--color-accent);
@@ -332,19 +345,31 @@ export const PortfolioCard = styled.div`
 
         }
     }
+
+    @media ${SITE_CONFIG.media.medium} {
+        min-height: 70vh;
+    }
     
 `
 
 export const PortfolioImage = styled.div`
     
-    min-width: 200px;
+    margin-bottom: 20px;
+    /* min-width: 200px; */
+    min-width: 280px;
+    max-width: 400px;
     
     @media ${SITE_CONFIG.media.small} {
         min-width: 300px;
+        margin-bottom: 0px;
     }
 
     @media ${SITE_CONFIG.media.medium} {
         min-width: 400px;
+    }
+
+    @media ${SITE_CONFIG.media.medium} {
+        min-width: 450px;
     }
 ` 
 

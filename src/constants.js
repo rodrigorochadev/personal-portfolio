@@ -75,12 +75,12 @@ export const SITE_CONFIG = {
 export const TYPOGRAPHY = {
 
   banner: {
-    title: "My name is Rodrigo. I’m a software developer from Portugal. I’m a front-end afficionado and my goal is to make the web prettier one project at a time.",
+    title: "My name is Rodrigo. I’m a software developer from Portugal. I aim to make the web prettier one project at a time.",
     tagline: "Create. Destroy. Rebuild."
   },
 
   about: {
-    description: "I have a BSc in Computer and Telematics engineering from University of Aveiro. I worked for a project in Altice Labs, named BOT School. Following that, i worked mostly freelance. I have a passion for well designed websites and mobile apps. I also like graphic design. I’m eaguer to learn something new everyday and provide people with the best projects I can."
+    description: "Hi everyone! My name is Rodrigo, and I was born in Figueira da Foz, Portugal 26 years ago, where I've lived and studied until I went to university. I've graduated with a B.Sc. in Computer and Telematics Engineering, and following that, started working as a software developer for Altice Labs, in Aveiro. As long as I can remember I've always had a passion for technology and arts. And because I believe that web design is an art, I can combine both my passions, by doing web development. I always aim to give every client the prettiest website I can. But, of course, beauty isn't everything, so I aim to deliver websites with a great performance, and taking into consideration good UI/UX design and good SEO practices. I’m eager to learn something new every day and I hope I can do it with you!"
   }
 
 }
