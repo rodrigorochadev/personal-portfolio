@@ -76,11 +76,18 @@ export const TYPOGRAPHY = {
 
   banner: {
     title: "My name is Rodrigo. I’m a software developer from Portugal. I aim to make the web prettier one project at a time.",
-    tagline: "Create. Destroy. Rebuild."
+    tagline: "Create. Destroy. Rebuild.",
+    contact: "Contact me.",
   },
 
   about: {
+    title: "A bit about me.",
     description: "Hi everyone! My name is Rodrigo, and I was born in Figueira da Foz, Portugal 26 years ago, where I've lived and studied until I went to university. I've graduated with a B.Sc. in Computer and Telematics Engineering, and following that, started working as a software developer for Altice Labs, in Aveiro. As long as I can remember I've always had a passion for technology and arts. And because I believe that web design is an art, I can combine both my passions, by doing web development. I always aim to give every client the prettiest website I can. But, of course, beauty isn't everything, so I aim to deliver websites with a great performance, and taking into consideration good UI/UX design and good SEO practices. I’m eager to learn something new every day and I hope I can do it with you!"
-  }
+  },
+
+  portfolio: {
+    title: "Some of my work.",
+    seeAllButton: "See all projects",
+  },
 
 }

@@ -13,7 +13,7 @@ export default () => {
             </BannerContainer>
             <BannerSocial>
                 <p>
-                    Contact me
+                    {TYPOGRAPHY.banner.contact}
                 </p>
                 <BannerSocialIcons>
                     <a href="https://instagram.com/__rodrigorocha__" rel="noreferrer" target="_blank" aria-label="Linkedin">

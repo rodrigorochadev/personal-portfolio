@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Container, Title, VerticalSpacing, Button, PortfolioFlex, PortfolioSeeAll } from '../../styles/componentsStyles'
 import PortfolioItem from '../Cards/PortfolioItem'
-
+import { TYPOGRAPHY } from '../../constants'
 
 
 
@@ -37,7 +37,7 @@ export default () => {
     return(
         <Container>
             <VerticalSpacing>
-                <Title>Some of my work.</Title>
+                <Title>{TYPOGRAPHY.portfolio.title}</Title>
                 <PortfolioFlex>
                     {data.allMarkdownRemark.edges.map(
                         project => {
@@ -58,7 +58,7 @@ export default () => {
                 <PortfolioSeeAll>
                     <a href="https://behance.net/rodrigo-rocha">
                         <Button>
-                            See all Projects
+                            {TYPOGRAPHY.portfolio.seeAllButton}
                         </Button>
                     </a>
                 </PortfolioSeeAll>

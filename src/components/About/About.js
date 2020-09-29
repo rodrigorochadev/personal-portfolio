@@ -28,7 +28,7 @@ export default () => {
                         <Img fluid={data.picture.childImageSharp.fluid} alt="Portrait" />
                     </AboutPicture>
                     <AboutInfo>
-                        <Title>A bit about me.</Title>
+                        <Title>{TYPOGRAPHY.about.title}</Title>
                         <Description>{TYPOGRAPHY.about.description}</Description>
                     </AboutInfo>
                 </AboutFlex>

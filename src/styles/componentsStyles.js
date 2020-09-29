@@ -14,7 +14,8 @@ export const Description = styled.p`
 
 export const Button = styled.button`
   font-family: ${SITE_CONFIG.fontFamilies.titles};
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 1.5rem;
   color: var(--color-text);
   padding: 10px 20px;
   border: 2px solid var(--color-accent);
