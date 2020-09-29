@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import { motion } from 'framer-motion'
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
@@ -129,7 +130,7 @@ export const HeaderNav = styled.div`
   }
 `
 
-export const HeaderLogo = styled.div`
+export const HeaderLogo = styled(motion.div)`
     svg {
       height: 30px;
       width: auto;
@@ -154,7 +155,7 @@ export const HeaderLogo = styled.div`
 `
 
 // *********************** Banner *********************** \\
-export const BannerContainer = styled.div`
+export const BannerContainer = styled(motion.div)`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -169,7 +170,7 @@ export const BannerContainer = styled.div`
     }
 `
 
-export const BannerSocial = styled.div`
+export const BannerSocial = styled(motion.div)`
     display: none;
 
     @media ${SITE_CONFIG.media.small} {
@@ -187,16 +188,16 @@ export const BannerSocial = styled.div`
   
 `
 
-export const BannerTitle = styled.h2`
+export const BannerTitle = styled(motion.h2)`
     font-weight: 400;
     margin-bottom: 10px;
 `
 
-export const BannerTagline = styled.h3`
+export const BannerTagline = styled(motion.h3)`
     font-weight: 300;
 `
 
-export const BannerSocialIcons = styled.div`
+export const BannerSocialIcons = styled(motion.div)`
 
     a {
       margin-right: 25px;

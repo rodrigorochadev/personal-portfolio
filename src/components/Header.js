@@ -6,6 +6,7 @@ import { Logo, Bulb, BulbOn } from '../assets/svg/svg'
 import { ThemeContext } from './ThemeContext';
 
 import { motion } from 'framer-motion'
+import { container, item } from '../animations'
 
 export default () => {
 
@@ -20,10 +21,13 @@ export default () => {
       <Container>
         <SVGHolder>
           <Flex spaceBetween noHeight>
-            <HeaderLogo >
-              <Link to="/" aria-label="Rodrigo Rocha">
-                <Logo />
-              </Link>
+            <HeaderLogo variants={container} initial="hidden" animate="show">
+              <motion.div variants={item}>
+                <Link to="/" aria-label="Rodrigo Rocha">
+                  <Logo />
+                </Link>
+              </motion.div>
+              
             </HeaderLogo>
             <motion.div 
               initial={{ scale: 0 }}
