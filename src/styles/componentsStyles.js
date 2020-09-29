@@ -129,6 +129,7 @@ export const HeaderNav = styled.div`
     top: 62px;
   }
 `
+export const BulbMotion = styled(motion.div)``
 
 export const HeaderLogo = styled(motion.div)`
     svg {
@@ -195,6 +196,13 @@ export const BannerTitle = styled(motion.h2)`
 
 export const BannerTagline = styled(motion.h3)`
     font-weight: 300;
+`
+
+export const BannerContactInfo = styled(motion.p)`
+`
+
+export const BannerSocialIconContainer = styled(motion.a)`
+
 `
 
 export const BannerSocialIcons = styled(motion.div)`

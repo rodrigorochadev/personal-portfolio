@@ -47,17 +47,17 @@ export const item = {
     }
 }
 
-export const introAnim = {
+export const headerLogoAnim = {
     hidden: {
-        opacity: 0,
-        y: 72
+        scale: 0,
     }, 
     visible: {
-        opacity: 1,
-        y:0,
+        rotate: 360,
+        scale: 1,
         transition: {
-            duration: 0.6, 
-            ease: [0.6, 0.05, -0.01, 0.9]
+            type: "spring",
+            stiffness: 260,
+            damping: 20
         }
     }
 }

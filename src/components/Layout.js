@@ -8,6 +8,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {/* <div style={{background: 'transparent', position: 'absolute', top: 0, left: 0, minHeight: '100vh'}}>&nbsp;</div> */}
+        &nbsp;
         <Header />
         <main>{children}</main>
         <Footer />
