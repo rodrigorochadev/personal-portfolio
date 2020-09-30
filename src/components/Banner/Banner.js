@@ -1,22 +1,24 @@
 import React from 'react'
 import { Instagram, Facebook, Mail } from '../../assets/svg/svg'
 import { TYPOGRAPHY } from '../../constants'
-import { BannerContainer, BannerSocial, BannerSocialIcons, BannerTagline, BannerTitle, Container, BannerContactInfo, BannerSocialIconContainer } from '../../styles/componentsStyles'
+import { BannerContainer, BannerDetail, BannerSocial, BannerSocialIcons, BannerTitle, Container, BannerContactInfo, BannerSocialIconContainer } from '../../styles/componentsStyles'
 
 export default () => {
    
 
     return(
         <Container>
-            <BannerContainer >
-                <BannerTitle >{TYPOGRAPHY.banner.title}</BannerTitle>
-                <BannerTagline >{TYPOGRAPHY.banner.tagline}</BannerTagline>
+            <BannerContainer>
+                <BannerTitle>{TYPOGRAPHY.banner.title}</BannerTitle>
+                <BannerDetail />
+                {/* <BannerTagline>{TYPOGRAPHY.banner.tagline}</BannerTagline> */}
+                <div style={{position: "relative", bottom: 0, right: 0, height: '5px', width: '5px'}}></div>
             </BannerContainer>
-            <BannerSocial >
+            <BannerSocial>
                 <BannerContactInfo >
                     {TYPOGRAPHY.banner.contact}
                 </BannerContactInfo>
-                <BannerSocialIcons >
+                <BannerSocialIcons>
                     <BannerSocialIconContainer href="https://instagram.com/__rodrigorocha__" rel="noreferrer" target="_blank" aria-label="Linkedin">
                         <Instagram />
                     </BannerSocialIconContainer>

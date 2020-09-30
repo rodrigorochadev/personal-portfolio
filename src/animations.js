@@ -28,15 +28,6 @@ export const rotation = keyframes`
     }
 `
 
-export const fading = keyframes`
-  0% {
-      opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-`
-
 export const ANIMATIONS = {
   
   duration: '0.7s',

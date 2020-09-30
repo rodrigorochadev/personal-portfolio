@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { ANIMATIONS, fading, rotation, textUp } from '../animations';
+import { ANIMATIONS, rotation, textUp } from '../animations';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
@@ -130,6 +130,7 @@ export const HeaderNav = styled.div`
   }
 `
 export const BulbMotion = styled.div`
+  color: transparent;
   animation: ${rotation} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
 `
 
@@ -180,7 +181,9 @@ export const BannerSocial = styled.div`
     @media ${SITE_CONFIG.media.small} {
       display: initial;
       position: absolute;
-      bottom: 70px;
+      bottom: 100px;
+      left: 0;
+      /* transform: rotate(-90deg); */
 
       display: flex;
       flex-direction: column;
@@ -196,40 +199,53 @@ export const BannerTitle = styled.h2`
     font-weight: 400;
     margin-bottom: 10px;
     animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-    
+    animation-delay: 0.5s;
 `
 
-export const BannerTagline = styled.h3`
-    font-weight: 300;
-    animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-    animation-delay: 0.1s;
-`
+// export const BannerTagline = styled.h3`
+//     font-weight: 300;
+//     animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+//     animation-delay: 0.6s;
+// `
 
 export const BannerContactInfo = styled.p`
   animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+  animation-delay: 0.6s;
 `
 
 export const BannerSocialIconContainer = styled.a`
+`
 
+export const BannerDetail = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 3px;
+  width: 30px;
+  background: var(--color-accent);
+
+  animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+  animation-delay: 0.6s;
 `
 
 export const BannerSocialIcons = styled.div`
-    
+    display: flex;
+    justify-content: center;
+
     a {
       margin-right: 25px;
 
       animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
 
       &:nth-child(1) {
-        animation-delay: 0.2s;
+        animation-delay: 0.7s;
       }
 
       &:nth-child(2) {
-        animation-delay: 0.4s;
+        animation-delay: 0.9s;
       }
 
       &:nth-child(3) {
-        animation-delay: 0.6s;
+        animation-delay: 1.2s;
       }
       
 
@@ -240,7 +256,7 @@ export const BannerSocialIcons = styled.div`
     }
 
     svg {
-
+      /* transform: rotate(90deg); */
       fill: var(--color-text);
 
       &:hover {
@@ -274,17 +290,23 @@ export const AboutInfo = styled.div`
     @media ${SITE_CONFIG.media.medium} {
       padding-bottom: -100px !important;
     }
+
+    /* ${props => {
+      if (!props.toggle) {
+        return `
+          transition: 7s ease;
+          opacity: 0;
+        `;
+      } else {
+        return `
+          opacity: 1;
+        `;
+        }
+      }
+    } */
 `
 
 export const AboutPicture = styled.div`
-
-    /* img {
-      outline: 3px solid var(--color-accent);
-      outline-offset: -15px; 
-
-      
-    } */
-    
 
     min-width: 200px;
     height: auto;
