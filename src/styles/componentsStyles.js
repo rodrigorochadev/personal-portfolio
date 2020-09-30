@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { motion } from 'framer-motion'
+import { ANIMATIONS, fading, rotation, textUp } from '../animations';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
@@ -129,9 +129,11 @@ export const HeaderNav = styled.div`
     top: 62px;
   }
 `
-export const BulbMotion = styled(motion.div)``
+export const BulbMotion = styled.div`
+  animation: ${rotation} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
+`
 
-export const HeaderLogo = styled(motion.div)`
+export const HeaderLogo = styled.div`
     svg {
       height: 30px;
       width: auto;
@@ -141,7 +143,7 @@ export const HeaderLogo = styled(motion.div)`
         height: 35px;
       }
     }  
-
+    
     ${props =>
       props.bulb &&
         css`
@@ -156,7 +158,7 @@ export const HeaderLogo = styled(motion.div)`
 `
 
 // *********************** Banner *********************** \\
-export const BannerContainer = styled(motion.div)`
+export const BannerContainer = styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -165,13 +167,14 @@ export const BannerContainer = styled(motion.div)`
     justify-content: center;
     padding: 120px 0;
     text-align: center;
-    
+
     @media ${SITE_CONFIG.media.small} {
       padding: 100px 120px;
     }
+
 `
 
-export const BannerSocial = styled(motion.div)`
+export const BannerSocial = styled.div`
     display: none;
 
     @media ${SITE_CONFIG.media.small} {
@@ -189,32 +192,53 @@ export const BannerSocial = styled(motion.div)`
   
 `
 
-export const BannerTitle = styled(motion.h2)`
+export const BannerTitle = styled.h2`
     font-weight: 400;
     margin-bottom: 10px;
+    animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+    
 `
 
-export const BannerTagline = styled(motion.h3)`
+export const BannerTagline = styled.h3`
     font-weight: 300;
+    animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+    animation-delay: 0.1s;
 `
 
-export const BannerContactInfo = styled(motion.p)`
+export const BannerContactInfo = styled.p`
+  animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
 `
 
-export const BannerSocialIconContainer = styled(motion.a)`
+export const BannerSocialIconContainer = styled.a`
 
 `
 
-export const BannerSocialIcons = styled(motion.div)`
-
+export const BannerSocialIcons = styled.div`
+    
     a {
       margin-right: 25px;
+
+      animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
+
+      &:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      
 
       &:last-child {
         margin-right: 0;
       }
 
     }
+
     svg {
 
       fill: var(--color-text);

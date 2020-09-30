@@ -8,6 +8,12 @@ module.exports = {
     siteUrl: `https://rodrigorocha.pt`
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
