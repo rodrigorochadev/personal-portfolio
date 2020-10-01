@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { ANIMATIONS, rotation, textUp } from '../animations';
+import { ANIMATIONS, textDown, rotationUnScale, textUp } from '../animations';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
@@ -124,15 +124,21 @@ export const HeaderNav = styled.div`
   right: 0;
   left: 0;
   z-index: 99;
-
+  animation: ${textDown} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
+  
   @media ${SITE_CONFIG.media.small} {
     top: 62px;
   }
 `
-export const BulbMotion = styled.div`
-  color: transparent;
-  animation: ${rotation} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
+export const RotateInfinite = styled.div`
+  animation: ${rotationUnScale} 7s ${ANIMATIONS.easings.elastic};
+  animation-iteration-count: infinite;
 `
+
+// export const BulbMotion = styled.div`
+//   color: transparent;
+//   animation: ${textDown} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
+// `
 
 export const HeaderLogo = styled.div`
     svg {
@@ -199,7 +205,7 @@ export const BannerTitle = styled.h2`
     font-weight: 400;
     margin-bottom: 10px;
     animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-    animation-delay: 0.5s;
+    /* animation-delay: 0.5s; */
 `
 
 // export const BannerTagline = styled.h3`
@@ -210,7 +216,7 @@ export const BannerTitle = styled.h2`
 
 export const BannerContactInfo = styled.p`
   animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-  animation-delay: 0.6s;
+  animation-delay: 0.1s;
 `
 
 export const BannerSocialIconContainer = styled.a`
@@ -224,7 +230,7 @@ export const BannerDetail = styled.div`
   background: var(--color-accent);
 
   animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-  animation-delay: 0.6s;
+  animation-delay: 0.1s;
 `
 
 export const BannerSocialIcons = styled.div`
@@ -237,15 +243,15 @@ export const BannerSocialIcons = styled.div`
       animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
 
       &:nth-child(1) {
-        animation-delay: 0.7s;
+        animation-delay: 0.2s;
       }
 
       &:nth-child(2) {
-        animation-delay: 0.9s;
+        animation-delay: 0.4s;
       }
 
       &:nth-child(3) {
-        animation-delay: 1.2s;
+        animation-delay: 0.6s;
       }
       
 

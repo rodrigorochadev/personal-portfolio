@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby'
 
-import { SVGHolder, UnstyledButton, Container, Flex, HeaderNav, HeaderLogo, BulbMotion } from '../styles/componentsStyles'
+import { RotateInfinite, SVGHolder, UnstyledButton, Container, Flex, HeaderNav, HeaderLogo } from '../styles/componentsStyles'
 import { Logo, Bulb, BulbOn } from '../assets/svg/svg'
 import { ThemeContext } from './ThemeContext';
 
@@ -19,25 +19,20 @@ export default () => {
       <Container>
         <SVGHolder>
           <Flex spaceBetween noHeight>
-            <BulbMotion>
-              <HeaderLogo >
-                  <Link to="/" aria-label="Rodrigo Rocha">
-                    <Logo />
-                  </Link>
-              </HeaderLogo>
-            </BulbMotion>
+            <HeaderLogo >
+                <Link to="/" aria-label="Rodrigo Rocha">
+                  <Logo />
+                </Link>
+            </HeaderLogo>
             
-              
-                <HeaderLogo rotate bulb>
-                <BulbMotion >
+            <HeaderLogo rotate bulb>
+              <RotateInfinite>
                   <UnstyledButton aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
                       {colorMode === 'light' ? <BulbOn /> : <Bulb />}
                   </UnstyledButton>
-                  </BulbMotion>
-                </HeaderLogo>
+              </RotateInfinite>
               
-
-            {/* </motion.div> */}
+            </HeaderLogo>
 
           </Flex>
         </SVGHolder>

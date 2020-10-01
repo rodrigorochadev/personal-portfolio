@@ -11,8 +11,6 @@ export default () => {
             <BannerContainer>
                 <BannerTitle>{TYPOGRAPHY.banner.title}</BannerTitle>
                 <BannerDetail />
-                {/* <BannerTagline>{TYPOGRAPHY.banner.tagline}</BannerTagline> */}
-                <div style={{position: "relative", bottom: 0, right: 0, height: '5px', width: '5px'}}></div>
             </BannerContainer>
             <BannerSocial>
                 <BannerContactInfo >
