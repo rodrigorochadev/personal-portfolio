@@ -30,7 +30,7 @@ export const SITE_CONFIG = {
 
   fontFamilies: {
     regular: '"Cormorant Garamond", serif',
-    titles: '"Canela", serif',
+    titles: '"Canela-Light", serif',
     details: '"Poppins", sans-serif',
   },
 
