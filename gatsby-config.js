@@ -59,9 +59,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        google: {
-          families: ['Canela-Light, Canela-Bold'],
-          urls: ['/fonts/fonts.css']
+        custom: {
+          families: [`Canela-Light`, `Canela-Bold`],
+          urls: [`/fonts/fonts.css`]
         }
       }
     },
