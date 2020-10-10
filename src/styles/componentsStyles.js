@@ -8,6 +8,28 @@ export const Title = styled.h1`
   font-family: ${SITE_CONFIG.fontFamilies.titles};
   font-weight: 400;
 `
+export const BigTitle = styled.h1`
+  font-family: ${SITE_CONFIG.fontFamilies.titles}; 
+  font-size: 3rem;
+  
+  @media ${SITE_CONFIG.media.small} {
+    font-size: 5rem;
+  }
+  @media ${SITE_CONFIG.media.medium} {
+    font-size: 6rem;
+  }
+  @media ${SITE_CONFIG.media.large} {
+    font-size: 7rem;
+  }
+
+  ${props =>
+    props.difference &&
+    css`
+      color: white;
+      mix-blend-mode: difference;
+    `};
+  
+`
 
 export const Description = styled.p`
 
@@ -120,25 +142,17 @@ export const HeaderNav = styled.div`
   height: 0px;
   width: 100%;
   position: absolute;
-  top: 42px;
+  top: 62px;
   right: 0;
   left: 0;
   z-index: 99;
   animation: ${textDown} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
-  
-  @media ${SITE_CONFIG.media.small} {
-    top: 62px;
-  }
+
 `
 export const RotateInfinite = styled.div`
   animation: ${rotationUnScale} 7s ${ANIMATIONS.easings.elastic};
   animation-iteration-count: infinite;
 `
-
-// export const BulbMotion = styled.div`
-//   color: transparent;
-//   animation: ${textDown} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
-// `
 
 export const HeaderLogo = styled.div`
     svg {
@@ -181,45 +195,13 @@ export const BannerContainer = styled.div`
 
 `
 
-export const BannerSocial = styled.div`
-    display: none;
-
-    @media ${SITE_CONFIG.media.small} {
-      display: initial;
-      position: absolute;
-      bottom: 100px;
-      left: 0;
-      /* transform: rotate(-90deg); */
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-
-      row-gap: 10px;
-    }
-    
-  
-`
-
 export const BannerTitle = styled.h2`
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    line-height: ${SITE_CONFIG.fontHeights.titleHeight};
     font-weight: 400;
     margin-bottom: 10px;
     animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
     /* animation-delay: 0.5s; */
-`
-
-// export const BannerTagline = styled.h3`
-//     font-weight: 300;
-//     animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-//     animation-delay: 0.6s;
-// `
-
-export const BannerContactInfo = styled.p`
-  animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-  animation-delay: 0.1s;
-`
-
-export const BannerSocialIconContainer = styled.a`
 `
 
 export const BannerDetail = styled.div`
@@ -233,83 +215,28 @@ export const BannerDetail = styled.div`
   animation-delay: 0.1s;
 `
 
-export const BannerSocialIcons = styled.div`
-    display: flex;
-    justify-content: center;
-
-    a {
-      margin-right: 25px;
-
-      animation: ${textUp} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic} ;
-
-      &:nth-child(1) {
-        animation-delay: 0.2s;
-      }
-
-      &:nth-child(2) {
-        animation-delay: 0.4s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-      
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-    }
-
-    svg {
-      /* transform: rotate(90deg); */
-      fill: var(--color-text);
-
-      &:hover {
-        cursor: pointer;
-        transition: ${SITE_CONFIG.transitions.default};
-        fill: var(--color-accent);
-      }
-    }
-
-`
-
 // *********************** About *********************** \\
 export const AboutFlex = styled.div`
 
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: initial;
     column-gap: 50px;
     row-gap: 50px;
 
-    @media ${SITE_CONFIG.media.medium} {
+    @media ${SITE_CONFIG.media.small} {
         flex-direction: row;
         align-items: flex-end;
     }
 `
 
-export const AboutInfo = styled.div`
+export const AboutInfo = styled.h2`
 
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; */
 
     @media ${SITE_CONFIG.media.medium} {
-      padding-bottom: -100px !important;
+      padding-bottom: 100px !important;
     }
-
-    /* ${props => {
-      if (!props.toggle) {
-        return `
-          transition: 7s ease;
-          opacity: 0;
-        `;
-      } else {
-        return `
-          opacity: 1;
-        `;
-        }
-      }
-    } */
 `
 
 export const AboutPicture = styled.div`
@@ -317,128 +244,23 @@ export const AboutPicture = styled.div`
     min-width: 200px;
     height: auto;
 
-    padding-bottom: 0px;
-    /* min-width: 200px;
-    max-width: 250px; */
-
     @media ${SITE_CONFIG.media.small} {
-        max-width: 400px;
+        min-width: 400px;
     }
 
     @media ${SITE_CONFIG.media.medium} {
         min-width: 500px;
     }
     
-    
-
     @media ${SITE_CONFIG.media.medium} {
-      padding-bottom: 100px !important;
+      padding-top: -200px !important;
     }
 `
-
-// *********************** Portfolio *********************** \\
-export const PortfolioFlex = styled.div`
-    margin: 50px 0;
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-
-    @media ${SITE_CONFIG.media.medium} {
-      margin: 0;
-    }
-`
-
-export const PortfolioSeeAll = styled.div`
-
-    @media ${SITE_CONFIG.media.small} {
-      padding-top: 50px;
-    }
-`
-
-export const PortfolioMoreInfo = styled.div`
-    margin-top: 30px;
-
-    a {
-      color: var(--color-accent);
-
-      &:hover {
-        color: var(--color-text);
-      }
-    }
-`
-
-export const PortfolioDetails = styled.div`
-    width: 100%;
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 40%;
-        padding: 70px 0;
-    }
-`
-
-export const PortfolioId = styled.h1`
-  font-family: ${SITE_CONFIG.fontFamilies.titles};
-  font-weight: 400;
-`
-
-export const PortfolioName = styled.h2`
-  font-family: ${SITE_CONFIG.fontFamilies.titles};
-  font-weight: 500;
-`
-
-export const PortfolioCard = styled.div`
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
-
-
-    @media ${SITE_CONFIG.media.small} {
-        flex-direction: row;
-        justify-content: space-between;
-
-        @media ${SITE_CONFIG.media.small} {
-            ${props =>
-                props.reverse &&
-                css`
-                    flex-direction: row-reverse;
-            `}
-
-        }
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        min-height: 70vh;
-    }
-    
-`
-
-export const PortfolioImage = styled.div`
-    
-    margin-bottom: 20px;
-    /* min-width: 200px; */
-    min-width: 280px;
-    max-width: 400px;
-    
-    @media ${SITE_CONFIG.media.small} {
-        min-width: 300px;
-        margin-bottom: 0px;
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        min-width: 400px;
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        min-width: 450px;
-    }
-` 
 
 // *********************** Footer *********************** \\
 export const FooterContainer = styled.div`
-    background: ${SITE_CONFIG.defaults.black};
-    color: ${SITE_CONFIG.defaults.white};
+    background: var(--color-background);
+    color: var(--color-text);
     padding: 30px 0;
 `
 
@@ -469,7 +291,7 @@ export const FooterSocial = styled.div`
 export const FooterSVG = styled.div`
   svg {
     
-    fill: ${SITE_CONFIG.defaults.white};
+    fill: var(--color-text);
 
     &:hover {
       cursor: pointer;

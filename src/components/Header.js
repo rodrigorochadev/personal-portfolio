@@ -6,7 +6,7 @@ import { Logo, Bulb, BulbOn } from '../assets/svg/svg'
 import { ThemeContext } from './ThemeContext';
 
 
-export default () => {
+export default ({x, y}) => {
 
   const { colorMode, setColorMode } = React.useContext(ThemeContext);
 
@@ -15,7 +15,9 @@ export default () => {
   }
 
   return (
+    
     <HeaderNav id="home">
+      
       <Container>
         <SVGHolder>
           <Flex spaceBetween noHeight>

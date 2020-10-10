@@ -5,4 +5,5 @@ description: "Development of a website for Bee Awake. It's a project about impro
 image: 'beeawake.png'
 url: 'https://instagram.com/bee.awake'
 type: 'project'
+kind: 'Website'
 ---

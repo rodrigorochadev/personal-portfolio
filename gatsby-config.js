@@ -44,20 +44,42 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Cormorant Garamond`,
-            variants: [`300`, '400', '700']
-          },
-          {
-            family: `Cormorant SC`,
-            variants: [`400`]
-          },
-        ],
-      },
+      resolve: `gatsby-plugin-webfonts`,
+        options: {
+          fonts: {
+            google: [
+              {
+                family: "Cormorant Garamond",
+                variants: [`300`, '400', '700']
+              },
+            ]
+          }
+        }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Canela-Light, Canela-Bold'],
+          urls: ['/fonts/fonts.css']
+        }
+      }
+    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Cormorant Garamond`,
+    //         variants: [`300`, '400', '700']
+    //       },
+    //       {
+    //         family: `Junge`,
+    //         variants: [`400`]
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

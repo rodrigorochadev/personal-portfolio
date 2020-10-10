@@ -1,8 +1,8 @@
 import React from 'react'
-import scrollTo from 'gatsby-plugin-smoothscroll'
+// import scrollTo from 'gatsby-plugin-smoothscroll'
 
-import { Container, FooterContainer, FooterSection, FooterCopyright, FooterSocial, FooterContent, FooterSVG, UnstyledButton } from '../styles/componentsStyles'
-import { Instagram, Dribbble, Behance, Logo, Linkedin, Github } from '../assets/svg/svg'
+import { Container, FooterContainer, FooterSection, FooterCopyright, FooterSocial, FooterContent, FooterSVG } from '../styles/componentsStyles'
+import { Instagram, Dribbble, Behance, Linkedin, Github } from '../assets/svg/svg'
 
 export default () => {
 
@@ -11,11 +11,6 @@ export default () => {
             <Container>
                 <FooterSVG>
                     <FooterContent>
-                        <FooterSection>
-                            <UnstyledButton aria-label="rodrigorocha" onClick={() => scrollTo('#home')}>
-                                <Logo />
-                            </UnstyledButton>
-                        </FooterSection>
                         <FooterSection>
                             <FooterSocial>
                                 <a href="https://linkedin.com/in/rodrigorocha101" rel="noreferrer" target="_blank" aria-label="Linkedin">

@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
     background: var(--color-background);
     color: var(--color-text);
     font-size: ${SITE_CONFIG.fontSizesPlus.base};
-    
+
     @media ${SITE_CONFIG.media.small} {
       font-size: ${SITE_CONFIG.fontSizesPlus.base};
     }

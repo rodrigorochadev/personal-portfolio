@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: `${title} - Rodrigo Rocha`,
+          content: `Rodrigo Rocha Software Developer`,
         },
         {
           property: `og:description`,
