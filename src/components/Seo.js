@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `${defaultTitle} ~ %s ` : null}
       meta={[
         {
           name: `description`,
@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: `Rodrigo Rocha Software Developer`,
+          content: `Rodrigo Rocha | Software Developer`,
         },
         {
           property: `og:description`,

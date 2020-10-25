@@ -1,17 +1,47 @@
-import styled, {css} from 'styled-components';
+import styled,  {css, keyframes} from 'styled-components';
 import { ANIMATIONS, textDown, rotationUnScale, textUp } from '../animations';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
 
+const scrollLeft = keyframes`
+  0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+`
+
+export const MarqueeDiv = styled.div`
+    position: relative;
+    overflow: hidden;
+    --offset: 0vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+    height: 200px;
+`
+
+export const MarqueeText = styled.div`
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: ${scrollLeft} 20s linear infinite;
+    animation-play-state: running;
+
+
+    
+`
+
+
+
 export const Title = styled.h1`
   font-family: ${SITE_CONFIG.fontFamilies.titles};
-  font-weight: 400;
-`
-export const BigTitle = styled.h1`
-  font-family: ${SITE_CONFIG.fontFamilies.titles}; 
-  font-size: 3rem;
   
+  font-size: 3rem;
+
   @media ${SITE_CONFIG.media.small} {
     font-size: 5rem;
   }
@@ -21,14 +51,52 @@ export const BigTitle = styled.h1`
   @media ${SITE_CONFIG.media.large} {
     font-size: 7rem;
   }
+`
+
+export const BigTitle = styled.h1`
+  /* font-family: ${SITE_CONFIG.fontFamilies.titles};  */
+  font-family: ${SITE_CONFIG.fontFamilies.regular}; 
+  text-transform: uppercase;
+  font-size: 3rem;
+  
+  @media ${SITE_CONFIG.media.small} {
+    font-size: 5.5rem;
+  }
+  @media ${SITE_CONFIG.media.medium} {
+    font-size: 6.5rem;
+  }
+  @media ${SITE_CONFIG.media.large} {
+    font-size: 7.5rem;
+  }
+  @media ${SITE_CONFIG.media.xlarge} {
+    font-size: 8.5rem;
+  }
 
   ${props =>
-    props.difference &&
+    props.nowrap &&
     css`
-      color: white;
-      mix-blend-mode: difference;
+      white-space: nowrap;
     `};
-  
+
+  ${props =>
+    props.center &&
+    css`
+      text-align: center;
+    `};
+
+  ${props =>
+    props.right &&
+    css`
+      text-align: right;
+    `};
+
+  ${props =>
+    props.outline &&
+    css`
+      -webkit-text-stroke: 3px;
+      -webkit-text-stroke-color: var(--color-text);
+      -webkit-text-fill-color: transparent;
+    `};  
 `
 
 export const Description = styled.p`
@@ -46,7 +114,7 @@ export const Button = styled.button`
   transition: ${SITE_CONFIG.transitions.default};
 
   &:hover {
-    cursor: pointer;
+    /* cursor: pointer; */
     background: var(--color-accent);
     color: white;
 
@@ -69,7 +137,7 @@ export const SVGHolder = styled.div`
 
       &:hover {    
           fill: var(--color-accent);
-          cursor: pointer;
+          /* cursor: pointer; */
       }
 
       &:focus {
@@ -86,7 +154,7 @@ export const Container = styled.div`
   width: auto;
   height: 100%;
 
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     padding: 0 32px;
     max-width: 960px;
   }
@@ -97,7 +165,7 @@ export const Container = styled.div`
 
   @media (min-width: 1408px) {
     max-width: 1244px;
-  }
+  } */
 
 
 `
@@ -259,7 +327,7 @@ export const AboutPicture = styled.div`
 
 // *********************** Footer *********************** \\
 export const FooterContainer = styled.div`
-    background: var(--color-background);
+    /* background: var(--color-background); */
     color: var(--color-text);
     padding: 30px 0;
 `
@@ -294,7 +362,7 @@ export const FooterSVG = styled.div`
     fill: var(--color-text);
 
     &:hover {
-      cursor: pointer;
+      /* cursor: pointer; */
       fill: var(--color-accent);
       transition: ${SITE_CONFIG.transitions.default};
     }

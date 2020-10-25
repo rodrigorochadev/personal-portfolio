@@ -73,6 +73,7 @@ export default (props) => {
 }
 
 export const PortfolioMargin = styled.div`
+    z-index: 20;
     margin-top: 50px;
 
     @media ${SITE_CONFIG.media.small} {
@@ -103,6 +104,10 @@ export const PortfolioName = styled.div`
 
 export const PortfolioDescription = styled.div`
     
+    p {
+        font-family: ${SITE_CONFIG.fontFamilies.descriptions};
+    }
+    
 
     @media ${SITE_CONFIG.media.small} {
         width: 70%;
@@ -110,6 +115,7 @@ export const PortfolioDescription = styled.div`
 `
 
 export const PortfolioContainer = styled.div`
+    z-index: 20;
     display: flex;
     
     flex-direction: column;
@@ -136,7 +142,7 @@ export const PortfolioContainer = styled.div`
         &:hover {
             color: var(--var-color);
             /* mix-blend-mode: difference; */
-            cursor: pointer;
+            /* cursor: pointer; */
             -webkit-text-stroke: 1px;
             -webkit-text-stroke-color: var(--color-text);
             -webkit-text-fill-color: transparent;   
@@ -147,6 +153,7 @@ export const PortfolioContainer = styled.div`
 export const PortfolioTitle = styled(motion.div)`
     text-decoration: none;
     color: var(--color-text);
+    z-index: 20;
 
     h2 {
         font-family: ${SITE_CONFIG.fontFamilies.titles} !important;

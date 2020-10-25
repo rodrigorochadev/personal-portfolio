@@ -5,7 +5,7 @@ export const COLORS = {
   },
   background: {
     light: 'hsl(0deg, 0%, 100%)',
-    dark: '#121212',
+    dark: 'rgb(6, 17, 28)' 
   },
   accent: {
     light: '#178555',
@@ -29,9 +29,11 @@ export const SITE_CONFIG = {
   },
 
   fontFamilies: {
-    regular: '"Cormorant Garamond", serif',
-    titles: '"Canela-Light", serif',
-    details: '"Poppins", sans-serif',
+    // regular: '"Cormorant Garamond", serif',
+    regular: "'Poppins', sans-serif",
+    titles: '"Canela-Thin", serif',
+    details: '"Cormorant Garamond", serif',
+    descriptions: "'Poppins', sans-serif"
   },
 
   fontSizes: {
@@ -62,36 +64,15 @@ export const SITE_CONFIG = {
   },
 
   media: {
-      xsmall: `(min-width: 22em)`,
-      small: `(min-width: 48em)`,
-      medium: `(min-width: 64em)`,
-      large: `(min-width: 85.375em)`,
-      xlarge: `(min-width: 120em)`,
-      xxlarge: `(min-width: 160em)`,
-      retina: "(-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)",
+      xsmall: `screen and (min-width: 22em)`,
+      small: `screen and (min-width: 48em)`,
+      medium: `screen and (min-width: 64em)`,
+      large: `screen and (min-width: 85.375em)`,
+      xlarge: `screen and (min-width: 120em)`,
+      xxlarge: `screen and (min-width: 160em)`,
   },
 
   transitions: {
       default: '0.2s ease-in-out',
   },
-}
-
-export const TYPOGRAPHY = {
-
-  banner: {
-    title: "Hi, everyone! My name is Rodrigo and I’m a software developer from Portugal. I aim to make the web prettier one project at a time.",
-    tagline: "Create. Destroy. Rebuild.",
-    contact: "Contact me.",
-  },
-
-  about: {
-    title: "A bit about me.",
-    description: "Hi everyone! My name is Rodrigo, and I was born in Figueira da Foz, Portugal 26 years ago, where I've lived and studied until I went to university. I've graduated with a B.Sc. in Computer and Telematics Engineering, and following that, started working as a software developer for Altice Labs, in Aveiro. As long as I can remember I've always had a passion for technology and arts. And because I believe that web design is an art, I can combine both my passions, by doing web development. I always aim to give every client the prettiest website I can. I’m eager to learn something new every day and I hope I can do it with you!"
-  },
-
-  portfolio: {
-    title: "Some of my work.",
-    seeAllButton: "See all projects",
-  },
-
 }

@@ -52,6 +52,10 @@ module.exports = {
                 family: "Cormorant Garamond",
                 variants: [`300`, '400', '700']
               },
+              {
+                family: "Libre Baskerville",
+                variants: ['400i']
+              },
             ]
           }
         }
@@ -98,7 +102,7 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     // `gatsby-plugin-offline`,
   ],
 };

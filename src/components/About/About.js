@@ -1,14 +1,14 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import {SITE_CONFIG} from '../../constants'
-import { Container, AboutFlex, AboutPicture, BigTitle } from '../../styles/componentsStyles'
-import styled, { css } from 'styled-components'
+import { BigTitle, VerticalSpacing} from '../../styles/componentsStyles'
 import usePageOfssetY from '../../hooks/usePageOffsetY'
 import useWindowSize from '../../hooks/useWindowSize'
+import AboutItem from './AboutItem'
+import { AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer, AboutContainer } from '../../styles/components/aboutStyles'
 
 export default () => {
-    const offsetY = usePageOfssetY();
+    
     const { width } = useWindowSize()
 
     const data = useStaticQuery(graphql`
@@ -20,112 +20,81 @@ export default () => {
                     }  
                 }
             }
+            figueira: file(relativePath: {eq: "figueira-da-foz.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }  
+                }
+            }
+
+            aveiro: file(relativePath: {eq: "aveiro.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }  
+                }
+            }
         }
     `);
 
 
     const text = [
-        `I was born in Figueira da Foz, Portugal in October 4th, 1994 and graduated with a BSc in Computer and Telematics Engineering from University of Aveiro.`,
-        `I had my first professional experience working for Altice Labs as an Software Developer. I also work as a freelance web developer.`,
-        `My passion is to design and develop software. I'm eager to learn something new every day, and maybe I can teach you something.`
+
+        [0, `Hi, everyone! My name is Rodrigo Rocha. I was born in Figueira da Foz, Portugal, October 4th, 1994 where I lived and studied   until I went to college.`, data.figueira.childImageSharp.fluid],
+        [0, `I attended University of Aveiro where I've graduated with an BSc in Computer and Telematics Engineering. Following that, I had my first professional experience working as a software developer for Altice Labs.`, data.aveiro.childImageSharp.fluid],
+        [1, `I have a passion to design and develop software, as well as good looking websites and mobile applications. I'm eager to improve and learn something new every day.`, data.picture.childImageSharp.fluid]
     ]
     
     return(
-        <>
         
-        <Container>
-            <AboutFlex>
-                {/* style={{transform: `translateY(${offsetY*0.15}px)`}} */}
+        <VerticalSpacing>
+        {width < 1024 && (
+            <>
+            <div style={{paddingTop: '100px'}}></div>
+            <div style={{padding: '0 10vw', marginTop: '-150px'}}>
+                {text.map((textHeading, i) => {
+                        return(
+                            <MobileAboutContainer>
+                                <AboutTextContainer>
+                                    <AboutText>
+                                        <AboutH2>{textHeading[1]}</AboutH2>
+                                    </AboutText>
+                                </AboutTextContainer>
+                                <MobileAboutImgContainer>
+                                    <Img fluid={textHeading[2]}></Img>
+                                </MobileAboutImgContainer>
+                            </MobileAboutContainer>
+                        )
+                    }  
+                )}                
+            </div>
+            </>
+        )}
 
+        {width >= 1024 && (
+            <>
+            <div style={{paddingTop: '300px'}}></div>
+            <div style={{padding: '0 10vw'}}>
+            
+                <BigTitle outline right>Who am I?</BigTitle>
+                <p>(Hover on pictures to see more!)</p>
+                <div style={{borderTop: '1px solid var(--color-text)', marginBottom: '100px'}}></div>
+            </div>
+            <AboutContainer>
                 
-                <AboutPicture >
-                    <Img fluid={data.picture.childImageSharp.fluid} alt="Portrait" />
-                </AboutPicture>
-
-
-                <AboutTitle>
-                    {/*  */}
-                    {width <= 768 && (
-                        <BigTitle >A little bit about me.</BigTitle>
-                    )}
-                    {width > 768 && (
-                        <BigTitle style={{transform: `translateY(-${offsetY*0.10}px)`}}>A little bit about me.</BigTitle>
-                    )}
-                </AboutTitle>
                 
-            </AboutFlex>            
-        </Container>
-        <div style={{padding: '0 10vw', marginTop: '-150px'}}>
+                <AboutItem translateY={[0.15, 0.02]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid}/>
+                <AboutItem translateY={[0.13, 0.02]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid}/>
+                <AboutItem translateY={[0.11, 0.02]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid}/>
+                
+                
 
-            {/* style={{transform: `translateY(${offsetY*0.12}px)`}} */}
-            {text.map((textHeading, i) => {
-                    return(
-                        <AboutTextContainer reverse={i%2 !== 0}>
-                            <AboutText>
-                                <AboutH2>{textHeading}</AboutH2>
-                            </AboutText>
-                        </AboutTextContainer>
-                    )
-                }  
-            )}
-        </div>
-        </>
+            </AboutContainer>
+            </>
+        )}
+        
+            
+        </VerticalSpacing>
     )
 }
-
-const AboutTitle = styled.div`
-    margin-bottom: 70px;
-
-    @media ${SITE_CONFIG.media.small} {
-        position: absolute;
-        width: 500px;
-        left: 400px;
-        margin-bottom: -50px;
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        left: 500px;        
-    }
-    
-`
-
-const AboutTextContainer = styled.div`
-    display: flex;
-    margin-top: 100px;
-    
-
-    ${props => props.reverse && css`
-        justify-content: right;
-    `};
-
-    @media ${SITE_CONFIG.media.small} {
-        margin-top: 250px;
-    }
-
-`
-
-const AboutText = styled.div`
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 60%;
-        border-bottom: 1px solid var(--color-text);
-    }
-    
-    
-`
-
-export const AboutH2 = styled.h2`
-
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-    font-weight: 400;
-    line-height: ${SITE_CONFIG.fontHeights.titleHeight};
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-
-    @media ${SITE_CONFIG.media.small} {
-        font-size: 2rem;
-        
-    }
-    
-    
-`

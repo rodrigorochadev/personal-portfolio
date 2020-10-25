@@ -1,42 +1,61 @@
 import React from 'react'
-import { VerticalSpacing } from '../../styles/componentsStyles'
+import { VerticalSpacing, Container } from '../../styles/componentsStyles'
 import styled from 'styled-components'
 import { SITE_CONFIG } from '../../constants'
+import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext'
+import { motion } from 'framer-motion'
 
 export default () => {
-    
+
+    const dispatch = useGlobalDispatchContext()
+    const { cursorStyles } = useGlobalStateContext()
+  
+    const onCursor = cursorType => {
+      cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
+      dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+    }
     return(
-        <div style={{padding: '0 10vw'}}>
+        <Container>
             <VerticalSpacing>
                 <TalkContainer>
-                    <p>I hope you got inspired to learn something new!
-                        Maybe we'll build something together.
-                        Talk to me at <a href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com</a>
-                    </p>
+                    <TalkTitle>Let's build something together!</TalkTitle>
+                    <TalkMail 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com</TalkMail>
                 </TalkContainer>
             </VerticalSpacing>
-        </div>
+        </Container>
     )
 }
 
-export const TalkContainer = styled.div`
-    width: 100%;
-
-    p, a {
-        font-family: ${SITE_CONFIG.fontFamilies.titles};
-        line-height: ${SITE_CONFIG.fontHeights.titleHeight};
-        font-weight: 400;
-        font-size: 1.5rem;
-
-        @media ${SITE_CONFIG.media.small} {
-            font-size: 2rem;
-            
-        }
-    }
+export const TalkTitle = styled.div`
+    font-family: ${SITE_CONFIG.fontFamilies.details};
+    font-weight: 300;
+    font-size: 1.5rem;
 
     @media ${SITE_CONFIG.media.small} {
-        width: 600px;
+        font-size: 3.5vw;
     }
 
+`
+
+export const TalkMail = styled(motion.a)`
+    font-size: 1.5rem;
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    text-decoration: none;
+
+    @media ${SITE_CONFIG.media.small} {
+        font-size: 6vw;
+    }
+`
+
+export const TalkContainer = styled.div`
+    width: 100%;
     
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
+
+    @media ${SITE_CONFIG.media.small} {
+        text-align: center;
+    }
 `
