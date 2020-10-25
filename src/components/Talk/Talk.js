@@ -32,7 +32,7 @@ export default () => {
 export const TalkTitle = styled.div`
     font-family: ${SITE_CONFIG.fontFamilies.details};
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     @media ${SITE_CONFIG.media.small} {
         font-size: 3.5vw;

@@ -48,13 +48,13 @@ module.exports = {
         options: {
           fonts: {
             google: [
+              // {
+              //   family: "Cormorant Garamond",
+              //   variants: [`300`, '400', '700']
+              // },
               {
-                family: "Cormorant Garamond",
-                variants: [`300`, '400', '700']
-              },
-              {
-                family: "Libre Baskerville",
-                variants: ['400i']
+                family: "Poppins",
+                variants: ['400, 700']
               },
             ]
           }
