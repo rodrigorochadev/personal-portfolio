@@ -13,9 +13,7 @@ const IndexPage = () => (
     <Banner />
     <About />
     <NewPortfolio />
-    <div style={{padding: '200px 0'}}>
-      <Marquee text='Thank you for your attention!' />
-    </div>
+    <Marquee text='Thank you for your attention!' />
     <Talk />    
   </Layout>
 

@@ -21,6 +21,11 @@ export const MarqueeDiv = styled.div`
     --move-initial: calc(-25% + var(--offset));
     --move-final: calc(-50% + var(--offset));
     height: 200px;
+    padding: 150px 0;
+
+    @media ${SITE_CONFIG.media.small} {
+      padding: 300px 0;
+    }
 `
 
 export const MarqueeText = styled.div`
