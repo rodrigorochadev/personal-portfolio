@@ -105,7 +105,7 @@ export const PortfolioName = styled.div`
 export const PortfolioDescription = styled.div`
     
     p {
-        font-family: ${SITE_CONFIG.fontFamilies.descriptions};
+        font-family: ${SITE_CONFIG.fontFamilies.regular};
     }
     
 

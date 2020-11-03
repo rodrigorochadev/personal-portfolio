@@ -86,7 +86,9 @@ export const AboutImg = styled(Img)`
         transition: ${SITE_CONFIG.transitions.default};
         
         &:hover {
-            transform: scale(3,3);
+            
+            transform: ${props => props.translateX} scale(3,3);
+            
         }
     }
 
@@ -109,7 +111,7 @@ export const AboutText = styled.div`
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
-        width: 90%;
+        width: 85%;
     } 
 `
 

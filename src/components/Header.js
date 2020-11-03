@@ -1,11 +1,11 @@
 import React from 'react';
-// import { Link } from 'gatsby'
-import { SVGHolder, UnstyledButton, Flex, HeaderNav } from '../styles/componentsStyles'
-// import { Logo, Bulb, BulbOn } from '../assets/svg/svg'
+import { SVGHolder, UnstyledButton, Flex } from '../styles/componentsStyles'
 import { ThemeContext } from './ThemeContext';
 import styled from 'styled-components';
 import { SITE_CONFIG } from '../constants';
 import { motion } from 'framer-motion';
+import { HeaderNav } from '../styles/components/headerStyles';
+import { Link } from 'gatsby';
 
 
 export default ({onCursor}) => {
@@ -24,11 +24,12 @@ export default ({onCursor}) => {
         <SVGHolder>
           <Flex spaceBetween noHeight>
           
-            <ThemeText
-              onMouseEnter={() => onCursor('hovered')}
-              onMouseLeave={onCursor}
-            >R.R</ThemeText>
-
+              <IndexText
+                onMouseEnter={() => onCursor('hovered')}
+                onMouseLeave={onCursor}
+              > <Link to="/">R.R</Link>
+              </IndexText>
+            
             <UnstyledButton 
               onMouseEnter={() => onCursor('hovered')}
               onMouseLeave={onCursor}
@@ -43,16 +44,37 @@ export default ({onCursor}) => {
 };
 
 
+export const IndexText = styled(motion.div)`
+  
+
+  a {
+    font-weight: bold;
+
+    color: var(--color-text);
+
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    font-size: 1.2rem;
+    transition: ${SITE_CONFIG.transitions.default};
+    text-decoration: none;
+    
+    &:hover {
+        color: var(--color-accent);
+    }
+  }
+`
+
 export const ThemeText = styled(motion.p)`
   font-weight: bold;
-  
+
   color: var(--color-text);
 
   font-family: ${SITE_CONFIG.fontFamilies.titles};
   font-size: 1.2rem;
   transition: ${SITE_CONFIG.transitions.default};
+  text-decoration: none;
+
   &:hover {
-    /* cursor: pointer; */
-    color: var(--color-accent);
+      color: var(--color-accent);
   }
+
 `

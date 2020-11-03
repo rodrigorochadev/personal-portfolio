@@ -1,5 +1,6 @@
 import React from 'react'
-import { BigTitle, MarqueeDiv, MarqueeText } from '../styles/componentsStyles'
+import { MarqueeDiv, MarqueeText } from '../styles/components/marqueeStyles'
+import { BigTitle} from '../styles/componentsStyles'
 
 
 export default (props) => {

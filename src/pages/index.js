@@ -4,16 +4,16 @@ import Banner from '../components/Banner/Banner'
 import Layout from '../components/Layout'
 import Talk from '../components/Talk/Talk'
 import SEO from '../components/Seo'
-import NewPortfolio from '../components/NewPortfolio/NewPortfolio'
-import Marquee from '../components/Marquee'
+import Portfolio from '../components/Portfolio/Portfolio'
+import Details from '../components/Details/Details'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Software Developer" />
     <Banner />
     <About />
-    <NewPortfolio />
-    <Marquee text='Thank you for your attention!' />
+    <Details />
+    <Portfolio />
     <Talk />    
   </Layout>
 

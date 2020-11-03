@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import CustomCursor from './CustomCursor';
 import ScrollIndicator from './ScrollIndicator';
-import { useGlobalDispatchContext, useGlobalStateContext } from './context/globalContext';
+import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext';
 
 const Layout = ({ children }) => {
 

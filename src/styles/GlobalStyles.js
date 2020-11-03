@@ -37,8 +37,8 @@ const GlobalStyles = createGlobalStyle`
     
     &:before {
       z-index: -1;
-      animation: ${grain} 8s steps(10) infinite;
-      background-image: url(${noiseImg});
+      /* animation: ${grain} 8s steps(10) infinite;
+      background-image: url(${noiseImg}); */
       
       content: '';
       height: 300%;

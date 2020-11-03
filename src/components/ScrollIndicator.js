@@ -43,8 +43,8 @@ export const Scrolled = styled.div`
     bottom: 20px;
     right: 20px;
 
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 30px;
 
     fill: none;
     stroke: var(--color-text);

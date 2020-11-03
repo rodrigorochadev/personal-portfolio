@@ -1,18 +1,38 @@
-import React from 'react'
-// import scrollTo from 'gatsby-plugin-smoothscroll'
+import React, { useEffect } from 'react'
 
-import { Container, FooterContainer, FooterSection, FooterCopyright, FooterSocial, FooterContent, FooterSVG } from '../styles/componentsStyles'
+import { Container } from '../styles/componentsStyles'
+import { FooterContainer, FooterSection, FooterCopyright, FooterSocial, FooterContent, FooterSVG, SocialIcon } from '../styles/components/footerStyles'
 import { Instagram, Dribbble, Behance, Linkedin, Github } from '../assets/svg/svg'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import { useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { divUp } from '../animations'
 
 export default ({onCursor}) => {
+
+    // Animations
+    const animation = useAnimation()
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: "-50px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible")
+        }
+    }, [animation, inView])
+
 
     return(
         <FooterContainer id="footer">
             <Container>
                 <FooterSVG>
-                    <FooterContent>
+                    <FooterContent 
+                        ref={contentRef}
+                        animate={animation}
+                        initial="hidden"
+                        variants={divUp}    
+                    >
                         <FooterSection>
                             <FooterSocial>
                                 <SocialIcon 
@@ -58,10 +78,3 @@ export default ({onCursor}) => {
     )
 
 }
-
-export const SocialIcon = styled(motion.a)`
-    
-    &:hover {
-        cursor: none;
-    }
-`

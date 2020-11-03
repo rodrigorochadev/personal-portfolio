@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { VerticalSpacing, Container } from '../../styles/componentsStyles'
 import styled from 'styled-components'
 import { SITE_CONFIG } from '../../constants'
-import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext'
-import { motion } from 'framer-motion'
+import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
+import { motion, useAnimation } from 'framer-motion'
 import useWindowSize from '../../hooks/useWindowSize'
+import { useInView } from 'react-intersection-observer'
+import { divUp } from '../../animations'
 
 export default () => {
+
+
+    // Animations
+    const animation = useAnimation()
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: "-300px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("visible")
+        }
+    }, [animation, inView])
+
+    // Cursor
 
     const dispatch = useGlobalDispatchContext()
     const { cursorStyles } = useGlobalStateContext()
@@ -32,14 +50,19 @@ export default () => {
                         </>
                     )}
                     {width >= 768 && (
-                        <>
+                        <motion.div
+                            ref={contentRef}
+                            animate={animation}
+                            initial="hidden"
+                            variants={divUp}
+                        >
                             <TalkTitle>Let's build something together!</TalkTitle>
-                            <TalkMail 
+                            <TalkMail
                                 onMouseEnter={() => onCursor('hovered')}
                                 onMouseLeave={onCursor}
                                 href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com
                             </TalkMail>
-                        </>    
+                        </motion.div>    
                     )}
                     
                 </TalkContainer>
@@ -48,8 +71,8 @@ export default () => {
     )
 }
 
-export const TalkTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.details};
+export const TalkTitle = styled(motion.div)`
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
     font-weight: 300;
     font-size: 13vw;
 

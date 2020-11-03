@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#178555`,
         display: `minimal-ui`,
-        icon: `src/assets/images/favico.svg`, // This path is relative to the root of the site.
+        icon: `src/assets/images/logo.svg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -34,6 +34,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `portfolio`,
+    //     path: `${__dirname}/src/assets/images/portfolio/`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,10 +55,10 @@ module.exports = {
         options: {
           fonts: {
             google: [
-              // {
-              //   family: "Cormorant Garamond",
-              //   variants: [`300`, '400', '700']
-              // },
+              {
+                family: "Questrial",
+                variants: ['400', '700']
+              },
               {
                 family: "Poppins",
                 variants: ['400', '700']

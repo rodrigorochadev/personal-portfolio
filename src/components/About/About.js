@@ -6,11 +6,14 @@ import usePageOfssetY from '../../hooks/usePageOffsetY'
 import useWindowSize from '../../hooks/useWindowSize'
 import AboutItem from './AboutItem'
 import { AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer, AboutContainer } from '../../styles/components/aboutStyles'
+import Title from '../Title'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default () => {
-    
-    const { width } = useWindowSize()
 
+    const { width } = useWindowSize()
+    const [hoverState, setHoverState] = useState(false)
     const data = useStaticQuery(graphql`
         query {
             picture: file(relativePath: {eq: "portrait.jpg"}) {
@@ -51,47 +54,38 @@ export default () => {
         <VerticalSpacing>
         {width < 1024 && (
             <>
-            <div style={{paddingTop: '100px'}}></div>
-            <div style={{padding: '0 10vw', marginTop: '-150px'}}>
-                {text.map((textHeading, i) => {
-                        return(
-                            <MobileAboutContainer>
-                                <AboutTextContainer>
-                                    <AboutText>
-                                        <AboutH2>{textHeading[1]}</AboutH2>
-                                    </AboutText>
-                                </AboutTextContainer>
-                                <MobileAboutImgContainer>
-                                    <Img fluid={textHeading[2]}></Img>
-                                </MobileAboutImgContainer>
-                            </MobileAboutContainer>
-                        )
-                    }  
-                )}                
-            </div>
+                <div style={{paddingTop: '100px'}}></div>
+                <div style={{padding: '0 10vw', marginTop: '-150px'}}>
+                    {text.map((textHeading, i) => {
+                            return(
+                                <MobileAboutContainer>
+                                    <AboutTextContainer>
+                                        <AboutText>
+                                            <AboutH2>{textHeading[1]}</AboutH2>
+                                        </AboutText>
+                                    </AboutTextContainer>
+                                    <MobileAboutImgContainer>
+                                        <Img fluid={textHeading[2]}></Img>
+                                    </MobileAboutImgContainer>
+                                </MobileAboutContainer>
+                            )
+                        }  
+                    )}                
+                </div>
             </>
         )}
 
         {width >= 1024 && (
-            <>
-            <div style={{paddingTop: '300px'}}></div>
-            <div style={{padding: '0 10vw'}}>
-            
-                <BigTitle outline right>Who am I?</BigTitle>
-                <p>(Hover on pictures to see more!)</p>
-                <div style={{borderTop: '1px solid var(--color-text)', marginBottom: '100px'}}></div>
-            </div>
-            <AboutContainer>
-                
-                
-                <AboutItem translateY={[0.15, 0.02]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid}/>
-                <AboutItem translateY={[0.13, 0.02]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid}/>
-                <AboutItem translateY={[0.11, 0.02]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid}/>
-                
-                
-
-            </AboutContainer>
-            </>
+            <motion.div 
+            style={{padding: '100px 0'}}
+            onHoverStart={() => setHoverState(true)} 
+            onHoverEnd={() => setHoverState(false)}>
+                <AboutContainer>
+                    <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
+                    <AboutItem direction={-1} hoverState={hoverState} translateY={[0.15, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
+                    <AboutItem direction={1} hoverState={hoverState} translateY={[0.12, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
+                </AboutContainer>
+            </motion.div>
         )}
         
             

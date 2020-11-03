@@ -1,5 +1,67 @@
 import {keyframes} from 'styled-components'
 
+export const divUp = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+    },
+    hidden: { opacity: 0, y: 72 }
+}
+
+export const textRight = keyframes`
+  
+    0% {
+      opacity: 0%;
+      -webkit-transform: translateX(-150px) ;
+              transform: translateX(-150px) ;
+    }
+    50% {
+      opacity: 50%;
+      -webkit-transform: translateX(60px);
+              transform: translateX(60px);
+    }
+    100% {
+      opacity: 100%;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+
+`
+
+export const textLeft = keyframes`
+  
+    0% {
+      opacity: 0%;
+      -webkit-transform: translateX(150px) ;
+              transform: translateX(150px) ;
+    }
+    50% {
+      opacity: 50%;
+      -webkit-transform: translateX(-60px);
+              transform: translateX(-60px);
+    }
+    100% {
+      opacity: 100%;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+
+`
+
+export const scaleUp = keyframes`
+  
+    0% {
+      opacity: 0%;
+      scale: 0;
+    }
+    100% {
+      opacity: 100%;
+      scale: 1;
+    }
+
+`
+
 export const textUp = keyframes`
 
     0% {
@@ -41,19 +103,19 @@ export const grain = keyframes`
   90% { transform:translate(-10%, 10%); }
 `
 
-// export const rotation = keyframes`
-//   0% {
+export const rotation = keyframes`
+  0% {
       
-//       transform: ;
-//       -webkit-transform: scale(0) rotate(0) ;
-//               transform: scale(0) rotate(0) ;
-//     }
-//     100% {
+      transform: ;
+      -webkit-transform: rotate(0) ;
+              transform: rotate(0) ;
+    }
+    100% {
       
-//       -webkit-transform: scale(1) rotate(360deg);
-//               transform: scale(1) rotate(360deg);
-//     }
-// `
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+`
 
 export const rotationUnScale = keyframes`
     0%, 20%, 40%, 60%, 80% {  

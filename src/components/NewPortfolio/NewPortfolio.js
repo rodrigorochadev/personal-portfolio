@@ -3,12 +3,13 @@ import React from 'react'
 import styled from 'styled-components';
 import { SITE_CONFIG } from '../../constants';
 import { BigTitle, VerticalSpacing } from '../../styles/componentsStyles';
+import Title from '../Title';
 import NewPortfolioItem from './NewPortfolioItem'
 
 export default () => {
 
     const data = useStaticQuery(graphql`
-        query ProjectsQuery {
+        query NewProjectsQuery {
             allMarkdownRemark(
                 sort: {fields: frontmatter___id}
                 filter: {frontmatter: {type: {eq: "project"}}}) {
@@ -37,7 +38,8 @@ export default () => {
     return(
         <VerticalSpacing>
             <PortfolioContainer>
-                <BigTitle>Some of my work.</BigTitle>
+                <Title title="Some of my work." outline={true} right={true} />
+                {/* <BigTitle>Some of my work.</BigTitle> */}
 
                 <PortfolioMoreInfo>(Hover on title to see more!)</PortfolioMoreInfo>
                 {data.allMarkdownRemark.edges.map(

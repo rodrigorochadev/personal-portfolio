@@ -10,7 +10,7 @@ const NotFoundPage = () => (
     <SEO title="Page not Found" />
     <Container>
       <Container404>
-        <Logo />
+        {/* <Logo /> */}
         <Separator />
         <p>Oops.. It appears this page does not exist.</p>
         <Link to="/">Back to the homepage.</Link>

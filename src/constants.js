@@ -19,21 +19,13 @@ export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
 // 
 export const SITE_CONFIG = {
 
-  defaults: {
-    black: '#121212',
-    white: '#fff'
-  },
-
   fontHeights: {
     titleHeight: '2.8rem',
   },
 
   fontFamilies: {
-    // regular: '"Cormorant Garamond", serif',
     regular: "'Poppins', sans-serif",
     titles: '"Canela-Thin", serif',
-    details: '"Cormorant Garamond", serif',
-    descriptions: "'Poppins', sans-serif"
   },
 
   fontSizes: {
@@ -52,15 +44,6 @@ export const SITE_CONFIG = {
       large: '1.5rem',
       xLarge: '1.6rem',
       xxLarge: '1.7px',
-  },
-
-  breakpoints: {
-      xs: '22em',
-      sm: '48em',
-      md: '64em',
-      lg: '85.375em',
-      xl: '120em',
-      xxl: '160em'
   },
 
   media: {

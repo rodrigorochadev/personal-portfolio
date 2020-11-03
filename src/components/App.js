@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider } from './ThemeContext';
 import GlobalStyles from '../styles/GlobalStyles';
 
-import {GlobalProvider} from './context/globalContext'
+import {GlobalProvider} from '../context/globalContext'
 
 
 function App({ children }) {
