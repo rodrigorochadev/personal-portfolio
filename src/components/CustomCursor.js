@@ -8,11 +8,6 @@ export default () => {
     
     const { cursorType } = useGlobalStateContext()
 
-    const cursorSizes = {
-        hovered: 6,
-        regular: 5,
-    }
-
     const {x, y} = useMousePosition()
 
     return (

@@ -1,26 +1,17 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React, {useState} from 'react'
+import React from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
 import Img from 'gatsby-image'
 import styled, { css } from 'styled-components'
 import { SITE_CONFIG } from '../../constants'
-import InfoDetails from '../../components/Pages/InfoDetails'
-// import { DesktopAboutFlex, AboutImgContainer, AboutImg, AboutText, AboutH2, AboutImgParallax } from '../../styles/components/aboutStyles'
-// import useMousePosition from '../../hooks/useMousePosition'
-// import usePageOfssetY from '../../hooks/usePageOffsetY'
 import { Flutter } from '../../assets/svg/svg'
-import { BigTitle, Container } from '../../styles/componentsStyles'
+import { Container } from '../../styles/componentsStyles'
 import { motion } from 'framer-motion'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
 
 const WinegridPage = () => {
 
-    // const {x, y} = useMousePosition()
-
-    // const offsetY = usePageOfssetY()
-
-    // const [hoverState, setHoverState] = useState(false)
     const { cursorStyles } = useGlobalStateContext()
     const dispatch = useGlobalDispatchContext()
 

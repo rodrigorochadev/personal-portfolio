@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { DesktopAboutFlex, AboutImgContainer, AboutImg, AboutText, AboutH2, AboutImgParallax } from '../../styles/components/aboutStyles'
 import useMousePosition from '../../hooks/useMousePosition'
@@ -13,8 +13,6 @@ export default (props) => {
 
     const offsetY = usePageOfssetY()
     
-    const [hoverState, setHoverState] = useState(false)
-
     // Animations
     const animation = useAnimation()
     const [contentRef, inView] = useInView({
@@ -32,16 +30,14 @@ export default (props) => {
         <DesktopAboutFlex 
             last={props.last}
             reverse={props.reverse}
-
             ref={contentRef}
             animate={animation}
             initial="hidden"
             variants={divUp}
         >
-            
-                <AboutText style={{transform: `translateY(${offsetY * props.translateY[1]}px)`}}>
-                    <AboutH2>{props.text}</AboutH2>
-                </AboutText>
+            <AboutText style={{transform: `translateY(${offsetY * props.translateY[1]}px)`}}>
+                <AboutH2>{props.text}</AboutH2>
+            </AboutText>
             
             <AboutImgParallax 
                 style={{transform: `translateY(-${offsetY * props.translateY[0]}px)`}}
@@ -59,7 +55,6 @@ export default (props) => {
                     <AboutImg translateX={props.reverse ? "translateX(150px)" : "translateX(-150px)"} fluid={props.image} alt="Portrait" />
                 </AboutImgContainer>
             </AboutImgParallax>
-            
         </DesktopAboutFlex>
     )
 }

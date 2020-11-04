@@ -18,6 +18,7 @@ export const NewBannerContainer = styled(motion.div)`
         min-height: 100vh;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 
     /* @media ${SITE_CONFIG.media.medium} {
@@ -36,17 +37,12 @@ export const NewBannerContainer = styled(motion.div)`
 `
 
 export const NewBannerText = styled(motion.h1)`
-    z-index: 9;
-    transition: ${SITE_CONFIG.transitions.default};
+
+    transition: all 0.2s ease-out;
     text-transform: uppercase;
     color: var(--color-text);
-    /* -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: var(--color-text); */
-    /* -webkit-text-fill-color: var(--color-text); */
-    /* mix-blend-mode: difference; */
-    /* font-family: ${SITE_CONFIG.fontFamilies.titles}; */
 
-    ${props => props.textRight && css`
+    /* ${props => props.textRight && css`
             animation: ${textRight} 0.7s ease-out;
         `
     }
@@ -59,7 +55,7 @@ export const NewBannerText = styled(motion.h1)`
     ${props => props.scaleUp && css`
             animation: ${scaleUp} 0.7s linear;
         `
-    }
+    } */
 
     
 
@@ -70,14 +66,6 @@ export const NewBannerText = styled(motion.h1)`
         -webkit-text-stroke-color: var(--color-text); 
         -webkit-text-fill-color: var(--color-background);
     `}
-
-    em {
-        transition: ${SITE_CONFIG.transitions.default};
-        -webkit-transition: ${SITE_CONFIG.transitions.default};
-        -webkit-text-stroke: 3px;
-        -webkit-text-stroke-color: var(--color-text); 
-        -webkit-text-fill-color: transparent;    
-    }
 
     line-height: 6.5rem;
     font-size: 8rem;

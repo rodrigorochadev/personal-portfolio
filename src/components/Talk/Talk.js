@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { VerticalSpacing, Container } from '../../styles/componentsStyles'
-import styled from 'styled-components'
-import { SITE_CONFIG } from '../../constants'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
 import { motion, useAnimation } from 'framer-motion'
 import useWindowSize from '../../hooks/useWindowSize'
 import { useInView } from 'react-intersection-observer'
 import { divUp } from '../../animations'
+import { MobileTalkTitle, TalkContainer, TalkMail, TalkTitle } from '../../styles/components/talkStyles'
 
 export default () => {
 
@@ -42,11 +41,11 @@ export default () => {
                 <TalkContainer>
                     {width < 768 && (
                         <>
-                        <TalkMail 
+                        <MobileTalkTitle
                             onMouseEnter={() => onCursor('hovered')}
                             onMouseLeave={onCursor}
                             href="mailto:rodrigorochaua@gmail.com">Let's build something together!
-                        </TalkMail>
+                        </MobileTalkTitle>
                         </>
                     )}
                     {width >= 768 && (
@@ -70,34 +69,3 @@ export default () => {
         </Container>
     )
 }
-
-export const TalkTitle = styled(motion.div)`
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-    font-weight: 300;
-    font-size: 13vw;
-
-    @media ${SITE_CONFIG.media.small} {
-        font-size: 3.5vw;
-    }
-
-`
-
-export const TalkMail = styled(motion.a)`
-
-    font-size: 15vw;
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-
-    @media ${SITE_CONFIG.media.small} {
-        display: initial;
-        font-size: 6vw;
-        font-family: ${SITE_CONFIG.fontFamilies.titles};
-        text-decoration: none;
-    }
-`
-
-export const TalkContainer = styled.div`
-    width: 100%;
-    text-align: center;
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-
-`

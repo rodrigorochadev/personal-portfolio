@@ -1,13 +1,13 @@
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby'
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
 import { divUp } from '../../animations';
-import { SITE_CONFIG } from '../../constants';
-import { BigTitle, SmallTitle, VerticalSpacing } from '../../styles/componentsStyles';
-import Title from '../Title';
-import PortfolioItem from './PortfolioItem'
+import { Container, VerticalSpacing } from '../../styles/componentsStyles';
+import {PortfolioContainer, PortfolioInfo} from '../../styles/components/portfolioStyles'
+import useWindowSize from '../../hooks/useWindowSize';
+import PortfolioItemDesktop from './PortfolioItemDesktop';
+import PortfolioItemMobile from './PortfolioItemMobile';
 
 export default () => {
 
@@ -23,6 +23,8 @@ export default () => {
             animation.start("visible")
         }
     }, [animation, inView])
+
+    const { width } = useWindowSize()
 
     const data = useStaticQuery(graphql`
         query ProjectsQuery {
@@ -54,59 +56,64 @@ export default () => {
 
     return(
         <>
+        {width <= 768 && (
+            <VerticalSpacing>
+                <Container>
+                    <PortfolioContainer>
+                        {data.allMarkdownRemark.edges.map(
+                            (project, id) => {
+                                return(        
+                                    <PortfolioItemMobile
+                                        last={id===2}
+                                        key={project.node.frontmatter.id} 
+                                        id={project.node.frontmatter.id}
+                                        kind={project.node.frontmatter.kind}
+                                        name={project.node.frontmatter.name} 
+                                        description={project.node.frontmatter.description} 
+                                        image={project.node.frontmatter.image.childImageSharp.fluid}
+                                        url={project.node.frontmatter.url}
+                                        tech={project.node.frontmatter.tech}
+                                    />
+                                )
+                            }
+                        )}
+                    </PortfolioContainer>
+                </Container>
+            </VerticalSpacing>
+        )}
         
-        <VerticalSpacing>
-            <PortfolioContainer>
-                {/* <Title title="My work." description="(Click on title to learn more!)"  /> */}
-                {/* <SmallTitle>My Work</SmallTitle>
-                <div style={{width: '60%', marginBottom: '100px'}}>
-                    <p style={{lineHeight: '2rem'}}>Below you can see a selection of my work. It includes websites, mobile applications, branding, and so on. Hover on title to see a preview and click it to see the full details. I always try to deliver the best project I can and I really hope you like it. Maybe we can work together on something!</p>
-                </div> */}
-                <motion.p
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={divUp}
-                >A small selection of my work!</motion.p>
-                {data.allMarkdownRemark.edges.map(
-                    
-                    (project, id) => {
-                        return(        
-                            <PortfolioItem
-                                last={id===2}
-                                key={project.node.frontmatter.id} 
-                                id={project.node.frontmatter.id}
-                                kind={project.node.frontmatter.kind}
-                                name={project.node.frontmatter.name} 
-                                description={project.node.frontmatter.description} 
-                                image={project.node.frontmatter.image.childImageSharp.fluid}
-                                url={project.node.frontmatter.url}
-                                tech={project.node.frontmatter.tech}
-                            />
-                        )
-                    }
-                )}
-            </PortfolioContainer>
+        {width > 768 && (
+            <VerticalSpacing>
+                <div style={{padding: '0 10vw'}}>
+                    <PortfolioInfo
+                        ref={contentRef}
+                        animate={animation}
+                        initial="hidden"
+                        variants={divUp}
+                    >
+                        A small selection of my work!
+                    </PortfolioInfo>
+                    {data.allMarkdownRemark.edges.map(
+                        (project, id) => {
+                            return(        
+                                <PortfolioItemDesktop
+                                    last={id===2}
+                                    key={project.node.frontmatter.id} 
+                                    id={project.node.frontmatter.id}
+                                    kind={project.node.frontmatter.kind}
+                                    name={project.node.frontmatter.name} 
+                                    description={project.node.frontmatter.description} 
+                                    image={project.node.frontmatter.image.childImageSharp.fluid}
+                                    url={project.node.frontmatter.url}
+                                    tech={project.node.frontmatter.tech}
+                                />
+                            )
+                        }
+                    )}
+                </div>
         </VerticalSpacing>
+        )}
+        
         </>
     )
 }
-
-export const PortfolioContainer = styled.div`
-    padding: 0 10vw; 
-    margin-top: 50px;
-`
-
-export const PortfolioMoreInfo = styled.div`
-    
-    display: none;
-    margin-top: 20px;
-
-    @media ${SITE_CONFIG.media.small} {
-        display: flex;
-        width: 100%;
-        justify-content: right;
-        margin-top: 40px;
-    }
-
-`

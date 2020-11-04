@@ -1,14 +1,11 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { BigTitle, VerticalSpacing} from '../../styles/componentsStyles'
-import usePageOfssetY from '../../hooks/usePageOffsetY'
+import { Container, VerticalSpacing} from '../../styles/componentsStyles'
 import useWindowSize from '../../hooks/useWindowSize'
 import AboutItem from './AboutItem'
-import { AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer, AboutContainer } from '../../styles/components/aboutStyles'
-import Title from '../Title'
+import { DesktopAboutContainer, AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer } from '../../styles/components/aboutStyles'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 
 export default () => {
 
@@ -51,12 +48,12 @@ export default () => {
     
     return(
         
-        <VerticalSpacing>
+        <>
         {width < 1024 && (
-            <>
+            <VerticalSpacing>
                 <div style={{paddingTop: '100px'}}></div>
-                <div style={{padding: '0 10vw', marginTop: '-150px'}}>
-                    {text.map((textHeading, i) => {
+                <Container>
+                    {text.map((textHeading) => {
                             return(
                                 <MobileAboutContainer>
                                     <AboutTextContainer>
@@ -71,24 +68,26 @@ export default () => {
                             )
                         }  
                     )}                
-                </div>
-            </>
+                </Container>
+            </VerticalSpacing>
         )}
 
         {width >= 1024 && (
-            <motion.div 
-            style={{padding: '100px 0'}}
-            onHoverStart={() => setHoverState(true)} 
-            onHoverEnd={() => setHoverState(false)}>
-                <AboutContainer>
-                    <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
-                    <AboutItem direction={-1} hoverState={hoverState} translateY={[0.15, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
-                    <AboutItem direction={1} hoverState={hoverState} translateY={[0.12, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
-                </AboutContainer>
-            </motion.div>
+            <VerticalSpacing>
+                <DesktopAboutContainer 
+                    onHoverStart={() => setHoverState(true)} 
+                    onHoverEnd={() => setHoverState(false)}
+                >
+                    <Container>
+                        <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
+                        <AboutItem direction={-1} hoverState={hoverState} translateY={[0.15, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
+                        <AboutItem direction={1} hoverState={hoverState} translateY={[0.12, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
+                    </Container>
+                </DesktopAboutContainer>
+            </VerticalSpacing>
         )}
         
             
-        </VerticalSpacing>
+        </>
     )
 }

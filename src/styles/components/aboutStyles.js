@@ -29,6 +29,11 @@ export const DesktopAboutFlex = styled(motion.div)`
         text-align: center;
     `};
 `
+
+export const DesktopAboutContainer = styled(motion.div)`
+    padding: 100px 0;
+`
+
 export const AboutImgParallax = styled.div`
     &:hover {
         z-index: 99;
@@ -159,7 +164,3 @@ export const AboutTextContainer = styled.div`
 
 `
 
-export const AboutContainer = styled.div`
-    padding: 0 10vw;
-    padding-top: 30px;
-`
