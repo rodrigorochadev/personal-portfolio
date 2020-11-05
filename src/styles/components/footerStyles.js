@@ -2,10 +2,11 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import { SITE_CONFIG } from "../../constants"
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled(motion.div)`
     /* background: var(--color-background); */
     color: var(--color-text);
     padding: 30px 0;
+    overflow-y: hidden;
 `
 
 export const FooterSection = styled.div`
@@ -32,7 +33,7 @@ export const FooterSocial = styled.div`
 
 `
 
-export const FooterSVG = styled.div`
+export const FooterSVG = styled(motion.div)`
   svg {
     
     fill: var(--color-text);

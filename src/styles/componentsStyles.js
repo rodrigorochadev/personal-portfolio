@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled,  { css } from 'styled-components';
 import { SITE_CONFIG } from '../constants'
 
@@ -53,6 +54,15 @@ export const Description = styled.p`
 
 `
 
+export const InfoContainer = styled(motion.div)`
+
+  width: 100%;
+
+  @media ${SITE_CONFIG.media.small} {
+    width: 50%;
+  }
+`
+
 export const SmallTitle = styled.div`
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -93,6 +103,10 @@ export const Container = styled.div`
   width: auto;
   height: 100%;
   overflow-y: hidden;
+
+  ${props => props.overflow && css`
+    overflow-y: initial;
+  `}
 
 `
 

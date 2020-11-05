@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Img from 'gatsby-image'
-import { useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import useMousePosition from '../../hooks/useMousePosition'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
 import { useInView } from 'react-intersection-observer'
@@ -36,17 +36,21 @@ export default (props) => {
 
     return(
         <PortfolioMargin>
-                
-                <PortfolioContainerDesktop
-                    last={props.last}    
+                <motion.div
                     ref={contentRef}
                     animate={animation}
                     initial="hidden"
                     variants={divUp}
                 >
+                <PortfolioContainerDesktop
+                    last={props.last}
+                    first={props.first} 
+                    
+                >
                     <FloatingImage
                         initial={{opacity: 0}}
                         animate={{
+                            transition: { duration: 0.5, ease: 'easeOut' },
                             display: hoverState ? 'initial' : 'none',
                             opacity: hoverState ? 1 : 0,
                             x: x - 380,
@@ -72,7 +76,7 @@ export default (props) => {
                         <p style={{textAlign: "center", marginTop: '30px'}}>{props.tech}</p>
                     </div>
                 </PortfolioContainerDesktop>
-
+                </motion.div>
         </PortfolioMargin>
     )
 }

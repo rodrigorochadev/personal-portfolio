@@ -15,14 +15,14 @@ export default () => {
         query {
             picture: file(relativePath: {eq: "portrait.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
+                    fluid(maxWidth: 500, quality: 80) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }  
                 }
             }
             figueira: file(relativePath: {eq: "figueira-da-foz.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
+                    fluid(maxWidth: 500, quality: 80) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }  
                 }
@@ -30,7 +30,7 @@ export default () => {
 
             aveiro: file(relativePath: {eq: "aveiro.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
+                    fluid(maxWidth: 500, quality: 80) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }  
                 }
@@ -74,16 +74,17 @@ export default () => {
 
         {width >= 1024 && (
             <VerticalSpacing>
-                <DesktopAboutContainer 
+                <Container overflow>
+                    <DesktopAboutContainer 
                     onHoverStart={() => setHoverState(true)} 
                     onHoverEnd={() => setHoverState(false)}
                 >
-                    <Container>
+                    
                         <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
                         <AboutItem direction={-1} hoverState={hoverState} translateY={[0.15, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
                         <AboutItem direction={1} hoverState={hoverState} translateY={[0.12, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
-                    </Container>
-                </DesktopAboutContainer>
+                    </DesktopAboutContainer>
+                </Container>
             </VerticalSpacing>
         )}
         

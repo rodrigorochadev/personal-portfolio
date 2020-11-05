@@ -38,7 +38,7 @@ export const NewBannerContainer = styled(motion.div)`
 
 export const NewBannerText = styled(motion.h1)`
 
-    transition: all 0.2s ease-out;
+    
     text-transform: uppercase;
     color: var(--color-text);
 
@@ -81,21 +81,21 @@ export const NewBannerText = styled(motion.h1)`
     }
 
     @media ${SITE_CONFIG.media.medium} {
-        line-height: 10rem;
-        font-size: 10rem;
+        line-height: 8rem;
+        font-size: 8rem;
     }
 
 
     @media ${SITE_CONFIG.media.large} {
-        line-height: 12rem;
-        font-size: 13rem;
+        line-height: 9rem;
+        font-size: 10rem;
         
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
-        line-height: 14rem;
+        line-height: 9rem;
         text-transform: uppercase;
-        font-size: 17rem;
+        font-size: 11rem;
     }
 
 `

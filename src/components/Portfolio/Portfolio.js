@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { divUp } from '../../animations';
-import { Container, VerticalSpacing } from '../../styles/componentsStyles';
+import { Container, InfoContainer, SmallTitle, VerticalSpacing } from '../../styles/componentsStyles';
 import {PortfolioContainer, PortfolioInfo} from '../../styles/components/portfolioStyles'
 import useWindowSize from '../../hooks/useWindowSize';
 import PortfolioItemDesktop from './PortfolioItemDesktop';
@@ -21,6 +21,7 @@ export default () => {
     useEffect(() => {
         if (inView) {
             animation.start("visible")
+            console.log('portfolio . visible')
         }
     }, [animation, inView])
 
@@ -42,7 +43,7 @@ export default () => {
                             tech
                             image {
                                 childImageSharp {
-                                    fluid(maxWidth: 400, quality: 100) {
+                                    fluid(maxWidth: 400, quality: 80) {
                                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                     }
                                 }
@@ -59,6 +60,10 @@ export default () => {
         {width <= 768 && (
             <VerticalSpacing>
                 <Container>
+                    <InfoContainer>
+                        <SmallTitle>My Work</SmallTitle>
+                        <PortfolioInfo>Bellow you can see a small section of my work. I've tried to select academic and professional projects, as well as some prototypes and case studies. I always try to deliver the best project I can and I hope you enjoy what I bring to you!</PortfolioInfo>
+                    </InfoContainer>
                     <PortfolioContainer>
                         {data.allMarkdownRemark.edges.map(
                             (project, id) => {
@@ -85,19 +90,23 @@ export default () => {
         {width > 768 && (
             <VerticalSpacing>
                 <div style={{padding: '0 10vw'}}>
-                    <PortfolioInfo
+
+                    <InfoContainer
                         ref={contentRef}
                         animate={animation}
                         initial="hidden"
                         variants={divUp}
                     >
-                        A small selection of my work!
-                    </PortfolioInfo>
+                        <SmallTitle>My Work</SmallTitle>
+                        <PortfolioInfo>Bellow you can see a small section of my work. I've tried to select academic and professional projects, as well as some prototypes and case studies. I always try to deliver the best project I can and I hope you enjoy what I bring to you!</PortfolioInfo>
+                    </InfoContainer>
                     {data.allMarkdownRemark.edges.map(
                         (project, id) => {
+                            console.log(id===0)
                             return(        
                                 <PortfolioItemDesktop
-                                    last={id===2}
+                                    // last={id===2}
+                                    first={id===0}
                                     key={project.node.frontmatter.id} 
                                     id={project.node.frontmatter.id}
                                     kind={project.node.frontmatter.kind}

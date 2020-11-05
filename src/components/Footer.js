@@ -1,38 +1,37 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { Container } from '../styles/componentsStyles'
 import { FooterContainer, FooterSection, FooterCopyright, FooterSocial, FooterContent, FooterSVG, SocialIcon } from '../styles/components/footerStyles'
 import { Instagram, Dribbble, Behance, Linkedin, Github } from '../assets/svg/svg'
-import { useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { divUp } from '../animations'
+
 
 export default ({onCursor}) => {
 
     // Animations
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-50px",
-    })
+    // const animation = useAnimation()
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: true,
+    //     rootMargin: "-100px",
+    // })
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start("visible")
+    //         console.log('visible')
+    //     }
+    // }, [animation, inView])
 
 
     return(
-        <FooterContainer id="footer">
+        <FooterContainer 
+            // ref={contentRef}
+            // animate={animation}
+            // initial="hidden"
+            // variants={divUp} 
+        >
             <Container>
                 <FooterSVG>
-                    <FooterContent 
-                        ref={contentRef}
-                        animate={animation}
-                        initial="hidden"
-                        variants={divUp}    
-                    >
+                    <FooterContent>
                         <FooterSection>
                             <FooterSocial>
                                 <SocialIcon 

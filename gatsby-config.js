@@ -109,7 +109,7 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
-    // `gatsby-plugin-preact`,
+    `gatsby-plugin-preact`,
     // `gatsby-plugin-offline`,
   ],
 };

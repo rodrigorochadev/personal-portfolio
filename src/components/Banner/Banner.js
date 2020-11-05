@@ -37,13 +37,19 @@ export default () => {
                         <NewBannerText
                         //   textRight
                             outline
-                            style={{transform: inView ? `translate3d(-${offsetValue * 0.9}px, 0, 0)` : `translate3d(-${offsetValue}, 0, 0)`}}
+                            style={{
+                                transition: '0.7s ease-out',
+                                transform: inView ? `translate3d(-${offsetValue * 0.9}px, 0, 0)` : `translate3d(-${offsetValue}, 0, 0)`
+                            }}
                         > Aim
                         </NewBannerText>
                         <NewBannerText
                         //   textLeft
                             outline
-                            style={{transform: inView ? `translate3d(${offsetValue * 0.9}px, 0, 0)` : `translate3d(${offsetValue}, 0, 0)`}}
+                            style={{
+                                transition: '0.7s ease-out',
+                                transform: inView ? `translate3d(${offsetValue * 0.9}px, 0, 0)` : `translate3d(${offsetValue}, 0, 0)`
+                            }}
                         > Higher
                         </NewBannerText>
                     </div>
