@@ -47,8 +47,8 @@ export default (props) => {
                     // onHoverEnd={() => setHoverState(false)}
                     animate={{
                         transition: { duration: 0.5, ease: 'easeOut' },
-                        x: props.hoverState ? props.direction*0.5 * (x/20) : 0,
-                        y: props.hoverState ? props.direction*0.5 * (y/20) : 0,
+                        x: props.hoverState ? props.direction*0.5 * (x/10) : 0,
+                        y: props.hoverState ? props.direction*0.5 * (y/10) : 0,
                     }}
 
                     reverse={props.reverse}

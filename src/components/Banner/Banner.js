@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useInView } from 'react-intersection-observer';
+import React from 'react'
 import usePageOfssetY from '../../hooks/usePageOffsetY';
 import useWindowSize from '../../hooks/useWindowSize';
 import { NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
@@ -9,18 +8,7 @@ export default () => {
     const { width } = useWindowSize()
     const offsetY = usePageOfssetY()
 
-    const [contentRef, inView] = useInView({
-        triggerOnce: false,
-        rootMargin: "300px",
-    })
 
-    const [offsetValue, setOffsetValue] = useState(0);
-
-    useEffect(() => {
-        if(inView) {
-            setOffsetValue(offsetY);
-        }
-    }, [inView, offsetY])
 
     return(
         
@@ -33,13 +21,12 @@ export default () => {
 
             {width > 768 && (
                 <NewBannerContainer>
-                    <div ref={contentRef}>
-                        <NewBannerText
+                    <NewBannerText
                         //   textRight
                             outline
                             style={{
                                 transition: '0.7s ease-out',
-                                transform: inView ? `translate3d(-${offsetValue * 0.9}px, 0, 0)` : `translate3d(-${offsetValue}, 0, 0)`
+                                transform: `translate3d(-${offsetY * 1.3}px, 0, 0)`
                             }}
                         > Aim
                         </NewBannerText>
@@ -48,11 +35,10 @@ export default () => {
                             outline
                             style={{
                                 transition: '0.7s ease-out',
-                                transform: inView ? `translate3d(${offsetValue * 0.9}px, 0, 0)` : `translate3d(${offsetValue}, 0, 0)`
+                                transform: `translate3d(${offsetY * 1.1}px, 0, 0)`
                             }}
                         > Higher
                         </NewBannerText>
-                    </div>
                 </NewBannerContainer>
             )}
         </>

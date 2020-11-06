@@ -36,6 +36,7 @@
     "terser": "^4.6.11"
   },
   "devDependencies": {
+    "gatsby-omni-font-loader": "^1.0.4",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "prettier": "^1.19.1"
   },

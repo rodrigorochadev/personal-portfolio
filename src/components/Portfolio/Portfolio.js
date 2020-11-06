@@ -120,7 +120,7 @@ export default () => {
                         }
                     )}
                 </div>
-        </VerticalSpacing>
+            </VerticalSpacing>
         )}
         
         </>

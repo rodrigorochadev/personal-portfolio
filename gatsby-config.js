@@ -68,14 +68,26 @@ module.exports = {
         }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-omni-font-loader",
       options: {
-        custom: {
-          families: [`Canela-Light`, `Canela-Bold`],
-          urls: [`/fonts/fonts.css`]
-        }
+        enableListener: true,
+        custom: [
+          {
+            name: [`Canela-Light`, `Canela-Bold`],
+            file: `/fonts/fonts.css`,
+          },
+        ],
       }
     },
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     custom: {
+    //       families: [`Canela-Light`, `Canela-Bold`],
+    //       urls: [`/fonts/fonts.css`]
+    //     }
+    //   }
+    // },
     // {
     //   resolve: `gatsby-plugin-prefetch-google-fonts`,
     //   options: {
