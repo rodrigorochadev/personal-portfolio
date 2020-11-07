@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Img from 'gatsby-image'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import useMousePosition from '../../hooks/useMousePosition'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
-import { useInView } from 'react-intersection-observer'
-import { divUp } from '../../animations'
 import { FloatingImage, PortfolioContainerDesktop, PortfolioMargin, PortfolioName, PortfolioTitle } from '../../styles/components/portfolioStyles'
 
 export default (props) => {
 
 
     // Animations
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
+    // const animation = useAnimation()
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: true,
+    //     rootMargin: "-300px",
+    // })
 
-    useEffect(() => {
-        if (inView) {
-        animation.start("visible")
-        }
-    }, [animation, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //     animation.start("visible")
+    //     }
+    // }, [animation, inView])
 
     const {x, y} = useMousePosition()
     const [hoverState, setHoverState] = useState(false)
@@ -37,10 +35,10 @@ export default (props) => {
     return(
         <PortfolioMargin>
                 <motion.div
-                    ref={contentRef}
-                    animate={animation}
-                    initial="hidden"
-                    variants={divUp}
+                    // ref={contentRef}
+                    // animate={animation}
+                    // initial="hidden"
+                    // variants={divUp}
                 >
                 <PortfolioContainerDesktop
                     last={props.last}

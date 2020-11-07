@@ -1,4 +1,4 @@
-import React, {/*useRef, useEffect*/} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -6,6 +6,7 @@ import Footer from './Footer';
 import CustomCursor from './CustomCursor';
 import ScrollIndicator from './ScrollIndicator';
 import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext';
+import PageAnimation from './PageAnimation';
 
 const Layout = ({ children }) => {
 
@@ -20,12 +21,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-        &nbsp;
-            <Header onCursor={onCursor} />
-            <ScrollIndicator />
-            <CustomCursor />
-            <main>{children}</main>
-            <Footer onCursor={onCursor} />   
+      <PageAnimation />
+      <Header onCursor={onCursor} />
+      <ScrollIndicator />
+      <CustomCursor />
+      <main>{children}</main>
+      <Footer onCursor={onCursor} />   
+      &nbsp;
     </>
   );
 };

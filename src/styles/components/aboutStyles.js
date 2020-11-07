@@ -3,6 +3,10 @@ import { motion } from 'framer-motion'
 import Img from 'gatsby-image'
 import { SITE_CONFIG } from '../../constants'
 
+export const InViewContainer = styled(motion.div)`
+
+`
+
 export const DesktopAboutFlex = styled(motion.div)`
     z-index: 11;
     padding-top: 100px;
@@ -53,8 +57,8 @@ export const MobileAboutContainer = styled.div`
 export const AboutImgContainer = styled(motion.div)`
 
     position: absolute;
-    top: 50px;
-    right: 0px;
+    top: 0px;
+    right: -100px;
 
     z-index: 1;
 
@@ -64,7 +68,7 @@ export const AboutImgContainer = styled(motion.div)`
 
     ${props => props.reverse && css`
         top: 25px;
-        left: 0px;
+        left: -100px;
         right: initial;
     `};
 
@@ -84,23 +88,40 @@ export const AboutImg = styled(Img)`
             transform: scale(2,2);
         }
     } */
+    
 
-    @media ${SITE_CONFIG.media.medium} {
-        width: 200px;
+    @media ${SITE_CONFIG.media.small} {
+        width: 400px;
 
         transition: ${SITE_CONFIG.transitions.default};
-        
+        transform: scale(.5, .5);
+
         &:hover {
-            
-            transform: ${props => props.translateX} scale(3,3);
-            
+            transform: ${props => props.translateX} scale(1.5, 1.5); 
         }
     }
 
     @media ${SITE_CONFIG.media.large} {
-        width: 250px;
+        
+        width: 500px;
+        transform: scale(.5, .5);
         transition: ${SITE_CONFIG.transitions.default};
+
+        &:hover {
+            transform: ${props => props.translateX} scale(1.5, 1.5); 
+        }
     }
+
+    /* @media ${SITE_CONFIG.media.large} {
+        
+        width: 500px;
+        transform: scale(50%);
+        transition: ${SITE_CONFIG.transitions.default};
+
+        &:hover {
+            transform: ${props => props.translateX} scale(2,2); 
+        }
+    } */
 
 `
 

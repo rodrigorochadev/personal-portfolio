@@ -21,6 +21,13 @@ export default ({onCursor}) => {
     //     }
     // }, [animation, inView])
 
+    const social = [
+        {comp: <Linkedin />, url: 'https://linkedin.com/in/rodrigorocha101'},
+        {comp: <Github />, url: 'https://github.com/rodrigo-rocha'},
+        {comp: <Behance />, url: 'https://behance.net/rodrigo-rocha'},
+        {comp: <Dribbble />, url: 'https://dribbble.com/rodrigorocha'},
+        {comp: <Instagram />, url: 'https://instagram.com/__rodrigorocha__'}, 
+    ]
 
     return(
         <FooterContainer 
@@ -34,37 +41,16 @@ export default ({onCursor}) => {
                     <FooterContent>
                         <FooterSection>
                             <FooterSocial>
-                                <SocialIcon 
-                                    onMouseEnter={() => onCursor('hovered')}
-                                    onMouseLeave={onCursor}
-                                    href="https://linkedin.com/in/rodrigorocha101" rel="noreferrer" target="_blank" aria-label="Linkedin">
-                                    <Linkedin />
-                                </SocialIcon>
-
-                                <SocialIcon 
-                                    onMouseEnter={() => onCursor('hovered')}
-                                    onMouseLeave={onCursor}
-                                    href="https://github.com/rodrigo-rocha" rel="noreferrer" target="_blank" aria-label="Github">
-                                    <Github />
-                                </SocialIcon>
-                                <SocialIcon 
-                                    onMouseEnter={() => onCursor('hovered')}
-                                    onMouseLeave={onCursor}
-                                    href="https://behance.net/rodrigo-rocha" rel="noreferrer" target="_blank" aria-label="Behance">
-                                    <Behance />
-                                </SocialIcon>
-                                <SocialIcon 
-                                    onMouseEnter={() => onCursor('hovered')}
-                                    onMouseLeave={onCursor}
-                                    href="https://dribbble.com/rodrigorocha" rel="noreferrer" target="_blank" aria-label="Dribbble">
-                                    <Dribbble />
-                                </SocialIcon>
-                                <SocialIcon 
-                                    onMouseEnter={() => onCursor('hovered')}
-                                    onMouseLeave={onCursor}
-                                    href="https://instagram.com/__rodrigorocha__" rel="noreferrer" target="_blank" aria-label="Instagram">
-                                    <Instagram />
-                                </SocialIcon>
+                                {social.map(elem => {
+                                    return (
+                                        <SocialIcon 
+                                            onMouseEnter={() => onCursor('hovered')}
+                                            onMouseLeave={onCursor}
+                                            href={elem.url} rel="noreferrer" target="_blank" aria-label="Linkedin">
+                                            {elem.comp}
+                                        </SocialIcon>
+                                    )
+                                })}
                             </FooterSocial>
                         </FooterSection>
                         <FooterCopyright>

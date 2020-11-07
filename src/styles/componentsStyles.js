@@ -4,55 +4,52 @@ import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
 
-export const BigTitle = styled.h1`
-  /* font-family: ${SITE_CONFIG.fontFamilies.titles};  */
-  font-family: ${SITE_CONFIG.fontFamilies.regular}; 
-  text-transform: uppercase;
-  font-size: 3rem;
+// export const BigTitle = styled.h1`
+//   /* font-family: ${SITE_CONFIG.fontFamilies.titles};  */
+//   font-family: ${SITE_CONFIG.fontFamilies.regular}; 
+//   text-transform: uppercase;
+//   font-size: 3rem;
   
-  @media ${SITE_CONFIG.media.small} {
-    font-size: 5.5rem;
-  }
-  @media ${SITE_CONFIG.media.medium} {
-    font-size: 6.5rem;
-  }
-  @media ${SITE_CONFIG.media.large} {
-    font-size: 7.5rem;
-  }
-  @media ${SITE_CONFIG.media.xlarge} {
-    font-size: 8.5rem;
-  }
+//   @media ${SITE_CONFIG.media.small} {
+//     font-size: 5.5rem;
+//   }
+//   @media ${SITE_CONFIG.media.medium} {
+//     font-size: 6.5rem;
+//   }
+//   @media ${SITE_CONFIG.media.large} {
+//     font-size: 7.5rem;
+//   }
+//   @media ${SITE_CONFIG.media.xlarge} {
+//     font-size: 8.5rem;
+//   }
 
-  ${props =>
-    props.nowrap &&
-    css`
-      white-space: nowrap;
-    `};
+//   ${props =>
+//     props.nowrap &&
+//     css`
+//       white-space: nowrap;
+//     `};
 
-  ${props =>
-    props.center &&
-    css`
-      text-align: center;
-    `};
+//   ${props =>
+//     props.center &&
+//     css`
+//       text-align: center;
+//     `};
 
-  ${props =>
-    props.right &&
-    css`
-      text-align: right;
-    `};
+//   ${props =>
+//     props.right &&
+//     css`
+//       text-align: right;
+//     `};
 
-  ${props =>
-    props.outline &&
-    css`
-      -webkit-text-stroke: 3px;
-      -webkit-text-stroke-color: var(--color-text);
-      -webkit-text-fill-color: transparent;
-    `};  
-`
+//   ${props =>
+//     props.outline &&
+//     css`
+//       -webkit-text-stroke: 3px;
+//       -webkit-text-stroke-color: var(--color-text);
+//       -webkit-text-fill-color: transparent;
+//     `};  
+// `
 
-export const Description = styled.p`
-
-`
 
 export const InfoContainer = styled(motion.div)`
 

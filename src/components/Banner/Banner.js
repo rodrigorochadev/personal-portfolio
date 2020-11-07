@@ -1,15 +1,22 @@
 import React from 'react'
-import usePageOfssetY from '../../hooks/usePageOffsetY';
 import useWindowSize from '../../hooks/useWindowSize';
 import { NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
 
 export default () => {
 
     const { width } = useWindowSize()
-    const offsetY = usePageOfssetY()
+    // const offsetY = usePageOfssetY()
 
+    // const {x, y} = useMousePosition()
+    // const [freeMove, setfreeMove] = useState(true)
+    
+    // let elemRef = useRef()
+    
 
-
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: false,
+    //     rootMargin: "72px",
+    // })
     return(
         
         <>
@@ -20,25 +27,67 @@ export default () => {
             )}
 
             {width > 768 && (
-                <NewBannerContainer>
+                <NewBannerContainer
+                    // onMouseEnter={() => setfreeMove(true)} 
+                    // onMouseLeave={() => setfreeMove(false)}
+                    // ref={contentRef}
+                     
+                >
                     <NewBannerText
-                        //   textRight
+                        initial={{opacity: 0, y:50}}
+                        animate={{
+                            transition: {ease: "easeOut"},
+                            opacity: 1,
+                            y: 0
+                        }}
+                    >Aim</NewBannerText>
+                    <NewBannerText 
+                        initial={{opacity: 0, y:50}}
+                        animate={{
+                            transition: {delay: 0.1, ease: "easeOut"},
+                            opacity: 1,
+                            y: 0
+                        }}
+                    >Higher</NewBannerText>
+                    {/* <NewBannerText
+                        initial={{opacity: 0}}
+                        animate={{
+                            transition: { duration: 0.5, ease: 'easeOut' },
+                            x: -100,
+                            opacity: 1
+                        }}
+                            
                             outline
-                            style={{
-                                transition: '0.7s ease-out',
-                                transform: `translate3d(-${offsetY * 1.3}px, 0, 0)`
-                            }}
-                        > Aim
+                            
+                        > Software
                         </NewBannerText>
                         <NewBannerText
-                        //   textLeft
-                            outline
-                            style={{
-                                transition: '0.7s ease-out',
-                                transform: `translate3d(${offsetY * 1.1}px, 0, 0)`
+                            initial={{opacity: 0}}
+                            animate={{
+                                transition: { duration: 0.5, ease: 'easeOut' },
+                                x: 60,
+                                opacity: 1
                             }}
-                        > Higher
+                        > Developer
                         </NewBannerText>
+                        <div style={{display: 'flex', columnGap: '30px'}}>
+                            <NewBannerText
+                            initial={{opacity: 0}}
+                            animate={{
+                                transition: { duration: 0.5, ease: 'easeOut' },
+                                opacity: 1,
+                                x: -60,
+                            }}>From</NewBannerText>
+                            <NewBannerText 
+                            initial={{opacity: 0}}
+                            animate={{
+                                transition: { duration: 0.5, ease: 'easeOut' },
+                                x: -50,
+                                opacity: 1
+                            }}
+                            outline>Portugal</NewBannerText>
+                        </div> */}
+                        
                 </NewBannerContainer>
             )}
         </>

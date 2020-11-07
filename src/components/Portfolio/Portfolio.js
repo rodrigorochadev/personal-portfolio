@@ -1,8 +1,5 @@
-import { useAnimation } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby'
-import React, { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer';
-import { divUp } from '../../animations';
+import React from 'react'
 import { Container, InfoContainer, SmallTitle, VerticalSpacing } from '../../styles/componentsStyles';
 import {PortfolioContainer, PortfolioInfo} from '../../styles/components/portfolioStyles'
 import useWindowSize from '../../hooks/useWindowSize';
@@ -12,18 +9,17 @@ import PortfolioItemMobile from './PortfolioItemMobile';
 export default () => {
 
     // Animations
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
+    // const animation = useAnimation()
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: true,
+    //     rootMargin: "-300px",
+    // })
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-            console.log('portfolio . visible')
-        }
-    }, [animation, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start("visible")
+    //     }
+    // }, [animation, inView])
 
     const { width } = useWindowSize()
 
@@ -39,12 +35,11 @@ export default () => {
                             name
                             description
                             url
-                            kind
                             tech
                             image {
                                 childImageSharp {
-                                    fluid(maxWidth: 400, quality: 80) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    fluid(maxWidth: 400, quality: 70) {
+                                        ...GatsbyImageSharpFluid_tracedSVG
                                     }
                                 }
                             }
@@ -92,20 +87,19 @@ export default () => {
                 <div style={{padding: '0 10vw'}}>
 
                     <InfoContainer
-                        ref={contentRef}
-                        animate={animation}
-                        initial="hidden"
-                        variants={divUp}
+                        // ref={contentRef}
+                        // animate={animation}
+                        // initial="hidden"
+                        // variants={divUp}
                     >
                         <SmallTitle>My Work</SmallTitle>
                         <PortfolioInfo>Bellow you can see a small section of my work. I've tried to select academic and professional projects, as well as some prototypes and case studies. I always try to deliver the best project I can and I hope you enjoy what I bring to you!</PortfolioInfo>
                     </InfoContainer>
                     {data.allMarkdownRemark.edges.map(
                         (project, id) => {
-                            console.log(id===0)
                             return(        
                                 <PortfolioItemDesktop
-                                    // last={id===2}
+                                    last={id===2}
                                     first={id===0}
                                     key={project.node.frontmatter.id} 
                                     id={project.node.frontmatter.id}

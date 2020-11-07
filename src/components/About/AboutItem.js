@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { DesktopAboutFlex, AboutImgContainer, AboutImg, AboutText, AboutH2, AboutImgParallax } from '../../styles/components/aboutStyles'
 import useMousePosition from '../../hooks/useMousePosition'
 import usePageOfssetY from '../../hooks/usePageOffsetY'
-import { useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { divUp } from '../../animations'
+// import { useAnimation } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
+// import { divUp } from '../../animations'
 
 export default (props) => {
 
@@ -14,26 +14,26 @@ export default (props) => {
     const offsetY = usePageOfssetY()
     
     // Animations
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
+    // const animation = useAnimation()
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: true,
+    //     rootMargin: "-300px",
+    // })
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start("visible")
+    //     }
+    // }, [animation, inView])
 
     return (
         <DesktopAboutFlex 
             last={props.last}
             reverse={props.reverse}
-            ref={contentRef}
-            animate={animation}
-            initial="hidden"
-            variants={divUp}
+            // ref={contentRef}
+            // animate={animation}
+            // initial="hidden"
+            // variants={divUp}
         >
             <AboutText style={{transform: `translateY(${offsetY * props.translateY[1]}px)`}}>
                 <AboutH2>{props.text}</AboutH2>

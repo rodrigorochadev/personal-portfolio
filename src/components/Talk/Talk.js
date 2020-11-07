@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { VerticalSpacing, Container } from '../../styles/componentsStyles'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import useWindowSize from '../../hooks/useWindowSize'
-import { useInView } from 'react-intersection-observer'
-import { divUp } from '../../animations'
 import { MobileTalkTitle, TalkContainer, TalkMail, TalkTitle } from '../../styles/components/talkStyles'
 
 export default () => {
 
 
     // Animations
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
+    // const animation = useAnimation()
+    // const [contentRef, inView] = useInView({
+    //     triggerOnce: true,
+    //     rootMargin: "-300px",
+    // })
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start("visible")
+    //     }
+    // }, [animation, inView])
 
     // Cursor
 
@@ -50,10 +48,10 @@ export default () => {
                     )}
                     {width >= 768 && (
                         <motion.div
-                            ref={contentRef}
-                            animate={animation}
-                            initial="hidden"
-                            variants={divUp}
+                            // ref={contentRef}
+                            // animate={animation}
+                            // initial="hidden"
+                            // variants={divUp}
                         >
                             <TalkTitle>Let's build something together!</TalkTitle>
                             <TalkMail

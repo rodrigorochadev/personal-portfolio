@@ -60,11 +60,11 @@ export const NewBannerText = styled(motion.h1)`
     
 
     ${props => props.outline && css`
-        transition: ${SITE_CONFIG.transitions.default};
-        -webkit-transition: ${SITE_CONFIG.transitions.default};
-        -webkit-text-stroke: 3px;
+        transition: all 0.1s ease-out;
+        -webkit-transition: all 0.1s ease-out;
+        -webkit-text-stroke: 2px;
         -webkit-text-stroke-color: var(--color-text); 
-        -webkit-text-fill-color: var(--color-background);
+        -webkit-text-fill-color: transparent;
     `}
 
     line-height: 6.5rem;
@@ -76,26 +76,26 @@ export const NewBannerText = styled(motion.h1)`
     }
 
     @media ${SITE_CONFIG.media.small} {
-        line-height: 6.5rem;
-        font-size: 7.5rem;
+        line-height: 5rem;
+        font-size: 5rem;
     }
 
     @media ${SITE_CONFIG.media.medium} {
-        line-height: 8rem;
-        font-size: 8rem;
+        line-height: 5rem;
+        font-size: 5rem;
     }
 
 
     @media ${SITE_CONFIG.media.large} {
-        line-height: 9rem;
-        font-size: 10rem;
+        line-height: 6rem;
+        font-size: 6rem;
         
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
-        line-height: 9rem;
+        line-height: 7rem;
         text-transform: uppercase;
-        font-size: 11rem;
+        font-size: 7rem;
     }
 
 `

@@ -16,15 +16,15 @@ export const PortfolioContainerDesktop = styled.div`
     min-height: 30vh;
     padding: 80px 0;
     transition: ${SITE_CONFIG.transitions.defautls};
-    border-top: 0.1px solid var(--color-text);
+    border-top: 1px solid var(--color-text);
     
 
     ${props => props.last && css`
-        border-bottom: 0.1px solid var(--color-text);
+        border-bottom: 1px solid var(--color-text);
     `}
 
     ${props => props.first && css`
-        border: 0px solid black;
+        border-top: 1px solid var(--color-text);
     `}
 
     h2 {

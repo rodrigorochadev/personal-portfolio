@@ -1,43 +1,59 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { Container, VerticalSpacing} from '../../styles/componentsStyles'
 import useWindowSize from '../../hooks/useWindowSize'
 import AboutItem from './AboutItem'
-import { DesktopAboutContainer, AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer } from '../../styles/components/aboutStyles'
+import { DesktopAboutContainer, AboutTextContainer, AboutText, AboutH2, MobileAboutImgContainer, MobileAboutContainer, InViewContainer } from '../../styles/components/aboutStyles'
 import { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 export default () => {
 
     const { width } = useWindowSize()
+
     const [hoverState, setHoverState] = useState(false)
+
     const data = useStaticQuery(graphql`
         query {
             picture: file(relativePath: {eq: "portrait.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 80) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }  
                 }
             }
             figueira: file(relativePath: {eq: "figueira-da-foz.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 80) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }  
                 }
             }
 
             aveiro: file(relativePath: {eq: "aveiro.jpg"}) {
                 childImageSharp {
-                    fluid(maxWidth: 500, quality: 80) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }  
                 }
             }
         }
     `);
 
+    const [contentRef, inView] = useInView({
+        triggerOnce: false,
+        rootMargin: "0px",
+    })
+
+    useEffect(() => {
+        inView ? setHoverState(true) : setHoverState(false)
+        // if (inView) {
+        //     setHoverState(true);
+        // } else {
+        //     setHoverState(false);
+        // }
+    }, [inView])
 
     const text = [
 
@@ -73,19 +89,17 @@ export default () => {
         )}
 
         {width >= 1024 && (
-            <VerticalSpacing>
-                <Container overflow>
-                    <DesktopAboutContainer 
-                    onHoverStart={() => setHoverState(true)} 
-                    onHoverEnd={() => setHoverState(false)}
-                >
-                    
-                        <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
-                        <AboutItem direction={-1} hoverState={hoverState} translateY={[0.15, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
-                        <AboutItem direction={1} hoverState={hoverState} translateY={[0.12, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
-                    </DesktopAboutContainer>
-                </Container>
-            </VerticalSpacing>
+            <InViewContainer ref={contentRef}>
+                <VerticalSpacing>
+                    <Container overflow>
+                        <DesktopAboutContainer>
+                            <AboutItem direction={1} hoverState={hoverState} translateY={[0.17, 0.05]} reverse={false} text={text[0][1]} image={data.figueira.childImageSharp.fluid} />
+                            <AboutItem direction={-1} hoverState={hoverState} translateY={[0.13, 0.05]} reverse={true} text={text[1][1]} image={data.aveiro.childImageSharp.fluid} />
+                            <AboutItem direction={1} hoverState={hoverState} translateY={[0.2, 0.05]} reverse={false} text={text[2][1]} image={data.picture.childImageSharp.fluid} />
+                        </DesktopAboutContainer>
+                    </Container>
+                </VerticalSpacing>
+            </InViewContainer>
         )}
         
             
