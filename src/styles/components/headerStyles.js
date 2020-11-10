@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components'
-import { ANIMATIONS, textDown } from '../../animations';
 import { SITE_CONFIG } from '../../constants';
 
 export const HeaderNav = styled.div`
@@ -12,8 +11,6 @@ export const HeaderNav = styled.div`
   left: 0;
   z-index: 99;
   padding: 0 10vw;
-  //animation: ${textDown} ${ANIMATIONS.duration} ${ANIMATIONS.easings.elastic};
-
 `
 
 
@@ -43,6 +40,11 @@ export const ThemeText = styled(motion.p)`
 
   &:hover {
       color: var(--color-accent);
+      cursor: pointer;
+
+      @media ${SITE_CONFIG.media.small} {
+        cursor: none;
+      }
   }
 
 `

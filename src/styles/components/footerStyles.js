@@ -60,6 +60,9 @@ export const FooterContent = styled(motion.div)`
 export const SocialIcon = styled(motion.a)`
     
     &:hover {
-        cursor: none;
+        cursor: pointer;
+        @media ${SITE_CONFIG.media.small} {
+            cursor: none;
+        }
     }
 `

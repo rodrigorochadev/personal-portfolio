@@ -42,7 +42,7 @@ export default (props) => {
                 >
                 <PortfolioContainerDesktop
                     last={props.last}
-                    first={props.first} 
+                    first={props.first}
                     
                 >
                     <FloatingImage
@@ -59,13 +59,15 @@ export default (props) => {
                     </FloatingImage>
 
                     <div >
-                        <PortfolioName>
+                        <PortfolioName
+                        onMouseLeave={onCursor}
+                        >
                             <a href={props.url}>
                                 <PortfolioTitle 
-                                        onHoverStart={() => setHoverState(true)}
-                                        onHoverEnd={() => setHoverState(false)}
-                                        onMouseEnter={() => onCursor('project')}
-                                        onMouseLeave={onCursor}
+                                    onHoverStart={() => setHoverState(true)}
+                                    onHoverEnd={() => setHoverState(false)}
+                                    onMouseEnter={() => onCursor('project')}
+                                        
                                 >
                                     <h2>{props.name}</h2>
                                 </PortfolioTitle>

@@ -22,7 +22,7 @@ module.exports = {
         short_name: `rodrigorocha`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#178555`,
+        theme_color: `#06111c`,
         display: `minimal-ui`,
         icon: `src/assets/images/logo.svg`, // This path is relative to the root of the site.
       },

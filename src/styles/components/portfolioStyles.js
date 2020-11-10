@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "../../constants";
 const { motion } = require("framer-motion");
 const { default: styled, css } = require("styled-components");
 
-export const PortfolioContainerDesktop = styled.div`
+export const PortfolioContainerDesktop = styled(motion.div)`
     padding: 0 10vw;
     text-align: center;
 

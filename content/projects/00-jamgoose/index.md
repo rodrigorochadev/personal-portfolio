@@ -1,9 +1,9 @@
 ---
-id: '01'
+id: '02'
 name: 'Jamgoose Web Development'
 description: 'Complete branding of my personal project from logo design, visual identity, website and social media.'
 image: './jamgoose.png'
-url: 'https://jamgoose.netlify.app'
+url: '/portfolio/winegrid'
 tech: 'Gatsby • Figma'
 type: 'project'
 kind: 'Website'

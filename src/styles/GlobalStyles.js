@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { SITE_CONFIG } from '../constants';
-import {grain} from '../animations'
+// import {grain} from '../animations'
 
-import noiseImg from '../assets/images/noise.png'
+// import noiseImg from '../assets/images/noise.png'
 
 const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
@@ -12,7 +12,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${SITE_CONFIG.fontFamilies.regular}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
                  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    cursor: none;
+    @media ${SITE_CONFIG.media.small} {
+      cursor: none;
+    }
 
   }
   
@@ -35,19 +37,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     
-    &:before {
-      z-index: -1;
-      /* animation: ${grain} 8s steps(10) infinite;
-      background-image: url(${noiseImg}); */
-      
-      content: '';
-      height: 300%;
-      left: -50%;
-      opacity: 0.7;
-      position: fixed;
-      top: -100%;
-      width: 300%;
-    }
+    
 
     background: var(--color-background);
     color: var(--color-text);

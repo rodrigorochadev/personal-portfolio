@@ -9,6 +9,7 @@ import { Flutter } from '../../assets/svg/svg'
 import { Container } from '../../styles/componentsStyles'
 import { motion } from 'framer-motion'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
+import { PageBannerContainer, PageBannerText } from '../../styles/pagesStyles'
 
 const WinegridPage = () => {
 
@@ -22,31 +23,31 @@ const WinegridPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            winegrid: file(relativePath: {eq: "winegrid.png"}) {
+            winegrid: file(relativePath: {eq: "winegrid/winegrid.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 1000, quality: 100) {
+                    fluid(maxWidth: 600, quality: 70) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }
                 }
             }
-            notes: file(relativePath: {eq: "winegrid-notes.png"}) {
+            notes: file(relativePath: {eq: "winegrid/winegrid-notes.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 1000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 600, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }
                 }
             }
-            processes: file(relativePath: {eq: "winegrid-processes.png"}) {
+            processes: file(relativePath: {eq: "winegrid/winegrid-processes.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 1000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 600, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }
                 }
             }
-            scan: file(relativePath: {eq: "winegrid-scan.png"}) {
+            scan: file(relativePath: {eq: "winegrid/winegrid-scan.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 1000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 600, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
                     }
                 }
             }
@@ -59,12 +60,11 @@ const WinegridPage = () => {
             <SEO  title="Winegrid Mobile App" />
 
             <Container>
-                <InfoProject>
-                    <h1>Winegrid</h1>
+                <PageBannerContainer>
+                    <PageBannerText>Winegrid</PageBannerText>
                     <p>Mobile Application</p>
-                </InfoProject>
+                </PageBannerContainer>
 
-                {/* <InfoTitle>About</InfoTitle> */}
                 <DesignChoicesText>About the project</DesignChoicesText>
                 <InfoFlex>
                     <InfoText>
@@ -72,7 +72,6 @@ const WinegridPage = () => {
                     </InfoText>
                 </InfoFlex>
 
-                <div style={{marginBottom: '50px'}}></div>
                 <DesignChoicesText>Who are winegrid?</DesignChoicesText>
                 <InfoFlex>
                     <InfoText>
@@ -80,13 +79,10 @@ const WinegridPage = () => {
                     </InfoText>
                 </InfoFlex>
                 
-                <div style={{marginBottom: '100px'}}></div>
-                
-                <InfoFlex center>
-                    <Img fluid={data.winegrid.childImageSharp.fluid} alt="Winegrid Preview" style={{width: '600px'}}/>
-                </InfoFlex>
+                <LastMockupFlex>
+                    <MockupImg fluid={data.winegrid.childImageSharp.fluid} alt="Winegrid Preview" />
+                </LastMockupFlex>
 
-                <div style={{marginBottom: '100px'}}></div>
                 <DesignChoicesText>The goal</DesignChoicesText>
                 <InfoFlex>
                     <InfoText>
@@ -98,82 +94,63 @@ const WinegridPage = () => {
                         <p>05) Note taking capabilities.</p>
                     </InfoText>
                 </InfoFlex>
-
-                <div style={{marginBottom: '100px'}}></div>
                 
-                <InfoFlex center>
-                    <Img fluid={data.processes.childImageSharp.fluid} alt="Winegrid Processes" style={{width: '700px'}}/>
-                </InfoFlex>
+                <LastMockupFlex>
+                    <MockupImg fluid={data.processes.childImageSharp.fluid} alt="Winegrid Processes" />
+                </LastMockupFlex>
 
 
 
-                <div style={{marginBottom: '200px'}}></div>
-
-                {/* <InfoTitle>Design Choices</InfoTitle> */}
-                <div style={{marginBottom: '20px'}}></div>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <div >
-                        <DesignChoicesText>Typography</DesignChoicesText>
-                        <div style={{marginBottom: '30px'}}></div>
+                <DesignFlex>
+                    <div>
+                        <DesignChoicesText margin>Typography</DesignChoicesText>
                         <DesignChoicesFont style={{fontFamily: "'Questrial', sans-serif"}}>Questrial Typeface</DesignChoicesFont>
                         <p style={{fontFamily: "'Questrial', sans-serif", marginTop: '10px'}}>Regular - ABCD abcd 1234</p>
                         <p style={{fontFamily: "'Questrial', sans-serif", fontWeight: '700', marginTop: '10px'}}>Bold - ABCD abcd 1234</p>
-                        <div style={{marginBottom: '50px'}}></div>
                     </div>
                     <div>
-                        <DesignChoicesText>Colors</DesignChoicesText>
-                        <div style={{marginBottom: '30px'}}></div>
-                        <div style={{display: 'flex', columnGap: '30px'}}>
+                        <DesignChoicesText margin>Colors</DesignChoicesText>
+                        <ColorFlex>
                             <ColorDiv style={{backgroundColor: '#121212'}} />
                             <ColorDiv style={{backgroundColor: '#981c35'}} />
-                            <ColorDiv style={{backgroundColor: 'white'}} />
-                        </div>
-                        <div style={{marginBottom: '30px'}}></div>
-                        {/* <p>#000000</p>
-                        <p>#981c35</p>
-                        <p>#121212</p> */}
+                            <ColorDiv style={{backgroundColor: '#ffffff'}} />
+                        </ColorFlex>
                     </div>
                     <div>
-                        <DesignChoicesText>Technologies</DesignChoicesText>
-                        <div style={{marginBottom: '30px'}}></div>
+                        <DesignChoicesText margin>Technologies</DesignChoicesText>
                         <Flutter />
                     </div>
-                </div>
+                </DesignFlex>
 
-                <div style={{marginBottom: '200px'}}></div>
                 <DesignChoicesText>Why Flutter?</DesignChoicesText>
                 <InfoText>
                     <p>Since I was an absolute begginer at Mobile Development and UI/UX Design, I chose this framework for two main reasons. The first one is that it has a very detailed documentation and examples online, so it's easy to get started. The second was the fact that Flutter generates both Android and iOS applications, which was required for the project.</p>
                 </InfoText>
                 
-                <div style={{marginBottom: '50px'}}></div>
                 <InfoText>
                     <p>So why include this project, beeing an begginer in both fields? Well, this project openned my view on UI/UX Design as well as development of Mobile Applications. Even though it's not my best project, it's very important for me, since it helped me learn and get more interested in what I love to do.</p>
                 </InfoText>
                     
-
-                <div style={{marginBottom: '200px'}}></div>
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: "center"}}>
-                    <div style={{display: 'flex'}} >
-                        <Img fluid={data.scan.childImageSharp.fluid} alt="Scan" style={{width: '500px'}}/>
-                        <Img fluid={data.notes.childImageSharp.fluid} alt="Notes" style={{width: '500px'}}/>
-                    </div>
-                </div>
+                <LastMockupFlex>
+                    <MockupImg fluid={data.scan.childImageSharp.fluid} alt="Scan" />
+                    <MockupImg fluid={data.notes.childImageSharp.fluid} alt="Notes" />
+                </LastMockupFlex>
 
                 
-                <div style={{marginBottom: '200px'}}></div>
-                <InfoTitle style={{textAlign: 'center'}}>More details?</InfoTitle>
-                <p style={{textAlign: 'center'}}>Check out the project full technical report
-                    &nbsp;<motion.a 
-                        onMouseEnter={() => onCursor('hovered')}
-                        onMouseLeave={onCursor}
-                        href="https://shorturl.at/jtwDL">here</motion.a> or visit
-                    &nbsp;<motion.a 
-                        onMouseEnter={() => onCursor('hovered')}
-                        onMouseLeave={onCursor}
-                        href="https://winegrid.com">winegrid website</motion.a> to learn more about the work!</p>
-                <div style={{marginBottom: '200px'}}></div>
+                <MoreDetails>
+                    <InfoTitle style={{textAlign: 'center'}}>More details?</InfoTitle>
+                    <p style={{textAlign: 'center'}}>Check out the project full technical report
+                        &nbsp;<motion.a 
+                            onMouseEnter={() => onCursor('hovered')}
+                            onMouseLeave={onCursor}
+                            href="https://shorturl.at/jtwDL">here</motion.a> or visit
+                        &nbsp;<motion.a 
+                            onMouseEnter={() => onCursor('hovered')}
+                            onMouseLeave={onCursor}
+                            href="https://winegrid.com">winegrid website</motion.a> to learn more about the work!</p>
 
+                </MoreDetails>
+                
 
             </Container>
         </Layout>
@@ -181,24 +158,54 @@ const WinegridPage = () => {
 
 }
 
+export default WinegridPage
+
+export const MoreDetails = styled.div`
+    margin: 75px 0 30px;
+
+    @media ${SITE_CONFIG.media.small} {
+        margin: 200px 0 75px;
+    }
+`
+
+export const DesignFlex = styled.div`
+    margin: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    justify-content: space-between;
+
+    @media ${SITE_CONFIG.media.small} {
+        margin: 200px 0;
+        flex-direction: row;
+        column-gap: 50px;
+    }
+`
+
 export const InfoText = styled.div`
     z-index: 2;
+    width: 100%;
 
-    @media ${SITE_CONFIG.media.medium} {
-        width: 50%;
+    @media ${SITE_CONFIG.media.small} {
+        width: 80%;
     }
 
+    /* @media ${SITE_CONFIG.media.medium} {
+        width: 80%;
+    } */
+
     @media ${SITE_CONFIG.media.large} {
-        width: 75%;
+        /* width: 70%; */
 
         p {
             line-height: 2.2rem;
         }
     }
 
-    @media ${SITE_CONFIG.media.xlarge} {
+    /* @media ${SITE_CONFIG.media.xlarge} {
         width: 80%;
-    }
+    } */
 `
 
 export const InfoProject = styled.div`
@@ -216,29 +223,45 @@ export const InfoProject = styled.div`
     
 `
 
-export default WinegridPage
-
+export const ColorFlex = styled.div`
+    display: flex;
+    column-gap: 30px;
+`
 
 export const InfoFlex = styled.div`
     display: flex;
+    margin-bottom: 100px;
 
-    ${props => props.right && css`
-        justify-content: right;
-    `};
-
-    ${props => props.center && css`
-        justify-content: center;
-    `};
 `
 
 
-export const InfoDiv = styled.div`
-    width: 60%;
-`
+// export const InfoDiv = styled.div`
+//     width: 100%;
+
+//     @media ${SITE_CONFIG.media.small} {
+//         width: 80%;
+//     }
+
+//     @media ${SITE_CONFIG.media.small} {
+//         width: 70%;
+//     }
+
+//     @media ${SITE_CONFIG.media.small} {
+//         width: 60%;
+//     }
+// `
 
 export const InfoTitle = styled.div`
     font-family: ${SITE_CONFIG.fontFamilies.titles};
-    font-size: 6em;
+    font-size: 3em;
+
+    @media ${SITE_CONFIG.media.small} {
+        font-size: 5em;
+    }
+
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 6em;
+    }
 `
 
 export const ColorDiv = styled.div`
@@ -254,8 +277,35 @@ export const DesignChoicesText = styled.div`
     font-size: 1.1rem;
     font-weight: bold;
     opacity: 0.8;
+
+    ${props => props.margin && css`
+        margin-bottom: 30px;
+    `}
 `
 
 export const DesignChoicesFont = styled.div`
     font-size: 2rem;
+`
+export const LastMockupFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    row-gap: 80px;
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+    }
+`
+
+
+export const MockupImg = styled(Img)`
+
+    width: 100%;
+
+    @media ${SITE_CONFIG.media.small} {
+        width: 600px;
+    }
+    
 `

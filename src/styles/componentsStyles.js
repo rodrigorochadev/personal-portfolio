@@ -71,6 +71,10 @@ export const UnstyledButton = styled.button`
     background: 0;
     border: none;
 
+    &:hover {
+      cursor: pointer;
+    }
+    
     &:focus {
       outline: none;
     }
@@ -173,4 +177,8 @@ export const Container404 = styled.div`
 
 export const Separator = styled.div`
   margin-bottom: 40px;
+`
+
+export const CustomMargin = styled.div`
+  margin-bottom: ${props => props.margin};
 `
