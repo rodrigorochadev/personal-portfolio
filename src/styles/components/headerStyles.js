@@ -13,6 +13,15 @@ export const HeaderNav = styled.div`
   padding: 0 10vw;
 `
 
+export const HeaderFlex = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 0;
+  
+`
+
 
 export const Logo = styled(motion.div)`
   width: 25px;

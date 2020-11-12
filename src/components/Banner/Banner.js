@@ -5,34 +5,25 @@ import { NewBannerContainer, NewBannerText } from '../../styles/components/banne
 export default () => {
 
     const { width } = useWindowSize()
-    // const offsetY = usePageOfssetY()
-
-    // const {x, y} = useMousePosition()
-    // const [freeMove, setfreeMove] = useState(true)
     
-    // let elemRef = useRef()
-    
-
-    // const [contentRef, inView] = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: "72px",
-    // })
     return(
         
-        <>
+        <NewBannerContainer>
             {width <= 768 && (
-                <NewBannerContainer>
-                    <NewBannerText >Ex<br/>plo<br/>re</NewBannerText>
-                </NewBannerContainer>
+                <>
+                    <NewBannerText >Ex</NewBannerText>
+                    <NewBannerText >plo</NewBannerText>
+                    <NewBannerText >re</NewBannerText>
+                </>
             )}
 
             {width > 768 && (
-                <NewBannerContainer>
-                    <NewBannerText>Aim</NewBannerText>
-                    <NewBannerText>Higher</NewBannerText>    
-                </NewBannerContainer>
+                <>
+                    <NewBannerText outline>Aim</NewBannerText>
+                    <NewBannerText outline>Higher</NewBannerText>    
+                </>
             )}
-        </>
+        </NewBannerContainer>
         
     )
 }

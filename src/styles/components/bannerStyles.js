@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components"
 import {SITE_CONFIG} from '../../constants';
-import { textUpContainer } from "./transitionStyles";
 
 export const NewBannerContainer = styled.div`
     position: relative;
@@ -12,10 +11,6 @@ export const NewBannerContainer = styled.div`
     
     font-family: ${SITE_CONFIG.fontFamilies.titles};
 
-    animation: ${textUpContainer} 1s linear;
-    animation-delay: 0.4s;
-    animation-fill-mode: backwards;
-
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
         min-height: 100vh;
@@ -24,19 +19,6 @@ export const NewBannerContainer = styled.div`
         text-align: center;
     }
 
-    /* @media ${SITE_CONFIG.media.medium} {
-        margin-left: -30px;
-        min-height: 103vh;
-    } */
-
-    /* @media ${SITE_CONFIG.media.large} {
-        
-    }
-
-    @media ${SITE_CONFIG.media.xlarge} {
-        
-    } */
-
 `
 
 export const NewBannerText = styled.h1`
@@ -44,7 +26,6 @@ export const NewBannerText = styled.h1`
     
     text-transform: uppercase;
     color: var(--color-text);
-    
 
     ${props => props.outline && css`
         transition: all 0.1s ease-out;
@@ -81,7 +62,6 @@ export const NewBannerText = styled.h1`
 
     @media ${SITE_CONFIG.media.xlarge} {
         line-height: 7rem;
-        text-transform: uppercase;
         font-size: 7rem;
     }
 

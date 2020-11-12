@@ -2,7 +2,6 @@ import { motion } from "framer-motion"
 import styled, { css } from "styled-components"
 import { SITE_CONFIG } from "../constants"
 import Img from 'gatsby-image'
-import { textUpContainer } from "./components/transitionStyles"
 
 export const PageBannerContainer = styled(motion.div)`
        
@@ -16,9 +15,7 @@ export const PageBannerContainer = styled(motion.div)`
     align-items: center;
     text-align: center;
     overflow: hidden;
-    animation: ${textUpContainer} 1s linear;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+
 `
 
 

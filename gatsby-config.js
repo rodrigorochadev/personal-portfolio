@@ -34,13 +34,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `portfolio`,
-    //     path: `${__dirname}/src/assets/images/portfolio/`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -67,42 +60,27 @@ module.exports = {
           }
         }
     },
-    {
-      resolve: "gatsby-omni-font-loader",
-      options: {
-        enableListener: true,
-        custom: [
-          {
-            name: [`Canela-Light`, `Canela-Bold`],
-            file: `/fonts/fonts.css`,
-          },
-        ],
-      }
-    },
     // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   resolve: "gatsby-omni-font-loader",
     //   options: {
-    //     custom: {
-    //       families: [`Canela-Light`, `Canela-Bold`],
-    //       urls: [`/fonts/fonts.css`]
-    //     }
-    //   }
-    // },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
+    //     enableListener: true,
+    //     custom: [
     //       {
-    //         family: `Cormorant Garamond`,
-    //         variants: [`300`, '400', '700']
-    //       },
-    //       {
-    //         family: `Junge`,
-    //         variants: [`400`]
+    //         name: [`Canela-Light`, `Canela-Bold`],
+    //         file: `/fonts/fonts.css`,
     //       },
     //     ],
-    //   },
+    //   }
     // },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: [`Canela-Light`, `Canela-Bold`],
+          urls: [`/fonts/fonts.css`]
+        }
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

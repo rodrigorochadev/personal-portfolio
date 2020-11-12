@@ -1,59 +1,23 @@
-import { motion } from 'framer-motion';
 import styled,  { css } from 'styled-components';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
+export const PaddingContainer = styled.div`
+  padding: ${props => props.vertical} ${props => props.horizontal};
+`
 
-// export const BigTitle = styled.h1`
-//   /* font-family: ${SITE_CONFIG.fontFamilies.titles};  */
-//   font-family: ${SITE_CONFIG.fontFamilies.regular}; 
-//   text-transform: uppercase;
-//   font-size: 3rem;
-  
-//   @media ${SITE_CONFIG.media.small} {
-//     font-size: 5.5rem;
-//   }
-//   @media ${SITE_CONFIG.media.medium} {
-//     font-size: 6.5rem;
-//   }
-//   @media ${SITE_CONFIG.media.large} {
-//     font-size: 7.5rem;
-//   }
-//   @media ${SITE_CONFIG.media.xlarge} {
-//     font-size: 8.5rem;
-//   }
+export const MobileImgContainer = styled.div`
+    margin-bottom: ${props => props.marginBottom};
+    max-width: ${props => props.maxWidth};
+`
 
-//   ${props =>
-//     props.nowrap &&
-//     css`
-//       white-space: nowrap;
-//     `};
-
-//   ${props =>
-//     props.center &&
-//     css`
-//       text-align: center;
-//     `};
-
-//   ${props =>
-//     props.right &&
-//     css`
-//       text-align: right;
-//     `};
-
-//   ${props =>
-//     props.outline &&
-//     css`
-//       -webkit-text-stroke: 3px;
-//       -webkit-text-stroke-color: var(--color-text);
-//       -webkit-text-fill-color: transparent;
-//     `};  
-// `
-
-
-export const InfoContainer = styled(motion.div)`
+export const InfoContainer = styled.div`
 
   width: 100%;
+
+  ${props => props.marginBottom && css`
+    margin-bottom: 100px;
+  `}
 
   @media ${SITE_CONFIG.media.small} {
     width: 50%;
@@ -103,47 +67,6 @@ export const Container = styled.div`
   position: relative;
   width: auto;
   height: 100%;
-  overflow-y: hidden;
-
-  ${props => props.overflow && css`
-    overflow-y: initial;
-  `}
-
-`
-
-export const Flex = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  ${props =>
-    props.spaceBetween &&
-    css`
-      justify-content: space-between;
-    `};
-  ${props =>
-    props.flexEnd &&
-    css`
-      justify-content: flex-end;
-    `};
-  ${props =>
-    props.alignTop &&
-    css`
-      align-items: flex-start;
-    `};
-  ${props =>
-    props.noHeight &&
-    css`
-      height: 0;
-    `};
-`
-
-export const VerticalSpacing = styled.div`
-  padding: 50px 0;
-
-  @media ${SITE_CONFIG.media.medium} {
-    padding: 100px 0;
-  }
 `
 
 // *********************** 404 Page *********************** \\
@@ -177,8 +100,4 @@ export const Container404 = styled.div`
 
 export const Separator = styled.div`
   margin-bottom: 40px;
-`
-
-export const CustomMargin = styled.div`
-  margin-bottom: ${props => props.margin};
 `

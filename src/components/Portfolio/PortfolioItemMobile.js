@@ -1,32 +1,25 @@
 import React from 'react'
-import {FloatingImageMobile, PortfolioContainer, PortfolioDescription, PortfolioName, PortfolioTitle} from '../../styles/components/portfolioStyles'
 import Img from 'gatsby-image'
+import { MobileImgContainer, PaddingContainer } from '../../styles/componentsStyles'
+import { PortfolioTitle } from '../../styles/components/portfolioStyles'
 
 export default (props) => {
 
     return (
         
-            <PortfolioContainer>
-                <FloatingImageMobile>
+            <PaddingContainer vertical="75px" horizontal="0">
+                <MobileImgContainer maxWidth="500px" marginBottom="10px">
                     <Img fluid={props.image} alt={props.name} />
-                </FloatingImageMobile>
-                <>
-                    <PortfolioName>
-                        <a href={props.url}>
-                            <PortfolioTitle>
-                                <p>/{props.id}.</p>
-                                <h2>{props.name}</h2>
-                            </PortfolioTitle>
-                        </a>
-                    </PortfolioName>
+                </MobileImgContainer>
 
-                    <PortfolioDescription>
-                        <p>{props.description}</p>
-                    </PortfolioDescription>
-
-                    <a href={props.url}>Explore Project</a>
-                </>
+                <PortfolioTitle>
+                    <p>/{props.id}.</p>
+                    <h2>{props.name}</h2>
+                </PortfolioTitle>
                 
-            </PortfolioContainer>
+                <p>{props.description}</p>
+                <a href={props.url}>Explore Project</a>
+                
+            </PaddingContainer>
     )
 }

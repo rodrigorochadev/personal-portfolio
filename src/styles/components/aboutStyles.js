@@ -3,11 +3,53 @@ import { motion } from 'framer-motion'
 import Img from 'gatsby-image'
 import { SITE_CONFIG } from '../../constants'
 
-export const InViewContainer = styled(motion.div)`
 
+/* Mobile and Desktop */
+export const AboutTextContainer = styled.div`
+    z-index: 2;
+
+    @media ${SITE_CONFIG.media.medium} {
+        width: 80%;
+    }
+
+    @media ${SITE_CONFIG.media.large} {
+        width: 83%;
+    }
+
+    @media ${SITE_CONFIG.media.xlarge} {
+        width: 85%;
+    } 
 `
 
-export const DesktopAboutFlex = styled(motion.div)`
+export const AboutText = styled.h2`
+    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    font-weight: 400;
+    line-height: ${SITE_CONFIG.fontHeights.titleHeight};
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+
+    ${props => props.center && css`
+        text-align: center;
+    `};
+
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    @media ${SITE_CONFIG.media.large} {
+        font-size: 2.5rem;
+        line-height: 4.8rem;
+    }
+
+    @media ${SITE_CONFIG.media.xlarge} {
+        font-size: 2.5rem;
+        line-height: 5rem;
+    }
+`
+
+/* Desktop */
+export const DesktopAboutFlex = styled.div`
     z-index: 11;
     padding-top: 100px;
     padding-bottom: 250px;
@@ -44,16 +86,6 @@ export const AboutImgParallax = styled.div`
     }
 `
 
-export const MobileAboutImgContainer = styled.div`
-    width: 100%;
-    height: auto;
-`
-
-export const MobileAboutContainer = styled.div`
-    padding-bottom: 50px;
-    border-bottom: 1px solid var(--color-text);
-`
-
 export const AboutImgContainer = styled(motion.div)`
 
     position: absolute;
@@ -80,16 +112,6 @@ export const AboutImgContainer = styled(motion.div)`
 
 export const AboutImg = styled(Img)`
 
-    /* @media ${SITE_CONFIG.media.small} {
-        width: 200px;
-        transition: ${SITE_CONFIG.transitions.default};
-        
-        &:hover {
-            transform: scale(2,2);
-        }
-    } */
-    
-
     @media ${SITE_CONFIG.media.small} {
         width: 400px;
 
@@ -97,7 +119,11 @@ export const AboutImg = styled(Img)`
         transform: scale(.5, .5);
 
         &:hover {
-            transform: ${props => props.translateX} scale(1.5, 1.5); 
+            transform: ${props => props.translateX} scale(1.5, 1.5);
+
+            ${props => props.lessZoom && css`
+                transform: ${props => props.translateX} scale(1, 1);
+            `}
         }
     }
 
@@ -108,80 +134,12 @@ export const AboutImg = styled(Img)`
         transition: ${SITE_CONFIG.transitions.default};
 
         &:hover {
-            transform: ${props => props.translateX} scale(1.5, 1.5); 
+            transform: ${props => props.translateX} scale(1.5, 1.5);
+
+            ${props => props.lessZoom && css`
+                transform: ${props => props.translateX} scale(1, 1);
+            `}
         }
     }
 
-    /* @media ${SITE_CONFIG.media.large} {
-        
-        width: 500px;
-        transform: scale(50%);
-        transition: ${SITE_CONFIG.transitions.default};
-
-        &:hover {
-            transform: ${props => props.translateX} scale(2,2); 
-        }
-    } */
-
 `
-
-export const AboutText = styled.div`
-    z-index: 2;
-
-    @media ${SITE_CONFIG.media.medium} {
-        width: 80%;
-    }
-
-    @media ${SITE_CONFIG.media.large} {
-        width: 83%;
-    }
-
-    @media ${SITE_CONFIG.media.xlarge} {
-        width: 85%;
-    } 
-`
-
-export const AboutH2 = styled.h2`
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-    font-weight: 400;
-    line-height: ${SITE_CONFIG.fontHeights.titleHeight};
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-
-    ${props => props.center && css`
-        text-align: center;
-    `};
-
-    @media ${SITE_CONFIG.media.medium} {
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-
-    @media ${SITE_CONFIG.media.large} {
-        font-size: 2.5rem;
-        line-height: 4.8rem;
-    }
-
-    @media ${SITE_CONFIG.media.xlarge} {
-        font-size: 2.5rem;
-        line-height: 5rem;
-    }
-
-
-`
-
-export const AboutTextContainer = styled.div`
-    display: flex;
-    margin-top: 70px;
-
-    ${props => props.reverse && css`
-        justify-content: right;
-    `};
-
-    @media ${SITE_CONFIG.media.small} {
-        margin-top: 250px;
-        
-    }
-
-`
-

@@ -6,7 +6,7 @@ import Footer from './Footer';
 import CustomCursor from './CustomCursor';
 import ScrollIndicator from './ScrollIndicator';
 import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext';
-import PageAnimation from './PageAnimation';
+// import PageAnimation from './PageAnimation';
 
 const Layout = ({ children }) => {
 
@@ -21,13 +21,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <PageAnimation />
+      {/* <PageAnimation /> */}
       <CustomCursor />
       <ScrollIndicator />
       <Header onCursor={onCursor} />
       <main>{children}</main>
       <Footer onCursor={onCursor} />   
-      &nbsp;
     </>
   );
 };

@@ -1,13 +1,13 @@
-import React from 'react';
-import { UnstyledButton, Flex } from '../styles/componentsStyles'
+import React, {useContext} from 'react';
+import { UnstyledButton } from '../styles/componentsStyles'
 import { ThemeContext } from './ThemeContext';
-import { HeaderNav, Logo, ThemeText } from '../styles/components/headerStyles';
+import { HeaderFlex, HeaderNav, Logo, ThemeText } from '../styles/components/headerStyles';
 import { Link } from 'gatsby';
 
 
 export default ({onCursor}) => {
 
-  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+  const { colorMode, setColorMode } = useContext(ThemeContext);
 
   if (!colorMode) {
     return null;
@@ -15,24 +15,24 @@ export default ({onCursor}) => {
 
   return (
     
-    <HeaderNav id="home">
-      
-      <Flex spaceBetween noHeight>
+    <HeaderNav>
+      <HeaderFlex>
 
-      <Link to='/'>
-        <Logo 
+        <Link to='/'>
+          <Logo 
+            onMouseEnter={() => onCursor('hovered')}
+            onMouseLeave={onCursor}
+          />
+        </Link>
+
+        <UnstyledButton 
           onMouseEnter={() => onCursor('hovered')}
-          onMouseLeave={onCursor} />
-      </Link>
+          onMouseLeave={onCursor}
+          aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+            {colorMode === 'light' ? <ThemeText>Too bright?</ThemeText> : <ThemeText>Too dark?</ThemeText>}
+        </UnstyledButton>
 
-      <UnstyledButton 
-        onMouseEnter={() => onCursor('hovered')}
-        onMouseLeave={onCursor}
-        aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-          {colorMode === 'light' ? <ThemeText>Too bright?</ThemeText> : <ThemeText>Too dark?</ThemeText>}
-      </UnstyledButton>
-
-      </Flex>
+      </HeaderFlex>
     </HeaderNav>
   );
 };

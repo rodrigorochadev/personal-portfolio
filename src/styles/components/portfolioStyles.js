@@ -37,51 +37,12 @@ export const PortfolioContainerDesktop = styled(motion.div)`
     }
 `
 
-export const PortfolioInfo = styled(motion.p)`
-    margin-bottom: 150px;
-`
-
 export const PortfolioMargin = styled.div`
     z-index: 20;
     margin-top: 50px;
 
     @media ${SITE_CONFIG.media.small} {
         margin-top: 0;
-    }
-`
-
-export const PortfolioName = styled.div`
-
-    a {
-        text-decoration: none;
-    }
-
-    @media ${SITE_CONFIG.media.small} {
-        font-size: 3rem;
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        font-size: 3.1rem;
-    }
-
-    @media ${SITE_CONFIG.media.large} {
-        font-size: 3.3rem;
-    }
-
-    @media ${SITE_CONFIG.media.xlarge} {
-        font-size: 3.5rem;
-    }
-`
-
-export const PortfolioDescription = styled.div`
-    
-    p {
-        font-family: ${SITE_CONFIG.fontFamilies.regular};
-    }
-    
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 70%;
     }
 `
 
@@ -106,12 +67,34 @@ export const PortfolioContainer = styled(motion.div)`
 `
 
 export const PortfolioTitle = styled(motion.div)`
-    text-decoration: none;
-    color: var(--color-text);
+    
     z-index: 20;
+    
+    a {
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    @media ${SITE_CONFIG.media.small} {
+        font-size: 3rem;
+    }
+
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 3.1rem;
+    }
+
+    @media ${SITE_CONFIG.media.large} {
+        font-size: 3.3rem;
+    }
+
+    @media ${SITE_CONFIG.media.xlarge} {
+        font-size: 3.5rem;
+    }
 
     h2 {
         font-family: ${SITE_CONFIG.fontFamilies.titles} !important;
+        
+        
     }
 `
 
@@ -131,15 +114,4 @@ export const FloatingImage = styled(motion.div)`
         z-index: 99;
     }
     
-`
-
-export const FloatingImageMobile = styled(motion.div)`
-    width: 250px;
-    height: auto;
-    pointer-events: none;
-    margin-bottom: 35px;
-
-    @media ${SITE_CONFIG.media.small} {
-        display: none;
-    }
 `
