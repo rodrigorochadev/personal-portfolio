@@ -1,5 +1,5 @@
 import React from 'react'
-import { TransitionFlex, TransitionPage } from '../styles/components/transitionStyles'
+import { TransitionPage } from '../styles/components/transitionStyles'
 
 export default () => {
 
@@ -16,13 +16,13 @@ export default () => {
     // const randomNumber = Math.floor(Math.random() * randomColor.length);
 
     return(
-        <TransitionFlex>
-          <TransitionPage animate={{height: 0, transition: {duration: 0.8, delay: 0.2, ease: "easeOut"}}}/>
-          <TransitionPage animate={{height: 0, transition: {duration: 0.8, delay: 0.4, ease: "easeOut"}}}/>
-          <TransitionPage animate={{height: 0, transition: {duration: 0.8, delay: 0.6, ease: "easeOut"}}}/>
-          <TransitionPage animate={{height: 0, transition: {duration: 0.8, delay: 0.8, ease: "easeOut"}}}/>
-          <TransitionPage animate={{height: 0, transition: {duration: 0.8, delay: 1.0, ease: "easeOut"}}}/>
-        </TransitionFlex>
+      <>
+        <TransitionPage left="0%" style={{animationDelay: '0.2s'}} />
+        <TransitionPage left="20%" style={{animationDelay: '0.4s'}} />
+        <TransitionPage left="40%" style={{animationDelay: '0.6s'}} />
+        <TransitionPage left="60%" style={{animationDelay: '0.8s'}} />
+        <TransitionPage left="80%" style={{animationDelay: '1.0s'}} />
+      </>
     )
 
 }

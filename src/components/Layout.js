@@ -22,9 +22,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <PageAnimation />
-      <Header onCursor={onCursor} />
-      <ScrollIndicator />
       <CustomCursor />
+      <ScrollIndicator />
+      <Header onCursor={onCursor} />
       <main>{children}</main>
       <Footer onCursor={onCursor} />   
       &nbsp;

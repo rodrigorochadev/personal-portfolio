@@ -38,7 +38,7 @@ export default () => {
                             tech
                             image {
                                 childImageSharp {
-                                    fluid(maxWidth: 400, quality: 70) {
+                                    fluid(maxWidth: 500, quality: 75) {
                                         ...GatsbyImageSharpFluid_tracedSVG
                                     }
                                 }
@@ -64,7 +64,7 @@ export default () => {
                             (project, id) => {
                                 return(        
                                     <PortfolioItemMobile
-                                        last={id===2}
+                                        last={id===3}
                                         key={project.node.frontmatter.id} 
                                         id={project.node.frontmatter.id}
                                         kind={project.node.frontmatter.kind}

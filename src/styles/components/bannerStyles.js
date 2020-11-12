@@ -1,9 +1,8 @@
-import { motion } from "framer-motion"
 import styled, { css } from "styled-components"
-import { textRight, textLeft, scaleUp } from "../../animations";
 import {SITE_CONFIG} from '../../constants';
+import { textUpContainer } from "./transitionStyles";
 
-export const NewBannerContainer = styled(motion.div)`
+export const NewBannerContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,6 +11,10 @@ export const NewBannerContainer = styled(motion.div)`
     margin-left: -15px; 
     
     font-family: ${SITE_CONFIG.fontFamilies.titles};
+
+    animation: ${textUpContainer} 1s linear;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
 
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
@@ -36,27 +39,11 @@ export const NewBannerContainer = styled(motion.div)`
 
 `
 
-export const NewBannerText = styled(motion.h1)`
+export const NewBannerText = styled.h1`
 
     
     text-transform: uppercase;
     color: var(--color-text);
-
-    /* ${props => props.textRight && css`
-            animation: ${textRight} 0.7s ease-out;
-        `
-    }
-    
-    ${props => props.textLeft && css`
-            animation: ${textLeft} 0.7s ease-out;
-        `
-    }
-
-    ${props => props.scaleUp && css`
-            animation: ${scaleUp} 0.7s linear;
-        `
-    } */
-
     
 
     ${props => props.outline && css`
