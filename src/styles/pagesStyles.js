@@ -40,7 +40,7 @@ export const PageBannerText = styled(motion.h1)`
 
     /* line-height: 1.2rem;
     font-size: 2.2rem; */
-    font-size: 15vw;
+    font-size: 14vw;
     line-height: 11vw;
 
     @media screen and (min-width: 480px) {
@@ -99,6 +99,7 @@ export const DesignFlex = styled.div`
 export const InfoText = styled.div`
     z-index: 2;
     width: 100%;
+    color: var(--color-lightText);
 
     p {
         line-height: 2.2rem;
@@ -269,6 +270,10 @@ export const TechnologiesFlex = styled.div`
 
 //
 export const ProjectSubTitle = styled.h2`
-    font-size: 2.5rem;
+
     margin-bottom: 10px;
+
+    @media ${SITE_CONFIG.media.small} {
+        font-size: 2rem;
+    }
 `

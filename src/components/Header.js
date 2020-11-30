@@ -28,6 +28,7 @@ export default ({onCursor}) => {
         <UnstyledButton 
           onMouseEnter={() => onCursor('hovered')}
           onMouseLeave={onCursor}
+          onClick={onCursor}
           aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
             {colorMode === 'light' ? <ThemeText>Too bright?</ThemeText> : <ThemeText>Too dark?</ThemeText>}
         </UnstyledButton>

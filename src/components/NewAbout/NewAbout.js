@@ -42,7 +42,7 @@ export default () => {
                         <Img fluid={data.picture.childImageSharp.fluid} alt="My Portrait" />
                     </div>
                     <NewAboutContainerText>
-                        <NewAboutContainerHeadline>Hey! I'm Rodrigo. A software developer from Portugal with a passion for design. </NewAboutContainerHeadline>
+                        <NewAboutContainerHeadline>Hey! I'm Rodrigo Rocha, a software developer from Portugal with a passion for design. </NewAboutContainerHeadline>
                         <NewAboutContainerDescription>
                             I was born in Figueira da Foz, Portugal, October 4th, 1994, where I lived and studied until I went to college. I attended University of Aveiro, where I've graduated with an BSc in Computer and Telematics Engineering. Following that, I had my first professional experience working as a software developer for Altice Labs.<br />
                             Even tough my degree is mostly focused on computer science and telecomunications, what I trully love to do, is to design and develop software. Mainly, websites and mobile applications. I'm eager to improve and learn something new every day. 

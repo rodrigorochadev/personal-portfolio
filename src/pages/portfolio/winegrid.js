@@ -12,6 +12,7 @@ import NavigateProjects from '../../components/Design/NavigateProjects'
 import { ThemeContext } from '../../components/ThemeContext'
 
 import Scroll from '../../components/Design/Scroll'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const WinegridPage = () => {
 
@@ -103,8 +104,8 @@ const WinegridPage = () => {
 
     return(
         <Layout>
-            <SEO  title="Winegrid Mobile App" />
-            
+        <SEO  title="Winegrid Mobile App" />
+        
             <Scroll bottom="300px" right="450px"/>
             <Container>
                 <PageBannerContainer>

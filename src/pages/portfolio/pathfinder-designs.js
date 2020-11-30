@@ -138,10 +138,6 @@ const WinegridPage = () => {
                 <PageBannerContainer>
                     <PageBannerText>Pathfinder</PageBannerText>
                     <PageBannerText outline>Designs</PageBannerText>
-                
-                    <div style={{position: "absolute", bottom: '100px', left: 0}}>
-                        <p>Complete branding of my personal project.</p>
-                    </div>
                 </PageBannerContainer>
 
                 
@@ -242,11 +238,12 @@ const WinegridPage = () => {
                 </InfoFlex>
 
                 <InfoFlex>
-                    <InfoText>
-                        {/* <p>I tested the website performance using Google Lighthouse and GTMetrix.</p> */}
+                    <div>
                         <h2>GTMetrix</h2>
-                        <p>The following images represent the results in GTMetrix. Those beeing, <b>Performance Scores</b> and <b>Page Details</b>, respectively. </p>
-                    </InfoText>
+                        <InfoText>
+                            <p>The following images represent the results in GTMetrix. Those beeing, <b>Performance Scores</b> and <b>Page Details</b>, respectively. </p>
+                        </InfoText>
+                    </div>
                 </InfoFlex>
                 
 
@@ -265,10 +262,12 @@ const WinegridPage = () => {
                 </p>
                 <div style={{marginBottom: '50px'}}></div>
                 <InfoFlex>
-                    <InfoText>       
+                    <div>
                         <h2>Google Lighthouse</h2>
-                        <p>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</p>
-                    </InfoText>
+                        <InfoText>       
+                            <p>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</p>
+                        </InfoText>
+                    </div>
                 </InfoFlex>
 
                 <PageFlex>
