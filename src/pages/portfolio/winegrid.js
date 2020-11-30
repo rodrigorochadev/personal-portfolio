@@ -12,7 +12,6 @@ import NavigateProjects from '../../components/Design/NavigateProjects'
 import { ThemeContext } from '../../components/ThemeContext'
 
 import Scroll from '../../components/Design/Scroll'
-import { AnimatePresence, motion } from 'framer-motion'
 
 const WinegridPage = () => {
 
@@ -123,7 +122,7 @@ const WinegridPage = () => {
                         <ProjectInfo type="Project" description="Mobile Application" />
                         <ProjectInfo type="Role" description="Developer/Designer" />
                         <ProjectInfo type="Year" description="2019" />
-                        <ProjectInfo type="Website" link="https://www.winegrid.com" />
+                        <ProjectInfo type="Website" link="winegrid.com" />
                     </div>
                 </div>
 

@@ -4,9 +4,7 @@ import styled from 'styled-components'
 import { SITE_CONFIG } from '../../constants'
 import { Container, NewSVGContainer, NewSVG, Flex } from '../../styles/componentsStyles'
 import Img from 'gatsby-image'
-import Scroll from '../Design/Scroll'
-import { AboutMeSVG, ScrollMoreSVG } from '../../assets/svg/svg'
-import { motion } from 'framer-motion'
+import { AboutMeSVG } from '../../assets/svg/svg'
 
 export default () => {
 
@@ -77,7 +75,7 @@ export const NewAboutContainerText = styled.div`
 `
 
 export const NewAboutContainerHeadline = styled.h2`
-    line-height: 2rem;
+    line-height: 2.5rem;
     margin-bottom: 10px;
 `
 

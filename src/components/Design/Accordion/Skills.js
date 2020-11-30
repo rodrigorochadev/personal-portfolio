@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion'
-import React, { useContext, useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
 import { AccordionContent, AccordionHeader, AccordionIcon } from '../../../styles/components/accordionStyles'
 import { Container, Flex } from '../../../styles/componentsStyles'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../../context/globalContext'
-import { ThemeContext } from '../../../components/ThemeContext'
 
 const accordionData = [
     {

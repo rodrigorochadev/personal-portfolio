@@ -147,7 +147,7 @@ const WinegridPage = () => {
                         <ProjectInfo type="Project" description="Branding" />
                         <ProjectInfo type="Role" description="Developer/Designer" />
                         <ProjectInfo type="Year" description="2020" />
-                        <ProjectInfo type="Website" link="https://www.pathfinderdesigns.pt" />
+                        <ProjectInfo type="Website" link="pathfinderdesigns.pt" />
                     </ProjectInfoTable>
                 </ProjectInfoTableFlex>
 
@@ -305,7 +305,7 @@ const WinegridPage = () => {
                     previous="Winegrid Mobile App"
                     previousLink="/portfolio/winegrid"
                     next="School Manager"
-                    nextLink="/portfolio/school-manager"
+                    nextLink="/portfolio/under-construction"
                 />
 
             </Container>
@@ -325,16 +325,6 @@ export const PathfinderLogoContainer = styled.div`
     }
 `
 
-export const SectionTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
-    font-size: 3em;
-    margin-bottom: 50px;
-
-    @media ${SITE_CONFIG.media.small} {
-        font-size: 5em;
-        margin-bottom: 100px;
-    }
-`
 export const ProjectInfoTableFlex = styled.div`
     margin: 100px 0; 
     display: flex;

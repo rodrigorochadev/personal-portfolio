@@ -18,7 +18,7 @@ export default ({onCursor}) => {
     <HeaderNav>
       <HeaderFlex>
 
-        <Link to='/'>
+        <Link to='/' aria-label="Back to Homepage">
           <Logo 
             onMouseEnter={() => onCursor('hovered')}
             onMouseLeave={onCursor}

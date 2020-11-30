@@ -7,7 +7,7 @@ import PortfolioItemMobile from './PortfolioItemMobile';
 import { useStaticQuery, graphql } from 'gatsby'
 import { InfoContainer, PaddingContainer, NewSVGContainer, NewSVG } from '../../styles/componentsStyles';
 import { PortfolioContainer } from '../../styles/components/portfolioStyles'
-import { AboutMeSVG, PortfolioSVG } from '../../assets/svg/svg';
+import { PortfolioSVG } from '../../assets/svg/svg';
 
 
 export default () => {
@@ -45,7 +45,7 @@ export default () => {
         <PaddingContainer horizontal="10vw" vertical="100px">
             <InfoContainer style={{marginBottom: '60px'}}>
                 {/* <SmallTitle>My Work</SmallTitle> */}
-                <h2 style={{marginBottom: '10px'}}>A little of my work.</h2>
+                <h2 style={{marginBottom: '10px'}}>Some of my work.</h2>
                 <p style={{color: 'var(--color-lightText)'}}>Bellow you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it, to open the full details.</p>
             </InfoContainer>
 

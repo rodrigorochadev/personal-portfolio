@@ -42,7 +42,6 @@ export const ThemeText = styled(motion.p)`
 
   color: var(--color-text);
 
-  /* font-family: ${SITE_CONFIG.fontFamilies.titles.thin}; */
   font-size: 1.2rem;
   transition: ${SITE_CONFIG.transitions.default};
   text-decoration: none;

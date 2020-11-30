@@ -70,7 +70,7 @@ const FallbackStyles = () => {
 
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
-      return `${acc}\n--color-${name}: ${colorByTheme.light};`;
+      return `${acc}\n--color-${name}: ${colorByTheme.dark};`;
     },
     ''
   );

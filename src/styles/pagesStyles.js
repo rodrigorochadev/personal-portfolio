@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 export const PageBannerContainer = styled(motion.div)`
        
-    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
+    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
     position: relative;
     display: flex;
     flex-direction: column;
@@ -128,7 +128,6 @@ export const InfoProject = styled.div`
 
     h1 {
         text-transform: uppercase;
-        /* font-family: ${SITE_CONFIG.fontFamilies.titles}; */
         font-size: 7em;
     }
     
@@ -146,7 +145,6 @@ export const InfoFlex = styled.div`
 `
 
 export const InfoTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
     font-size: 3em;
 
     @media ${SITE_CONFIG.media.small} {

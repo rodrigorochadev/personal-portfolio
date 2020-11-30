@@ -22,7 +22,7 @@ export default (props) => {
                 <a
                     onMouseEnter={() => onCursor('hovered')}
                     onMouseLeave={onCursor}
-                    href="https://winegrid.com"
+                    href={`https://www.${props.link}`}
                 >{props.link}</a>
             </ProjectInformationDescription>
         </ProjectInformationFlex>

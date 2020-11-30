@@ -11,7 +11,7 @@ export const Flex = styled.div`
   ${props => props.alignRight && css`
     
     @media ${SITE_CONFIG.media.small} {
-      justify-content: right;
+      justify-content: flex-end;
     }
   `}
 
@@ -36,7 +36,7 @@ export const Flex = styled.div`
     align-items: center;
     row-gap: 100px;
 
-    @media ${SITE_CONFIG.media.small} {
+    @media ${SITE_CONFIG.media.medium} {
       flex-direction: row;
       column-gap: 20px;
 
@@ -171,10 +171,6 @@ export const Container404 = styled.div`
     &:hover {
       fill: var(--color-accent);
     }
-  }
-
-  p, a {
-    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
   }
   
   p {

@@ -96,7 +96,6 @@ export const PortfolioTitle = styled(motion.div)`
     }
 
     h2 {
-        /* font-family: ${SITE_CONFIG.fontFamilies.titles.thin} !important;     */
         font-family: 'Metropolis Bold', sans-serif;
         
     }

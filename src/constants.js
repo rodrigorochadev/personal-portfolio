@@ -9,7 +9,7 @@ export const COLORS = {
   },
   background: {
     light: '#ffffff',
-    dark: 'rgb(6, 17, 28)' 
+    dark: '#06111c' 
   },
   accent: {
     light: '#178555',
@@ -32,11 +32,6 @@ export const SITE_CONFIG = {
   },
 
   fontFamilies: {
-    poppins: "'Poppins', sans-serif",
-    titles: {
-      thin: "'Canela Thin', serif",
-      bold: "'Canela Bold', serif"
-    },
     text: {
       regular: "'Plus Jakarta Display Regular', sans-serif",
       bold: "'Plus Jakarta Display Bold', sans-serif",

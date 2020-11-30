@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Container } from '../styles/componentsStyles'
-import { FooterCopyright, FooterSocial, FooterContent, FooterSVG, SocialIcon } from '../styles/components/footerStyles'
-import { Instagram, Dribbble, Behance, Linkedin, Github } from '../assets/svg/svg'
+import { Container, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
+import { FooterSocial, FooterContent, FooterSVG, SocialIcon } from '../styles/components/footerStyles'
+import { Instagram, Dribbble, Behance, Linkedin, Github, ThankYouSVG } from '../assets/svg/svg'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { SITE_CONFIG } from '../constants'
@@ -48,12 +48,26 @@ export default ({onCursor}) => {
                         })}
                     </FooterSocial>
                     <FooterName>
+                        
                         <p>40° 09' 3.06" -8° 51' 42.44"</p>
                         <div style={{marginBottom: '10px'}}></div>
                         <p><b>Rodrigo Rocha © {new Date().getFullYear()}.</b></p>
                     </FooterName>
                 </FooterContent>
             </FooterSVG>
+            <div style={{position: 'absolute', bottom: '170px', right: '8%'}}>
+            <NewSVGContainer
+                animate={{
+                    rotate: 360,
+                    transition: { duration: 5, ease: 'linear', repeat: 'Infinity' },
+                }} 
+            >
+                <NewSVG>
+                    <ThankYouSVG />
+                </NewSVG>
+            </NewSVGContainer>
+            </div>
+            
         </Container>
         
     )
@@ -62,6 +76,7 @@ export default ({onCursor}) => {
 
 export const FooterName = styled.div`
     text-align: center;
+    position: relative;
 
     @media ${SITE_CONFIG.media.small} {
         text-align: right;

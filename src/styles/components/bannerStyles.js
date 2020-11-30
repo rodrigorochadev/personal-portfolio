@@ -39,13 +39,13 @@ export const NewBannerText = styled.h1`
             1px  1px 0 var(--color-text);
     `}
 
-    line-height: 6.5rem;
-    font-size: 8rem;
+    line-height: 8.5rem;
+    font-size: 9.5rem;
 
-    @media screen and (min-width: 28.125em) {
+    /* @media screen and (min-width: 28.125em) {
         line-height: 8rem;
         font-size: 9rem;    
-    }
+    } */
 
     @media ${SITE_CONFIG.media.small} {
         line-height: 4rem;
