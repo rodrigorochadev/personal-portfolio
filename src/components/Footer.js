@@ -29,7 +29,7 @@ export default ({onCursor}) => {
                         onMouseEnter={() => onCursor('hovered')}
                         onMouseLeave={onCursor}
                         href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com</motion.a>
-                        , or find me at my social medias below.
+                        ,or find me at my social medias below.
                     </p>
                 </FooterTalkDescription>
             </div>

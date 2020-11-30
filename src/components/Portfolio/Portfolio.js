@@ -46,10 +46,9 @@ export default () => {
             <InfoContainer style={{marginBottom: '60px'}}>
                 {/* <SmallTitle>My Work</SmallTitle> */}
                 <h2 style={{marginBottom: '10px'}}>Some of my work.</h2>
-                <p style={{color: 'var(--color-lightText)'}}>Bellow you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it, to open the full details.</p>
+                <p style={{color: 'var(--color-lightText)'}}>Below you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it to open the full details. Some pages are still being built, but you can have an idea on I how work. Enjoy!</p>
             </InfoContainer>
 
-            
                 {width < 768 && (
                     <PortfolioContainer>
                         {data.allMarkdownRemark.edges.map(

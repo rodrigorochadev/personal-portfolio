@@ -129,7 +129,7 @@ const WinegridPage = () => {
                 <ProjectSubTitle>Background</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>WINEGRID Mobile App was my BSc project. It was proposed by the company with the same name. It was a group project and I was responsible for the development of the mobile application. Since then, WINEGRID had gone through some visual changes, but the concept remains the same.</p>
+                        <p>WINEGRID Mobile App was my BSc project. It was proposed by the company with the same name. It was a group project, and I was responsible for the development of the mobile application. Since then, WINEGRID had gone through some visual changes, but the concept remains the same.</p>
                     </InfoText>
                 </InfoFlex>
 
@@ -149,7 +149,7 @@ const WinegridPage = () => {
                 <ProjectSubTitle>The problem</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>Monitoring the winemaking process manually is very time and resource consuming. A late reaction and lose monitoring, leads to lower wine quality, and therefore revenue loss. WINEGRID is a company that does real time vinification monitoring and bring the digital to the cellar, providing producers with realtime, remote and reliable data of five main productions variables, available in an online dashboard. To make the job of the cellar worker easier, we've developed a mobile application, with all the available options in the dashboard (and more!) one smartphone away.</p>
+                        <p>Monitoring the winemaking process manually is very time and resource consuming. A late reaction and lose monitoring, leads to lower wine quality, and therefore revenue loss. WINEGRID is a company that does real time vinification monitoring and bring the digital to the cellar, providing producers with real time, remote and reliable data of five main productions variables, available in an online dashboard. To make the job of the cellar worker easier, we've developed a mobile application, with all the available options in the dashboard (and more!) one smartphone away.</p>
                     </InfoText>
                 </InfoFlex>
                 
@@ -195,15 +195,15 @@ const WinegridPage = () => {
                 <ProjectSubTitle>Why Flutter?</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>Since I was an absolute begginer at Mobile Development and UI/UX Design, I chose this framework for two main reasons. The first one is that it has a very detailed documentation and online examples, so it's easy to get started. The second was the fact that Flutter generates both Android and iOS applications, which was required for the project.</p>
-                        <p>So why include this project, beeing an begginer in both fields? Well, this project openned my view on UI/UX Design as well as development of Mobile Applications. Even though it's not my best project, it's very important for me, since it helped me learn and get more interested in what I love to do.</p>
+                        <p>Since I was an absolute beginner at Mobile Development and UI/UX Design, I chose this framework for two main reasons. The first one is that it has a very detailed documentation and online examples, so it's easy to get started. The second was the fact that Flutter generates both Android and iOS applications, which was required for the project.</p>
+                        <p>So why include this project, being a beginner in both fields? Well, this project opened my view on UI/UX Design, as well as development of Mobile Applications. Even though it's not my best project, it's very important for me, since it helped me learn and get more interested in what I love to do.</p>
                     </InfoText>
                 </InfoFlex>
 
                 <ProjectSubTitle>Extra Details</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>Check out the project full technical report&nbsp;
+                        <p>Read the project full technical report&nbsp;
                             <a 
                                 onMouseEnter={() => onCursor('hovered')}
                                 onMouseLeave={onCursor}

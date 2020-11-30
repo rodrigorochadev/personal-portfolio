@@ -167,9 +167,9 @@ const WinegridPage = () => {
                         <p>03) Simple</p>
                         <br />
                         <p>I wanted the logo to be black and white, so it would fit everywhere without contrast problems. You can see why this is important in this website by switching between dark and light mode.</p>
-                        <p> Additionaly, the logo should remain legible at every scale. A very small one, like the favicon of a website, or a very big one, like a billboard.</p>
+                        <p> Additionally, the logo should remain legible at every scale. A very small one, like the favicon of a website, or a very big one, like a billboard.</p>
                         <br />
-                        <p>After many sketches and redraws, I've came up with the final logo: </p>
+                        <p>After many sketches and redraws, I've come up with the final logo: </p>
                     </InfoText>
                 </InfoFlex>
                 
@@ -220,7 +220,7 @@ const WinegridPage = () => {
                 <ProjectSubTitle>Designing and development of the website</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>For the design of the website, I did what I do almost every time I develop a website, which is create a first draft in a piece of paper. The content of the website, the images, and so on. Next, I replicated what I did in the paper, into a design software. I use Figma, because it's free and easy to use.</p>
+                        <p>For the design of the website, I did what I do almost every time I develop a website, which is to create a wireframe in a piece of paper. Later, the content of the website, the images, and so on were added into a design software. I use Figma.</p>
                         <p>The development of the website was done in Gatsby.</p>
                         
                     </InfoText>
@@ -241,7 +241,7 @@ const WinegridPage = () => {
                     <div>
                         <h2>GTMetrix</h2>
                         <InfoText>
-                            <p>The following images represent the results in GTMetrix. Those beeing, <b>Performance Scores</b> and <b>Page Details</b>, respectively. </p>
+                            <p>The following images represent the results in GTMetrix. Those being, <b>Performance Scores</b> and <b>Page Details</b>, respectively.</p>
                         </InfoText>
                     </div>
                 </InfoFlex>
@@ -321,7 +321,6 @@ export const PathfinderLogoContainer = styled.div`
     svg {
         width: 150px;
         fill: var(--color-text);
-
     }
 `
 
