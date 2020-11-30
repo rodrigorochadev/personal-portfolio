@@ -31,6 +31,6 @@ export const TalkMail = styled.a`
 export const TalkContainer = styled.div`
     text-align: center;
     * {
-        font-family: ${SITE_CONFIG.fontFamilies.titles};
+        font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
     }
 `

@@ -43,30 +43,30 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-webfonts`,
-        options: {
-          fonts: {
-            google: [
-              {
-                family: "Questrial",
-                variants: ['400', '700']
-              },
-              {
-                family: "Poppins",
-                variants: ['400', '700']
-              },
-            ]
-          }
-        }
-    },
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //     options: {
+    //       fonts: {
+    //         google: [
+    //           {
+    //             family: "Questrial",
+    //             variants: ['400', '700']
+    //           },
+    //           {
+    //             family: "Poppins",
+    //             variants: ['400', '700']
+    //           },
+    //         ]
+    //       }
+    //     }
+    // },
     // {
     //   resolve: "gatsby-omni-font-loader",
     //   options: {
     //     enableListener: true,
     //     custom: [
     //       {
-    //         name: [`Canela-Light`, `Canela-Bold`],
+    //         name: [`Canela Thin`, `Canela Bold`, `Plus Jakarta Display Regular`, `Plus Jakarta Display Bold`],
     //         file: `/fonts/fonts.css`,
     //       },
     //     ],
@@ -76,7 +76,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: [`Canela-Light`, `Canela-Bold`],
+          families: [`Canela Thin`, `Canela Bold`, `Plus Jakarta Display Regular`, `Plus Jakarta Display Bold`],
           urls: [`/fonts/fonts.css`]
         }
       }
@@ -96,7 +96,7 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-smoothscroll`,
+    // `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-preact`,

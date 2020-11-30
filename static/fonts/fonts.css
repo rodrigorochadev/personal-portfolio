@@ -1,21 +1,41 @@
 @font-face {
-  font-family: "Canela-Light";
-    src: url("Canela/regular/19560807c484bbbfcd37de7a0011a829.eot"); /* IE9*/
-    src: url("Canela/regular/19560807c484bbbfcd37de7a0011a829.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-         url("Canela/regular/19560807c484bbbfcd37de7a0011a829.woff2") format("woff2"), /* chrome、firefox */
-         url("Canela/regular/19560807c484bbbfcd37de7a0011a829.woff") format("woff"), /* chrome、firefox */
-         url("Canela/regular/19560807c484bbbfcd37de7a0011a829.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-         url("Canela/regular/19560807c484bbbfcd37de7a0011a829.svg#Canela-Light") format("svg"); /* iOS 4.1- */
-  }
+  font-family: "Canela Bold";
+  font-display: swap;
+    src: url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.eot"); /* IE9*/
+    src: url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+          url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.woff2") format("woff2"), /* chrome、firefox */
+          url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.woff") format("woff"), /* chrome、firefox */
+          url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+          url("Canela/bold/3def92f7b2ad644bd382798ecc8ca4c7.svg#Canela-Bold") format("svg"); /* iOS 4.1- */
+}
 
+@font-face {
+  font-family: "Canela Thin";
+  font-display: swap;
+    src: url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.eot"); 
+    src: url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.eot?#iefix") format("embedded-opentype"), 
+          url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.woff2") format("woff2"), 
+          url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.woff") format("woff"), 
+          url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.ttf") format("truetype"), 
+          url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.svg#Canela") format("svg"); 
+} 
 
+@font-face {
+  font-family: "Plus Jakarta Display Regular";
+  font-display: swap;
+  src: url("Jakarta/regular/PlusJakartaDisplay-Regular.ttf") format("truetype"), 
+       url("Jakarta/regular/PlusJakartaDisplay-Regular.ttf") format("embedded-opentype");
+} 
 
-  @font-face {
-    font-family: "Canela-Thin";
-      src: url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.eot"); 
-      src: url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.eot?#iefix") format("embedded-opentype"), 
-           url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.woff2") format("woff2"), 
-           url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.woff") format("woff"), 
-           url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.ttf") format("truetype"), 
-           url("Canela/thin/b1edfa746f416280b3502ba39df2c3ae.svg#Canela") format("svg"); 
-  } 
+@font-face {
+  font-family: "Plus Jakarta Display Bold";
+  font-display: swap;
+  src: url("Jakarta/bold/PlusJakartaDisplay-Bold.ttf") format("truetype"), 
+       url("Jakarta/bold/PlusJakartaDisplay-Bold.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: "Metropolis Bold";
+  font-display: swap;
+  src: url("Metropolis/bold/Metropolis-Bold.otf") format("opentype");
+} 

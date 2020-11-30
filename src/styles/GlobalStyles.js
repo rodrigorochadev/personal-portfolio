@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: ${SITE_CONFIG.fontFamilies.regular}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    font-family: ${SITE_CONFIG.fontFamilies.text.regular}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
                  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     @media ${SITE_CONFIG.media.small} {
@@ -33,14 +33,12 @@ const GlobalStyles = createGlobalStyle`
 
   html, body {
       overflow-x: hidden;
+      background: var(--color-background);
+      color: var(--color-text);
   }
 
   body {
     
-    
-
-    background: var(--color-background);
-    color: var(--color-text);
     font-size: ${SITE_CONFIG.fontSizes.base};
 
     @media ${SITE_CONFIG.media.small} {
@@ -70,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
   a {
       color: var(--color-accent);
       transition: ${SITE_CONFIG.transitions.default};
+      text-decoration: none;
       
       &:hover {
           color: var(--color-text);

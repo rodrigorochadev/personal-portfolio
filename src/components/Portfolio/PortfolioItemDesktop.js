@@ -22,6 +22,7 @@ export default (props) => {
             <PortfolioContainerDesktop
                 last={props.last}
                 first={props.first}
+                
             >
                 <FloatingImage
                     initial={{opacity: 0}}
@@ -48,8 +49,10 @@ export default (props) => {
                             <h2>{props.name}</h2>
                         </a>
                     </PortfolioTitle>
-                    <p style={{textAlign: "center", marginTop: '30px'}}>{props.tech}</p>
+                    <p style={{padding: '0 10vw', textAlign: "center", marginTop: '30px'}}>{props.tech}</p>
                 </div>
+
+                
             </PortfolioContainerDesktop>
         </PortfolioMargin>
     )

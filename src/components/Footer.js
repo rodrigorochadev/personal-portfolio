@@ -3,6 +3,9 @@ import React from 'react'
 import { Container } from '../styles/componentsStyles'
 import { FooterCopyright, FooterSocial, FooterContent, FooterSVG, SocialIcon } from '../styles/components/footerStyles'
 import { Instagram, Dribbble, Behance, Linkedin, Github } from '../assets/svg/svg'
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
+import { SITE_CONFIG } from '../constants'
 
 
 export default ({onCursor}) => {
@@ -18,6 +21,18 @@ export default ({onCursor}) => {
     return(
         
         <Container>
+            <div style={{marginTop: '75px'}}>
+                <h2>Let's build something together!</h2>
+                <FooterTalkDescription>
+                    <p>Send me an e-mail at
+                        &nbsp;<motion.a 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com</motion.a>
+                        , or find me at my social medias below.
+                    </p>
+                </FooterTalkDescription>
+            </div>
             <FooterSVG>
                 <FooterContent>
                     <FooterSocial>
@@ -32,10 +47,11 @@ export default ({onCursor}) => {
                             )
                         })}
                     </FooterSocial>
-                    
-                    <FooterCopyright>
-                        Rodrigo Rocha © {new Date().getFullYear()}.
-                    </FooterCopyright>
+                    <FooterName>
+                        <p>40° 09' 3.06" -8° 51' 42.44"</p>
+                        <div style={{marginBottom: '10px'}}></div>
+                        <p><b>Rodrigo Rocha © {new Date().getFullYear()}.</b></p>
+                    </FooterName>
                 </FooterContent>
             </FooterSVG>
         </Container>
@@ -43,3 +59,27 @@ export default ({onCursor}) => {
     )
 
 }
+
+export const FooterName = styled.div`
+    text-align: center;
+
+    @media ${SITE_CONFIG.media.small} {
+        text-align: right;
+    }
+`
+
+export const FooterTalkTitle = styled.div`
+    
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 3em;
+    }
+`
+
+export const FooterTalkDescription = styled.div`
+    
+    margin-top: 10px;
+
+    @media ${SITE_CONFIG.media.medium} {
+        width: 50%;
+    }
+`

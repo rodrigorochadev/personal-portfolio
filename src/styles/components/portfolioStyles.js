@@ -16,25 +16,16 @@ export const PortfolioContainerDesktop = styled(motion.div)`
     min-height: 30vh;
     padding: 80px 0;
     transition: ${SITE_CONFIG.transitions.defautls};
-    border-top: 1px solid var(--color-text);
+    border-top: 1px solid var(--color-opacityText);
     
 
     ${props => props.last && css`
-        border-bottom: 1px solid var(--color-text);
+        border-bottom: 1px solid var(--color-opacityText);
     `}
 
     ${props => props.first && css`
-        border-top: 1px solid var(--color-text);
+        border-top: 1px solid var(--color-opacityText);
     `}
-
-    h2 {
-        &:hover {
-            transition: all 0.3s ease;
-            -webkit-text-stroke: 1px;
-            -webkit-text-stroke-color: var(--color-text);
-            -webkit-text-fill-color: transparent;   
-        }
-    }
 `
 
 export const PortfolioMargin = styled.div`
@@ -68,11 +59,24 @@ export const PortfolioContainer = styled(motion.div)`
 
 export const PortfolioTitle = styled(motion.div)`
     
-    z-index: 20;
+    z-index: 20;    
     
     a {
+        color: var(--color-background);
+        text-shadow:
+            -1px -1px 0 var(--color-text),  
+            1px -1px 0 var(--color-text),
+            -1px  1px 0 var(--color-text),
+            1px  1px 0 var(--color-text);
+                 
+        transition: all 0.3s ease;
         text-decoration: none;
-        color: var(--color-text);
+        
+        &:hover {
+            text-shadow: none;
+            color: var(--color-text);
+            
+        }
     }
 
     @media ${SITE_CONFIG.media.small} {
@@ -92,8 +96,8 @@ export const PortfolioTitle = styled(motion.div)`
     }
 
     h2 {
-        font-family: ${SITE_CONFIG.fontFamilies.titles} !important;
-        
+        /* font-family: ${SITE_CONFIG.fontFamilies.titles.thin} !important;     */
+        font-family: 'Metropolis Bold', sans-serif;
         
     }
 `

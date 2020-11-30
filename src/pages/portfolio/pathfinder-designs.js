@@ -1,15 +1,19 @@
-// import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { useContext } from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
-import { PathfinderLogo } from '../../assets/svg/svg'
-import { Container, UnstyledButton } from '../../styles/componentsStyles'
+import { Container } from '../../styles/componentsStyles'
 import { motion } from 'framer-motion'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
-import { ColorDiv, ColorFlex, DesignChoicesFont, DesignChoicesText, DesignFlex, InfoFlex, InfoText, InfoTitle, MoreDetails, PageBannerContainer, PageBannerText } from '../../styles/pagesStyles'
+import { CustomImg, InfoFlex, InfoText, LastMockupFlex, MockupImg, PageBannerContainer, PageBannerText, PageFlex, PageImage, ProjectSubTitle, TypeImg } from '../../styles/pagesStyles'
 import { ThemeContext } from '../../components/ThemeContext'
 import styled from 'styled-components'
 import { SITE_CONFIG } from '../../constants'
+import Img from 'gatsby-image'
+
+import NavigateProjects from '../../components/Design/NavigateProjects'
+import Scroll from '../../components/Design/Scroll'
+import ProjectInfo from '../../components/Design/ProjectInfo'
 
 const WinegridPage = () => {
 
@@ -21,66 +25,147 @@ const WinegridPage = () => {
       dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
     }
 
-    // const data = useStaticQuery(graphql`
-    //     query {
-    //         winegrid: file(relativePath: {eq: "winegrid/winegrid.png"}) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 600, quality: 70) {
-    //                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
-    //                 }
-    //             }
-    //         }
-    //         notes: file(relativePath: {eq: "winegrid/winegrid-notes.png"}) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 600, quality: 70) {
-    //                     ...GatsbyImageSharpFluid_tracedSVG
-    //                 }
-    //             }
-    //         }
-    //         processes: file(relativePath: {eq: "winegrid/winegrid-processes.png"}) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 600, quality: 70) {
-    //                     ...GatsbyImageSharpFluid_tracedSVG
-    //                 }
-    //             }
-    //         }
-    //         scan: file(relativePath: {eq: "winegrid/winegrid-scan.png"}) {
-    //             childImageSharp {
-    //                 fluid(maxWidth: 600, quality: 70) {
-    //                     ...GatsbyImageSharpFluid_tracedSVG
-    //                 }
-    //             }
-    //         }
+    const data = useStaticQuery(graphql`
+        query {
+            logo: file(relativePath: {eq: "pathfinder-designs/logo.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 1080, quality: 70) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                }
+            }
+            logoBadge: file(relativePath: {eq: "pathfinder-designs/pfd-badge.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 300, quality: 70) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                }
+            }
+            colorsTypoLight: file(relativePath: {eq: "pathfinder-designs/pathfinder-colors-typo-light.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 600, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            colorsTypoDark: file(relativePath: {eq: "pathfinder-designs/pathfinder-colors-typo-dark.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 600, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            perfDesktop: file(relativePath: {eq: "pathfinder-designs/pfd-performance-desktop.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                }
+            }
+            perfMobile: file(relativePath: {eq: "pathfinder-designs/pfd-performance-mobile.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            gtmetrixSpeed: file(relativePath: {eq: "pathfinder-designs/gtmetrix-pfd-pagespeed.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            gtmetrixDetails: file(relativePath: {eq: "pathfinder-designs/gtmetrix-pfd-pagedetails.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            pfdShowcase: file(relativePath: {eq: "pathfinder-designs/pfd-showcase.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 1080, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            mockup01: file(relativePath: {eq: "pathfinder-designs/mockup01.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            mockup02: file(relativePath: {eq: "pathfinder-designs/mockup02.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            mockup03: file(relativePath: {eq: "pathfinder-designs/mockup03.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            mockup04: file(relativePath: {eq: "pathfinder-designs/mockup04.jpg"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+            mockup05: file(relativePath: {eq: "pathfinder-designs/mockup05.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 70) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                }
+            }
+        }
+    `);
 
-    //     }
-    // `);
-
-    const { colorMode, setColorMode } = useContext(ThemeContext);
+    const { colorMode } = useContext(ThemeContext);
  
-
     return(
         <Layout>
             <SEO  title="Pathfinder Designs" />
+            <Scroll bottom="30%" right="30%"/>
             <Container>
                 <PageBannerContainer>
                     <PageBannerText>Pathfinder</PageBannerText>
-                    <PageBannerText>Designs</PageBannerText>
-                    <p>Branding</p>
+                    <PageBannerText outline>Designs</PageBannerText>
+                
+                    <div style={{position: "absolute", bottom: '100px', left: 0}}>
+                        <p>Complete branding of my personal project.</p>
+                    </div>
                 </PageBannerContainer>
 
-                <DesignChoicesText>About the project</DesignChoicesText>
+                
+                
+                <ProjectInfoTableFlex>
+                    <ProjectInfoTable>
+                        <ProjectInfo type="Project" description="Branding" />
+                        <ProjectInfo type="Role" description="Developer/Designer" />
+                        <ProjectInfo type="Year" description="2020" />
+                        <ProjectInfo type="Website" link="https://www.pathfinderdesigns.pt" />
+                    </ProjectInfoTable>
+                </ProjectInfoTableFlex>
+
+                <ProjectSubTitle>About the project</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
                         <p>A personal project of mine. Create a brand from scratch, since the logo design, visual identity, website and social media. This project is not intended to be used in real life. The main purpose of this project was to test my design capabilities and decision making.</p>
                     </InfoText>
                 </InfoFlex>
 
-                <SectionTitle>Step One: The Brand</SectionTitle>
-
-                <DesignChoicesText>Designing the Logo</DesignChoicesText>
+                <ProjectSubTitle>Designing the Logo</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>I designed the logo according to Sagi Haviv, three main rules of logo design.</p>
+                        <p>I designed the logo according to Sagi Haviv's three main rules of logo design.</p>
                         <p>01) Appropriate</p>
                         <p>02) Distinctive</p>
                         <p>03) Simple</p>
@@ -88,110 +173,141 @@ const WinegridPage = () => {
                         <p>I wanted the logo to be black and white, so it would fit everywhere without contrast problems. You can see why this is important in this website by switching between dark and light mode.</p>
                         <p> Additionaly, the logo should remain legible at every scale. A very small one, like the favicon of a website, or a very big one, like a billboard.</p>
                         <br />
-                        <p>After many sketches and redraws, I've came up with the final product: </p>
+                        <p>After many sketches and redraws, I've came up with the final logo: </p>
+                    </InfoText>
+                </InfoFlex>
+                
+                <LastMockupFlex>
+                    <CustomImg maxWidth="1080px" fluid={data.logo.childImageSharp.fluid} alt="Winegrid Preview" style={{marginBottom: '50px'}}/>
+                </LastMockupFlex>
+                
+                <InfoFlex>
+                    <InfoText>
+                        <p>I also designed the logo on a badge. For a more casual setting, like social media profiles pictures.</p>
                     </InfoText>
                 </InfoFlex>
 
+                <LastMockupFlex>
+                    <MockupImg fluid={data.logoBadge.childImageSharp.fluid} alt="Winegrid Preview" style={{marginBottom: '50px', maxWidth: '300px'}}/>
+                </LastMockupFlex>
                 
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', columnGap: '30px'}}>
-                    {colorMode === 'light' ? 
-                        <PathfinderLogoContainer>
-                            <PathfinderLogo />
-                        </PathfinderLogoContainer>
-                         :
-                         <PathfinderLogoContainer white>
-                            <PathfinderLogo />
-                        </PathfinderLogoContainer>
+                <ProjectSubTitle>Typography & Colors</ProjectSubTitle>
+                <LastMockupFlex justifyLeft>
+                    {colorMode === 'light' ?
+                        <TypeImg fluid={data.colorsTypoLight.childImageSharp.fluid} alt="Colors and Typography" style={{marginBottom: '50px'}} />
+                        :
+                        <TypeImg fluid={data.colorsTypoDark.childImageSharp.fluid} alt="Colors and Typography" style={{marginBottom: '50px'}} />
                     }
-                    <UnstyledButton
-                        onMouseEnter={() => onCursor('hovered')}
-                        onMouseLeave={onCursor}
-                        aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-                        <SwitchTheme>Switch Website Theme</SwitchTheme>
-                    </UnstyledButton>
-                </div>
-
-                <DesignFlex>
-                    <div>
-                        <DesignChoicesText margin>Typography</DesignChoicesText>
-                        <DesignChoicesFont >Poppins Typeface</DesignChoicesFont>
-                        <p style={{marginTop: '10px'}}>Regular - ABCD abcd 1234</p>
-                        <p style={{fontWeight: '700', marginTop: '10px'}}>Bold - ABCD abcd 1234</p>
-                    </div>
-                    <div>
-                        <DesignChoicesText margin>Colors</DesignChoicesText>
-                        <ColorFlex>
-                            <ColorDiv style={{backgroundColor: '#ffc95e'}} />
-                            <ColorDiv style={{backgroundColor: '#121212'}} />
-                            <ColorDiv style={{backgroundColor: '#ffffff'}} />
-                        </ColorFlex>
-                    </div>
-                    <div></div>
-                </DesignFlex>
-
-                <DesignChoicesText>Logo Applications</DesignChoicesText>
+                </LastMockupFlex>
+                
+                <div style={{marginTop: '100px'}}></div>
+                <ProjectSubTitle>Logo Applications</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
                         <p>Now we can take a look at some applications, using the logo. Since the logo is very simple, applying the logo to various types of products is easy and natural.</p>
                     </InfoText>
                 </InfoFlex>
-                
-                <SectionTitle>Step Two: Website</SectionTitle>
 
-                <DesignChoicesText>Designing the website</DesignChoicesText>
+                <LastMockupFlex>
+                    <CustomImg maxWidth="500px" fluid={data.mockup01.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    <CustomImg maxWidth="500px" fluid={data.mockup02.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    <CustomImg maxWidth="500px" fluid={data.mockup03.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    <CustomImg maxWidth="500px" fluid={data.mockup04.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    <CustomImg maxWidth="500px" fluid={data.mockup05.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                </LastMockupFlex>
+                {/* <div style={{display: 'flex', marginBottom: '100px'}}>
+                    <PageBannerText>Website&nbsp;</PageBannerText>
+                    <PageBannerText outline>.</PageBannerText>
+                    <PageBannerText>.</PageBannerText>
+                </div> */}
+
+                <ProjectSubTitle>Designing and development of the website</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
                         <p>For the design of the website, I did what I do almost every time I develop a website, which is create a first draft in a piece of paper. The content of the website, the images, and so on. Next, I replicated what I did in the paper, into a design software. I use Figma, because it's free and easy to use.</p>
-                        <p>The website must be responsive, so it can be easily accesed by everyone, everywhere. With that in mind I design and develop with a Mobile First approach.</p>
-                    </InfoText>
-                </InfoFlex>
-                
-                <p><b>**** INSERT PRINTSCREENS HERE ****</b></p>
-
-                <DesignChoicesText>Developing the website</DesignChoicesText>
-                <InfoFlex>
-                    <InfoText>
-                        <p>I usually use React to develop anything web related. Since this is a simple website without much logic and databases between, I chose Gatsby. Gatsby is a static website generator, focused on performance.</p>
+                        <p>The development of the website was done in Gatsby.</p>
                         
                     </InfoText>
                 </InfoFlex>
 
-                <DesignChoicesText>Performance</DesignChoicesText>
+                <LastMockupFlex>
+                    <CustomImg maxWidth="1080px" fluid={data.pfdShowcase.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                </LastMockupFlex>
+
+                <ProjectSubTitle>Website quality</ProjectSubTitle>
                 <InfoFlex>
                     <InfoText>
-                        <p>I tested the website performance using Google Lighthouse and GTMetrix.</p>
-                        
+                        <p>My main focus while developing the website was implementing all the UI/UX best practices, taking into consideration, performance, accessibility, SEO. To give it a "numeric value", I used <b>GTMetrix</b> and <b>Google Lighthouse</b>.</p>
                     </InfoText>
                 </InfoFlex>
 
-                <SectionTitle>Step Three: Social Media</SectionTitle>
-
-                <DesignChoicesText>Logo Variation</DesignChoicesText>
                 <InfoFlex>
                     <InfoText>
-                        <p>For a more captivating look, i've drawn a logo variation, with more complexity in order to fit the circle Facebook/Instagram avatar. I've incorporated the tagline <b>FIND YOUR PATH</b>, as a way of calling attention to the page.</p>
+                        {/* <p>I tested the website performance using Google Lighthouse and GTMetrix.</p> */}
+                        <h2>GTMetrix</h2>
+                        <p>The following images represent the results in GTMetrix. Those beeing, <b>Performance Scores</b> and <b>Page Details</b>, respectively. </p>
+                    </InfoText>
+                </InfoFlex>
+                
+
+                <PageFlex>
+                    <PageImage>
+                        <Img fluid={data.gtmetrixSpeed.childImageSharp.fluid} alt="GTMetrix Page Speed"/>
+                    </PageImage>
+                    <PageImage>
+                        <Img fluid={data.gtmetrixDetails.childImageSharp.fluid} alt="GTMetrix Page Details"/>
+                    </PageImage>
+                </PageFlex>
+                <p>Check GTMetrix report&nbsp;<motion.a 
+                    onMouseEnter={() => onCursor('hovered')}
+                    onMouseLeave={onCursor}
+                    href="https://gtmetrix.com/reports/pathfinderdesigns.pt/oQylhy5o">here</motion.a>.
+                </p>
+                <div style={{marginBottom: '50px'}}></div>
+                <InfoFlex>
+                    <InfoText>       
+                        <h2>Google Lighthouse</h2>
+                        <p>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</p>
                     </InfoText>
                 </InfoFlex>
 
-                <DesignChoicesText>First Post</DesignChoicesText>
-                <DesignChoicesText>Continuation</DesignChoicesText>
+                <PageFlex>
+                    <PageImage>
+                        <Img fluid={data.perfDesktop.childImageSharp.fluid} alt="Performance on Desktop: 100"/>
+                    </PageImage>
+                    <PageImage>
+                        <Img fluid={data.perfMobile.childImageSharp.fluid} alt="Performance on Mobile: 99"/>
+                    </PageImage>
+                </PageFlex>
+
+                <p>Check Google Lighthouse report&nbsp;<motion.a 
+                    onMouseEnter={() => onCursor('hovered')}
+                    onMouseLeave={onCursor}
+                    href="https://developers.google.com/speed/pagespeed/insights/?url=https://pathfinderdesigns.pt">here</motion.a>.
+                </p>
+                <div style={{marginBottom: '50px'}}></div>
                 
-
-
-                <MoreDetails>
-                    <InfoTitle style={{textAlign: 'center'}}>More details?</InfoTitle>
-                    <p style={{textAlign: 'center'}}>Visit the website
-                        &nbsp;<motion.a 
-                            onMouseEnter={() => onCursor('hovered')}
-                            onMouseLeave={onCursor}
-                            href="https://pathfinderdesigns.pt">here</motion.a> or view the
-                        &nbsp;<motion.a 
-                            onMouseEnter={() => onCursor('hovered')}
-                            onMouseLeave={onCursor}
-                            href="https://winegrid.com">Behance project</motion.a> to see additional applications of the brand.</p>
-
-                </MoreDetails>
                 
+                <ProjectSubTitle>Extra Details</ProjectSubTitle>
+                <InfoFlex>
+                    <InfoText>
+                        <p>Visit the website
+                            &nbsp;<motion.a 
+                                onMouseEnter={() => onCursor('hovered')}
+                                onMouseLeave={onCursor}
+                                href="https://pathfinderdesigns.pt">here</motion.a> or view the
+                            &nbsp;<motion.a 
+                                onMouseEnter={() => onCursor('hovered')}
+                                onMouseLeave={onCursor}
+                                href="https://winegrid.com">Behance project</motion.a> to see additional applications of the brand.</p>
+                    </InfoText>
+                </InfoFlex>
+                <NavigateProjects 
+                    previous="Winegrid Mobile App"
+                    previousLink="/portfolio/winegrid"
+                    next="School Manager"
+                    nextLink="/portfolio/school-manager"
+                />
 
             </Container>
         </Layout>
@@ -211,7 +327,7 @@ export const PathfinderLogoContainer = styled.div`
 `
 
 export const SectionTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
     font-size: 3em;
     margin-bottom: 50px;
 
@@ -220,11 +336,17 @@ export const SectionTitle = styled.div`
         margin-bottom: 100px;
     }
 `
-export const SwitchTheme = styled.p`
-    color: var(--color-accent);
-    transition: ${SITE_CONFIG.transitions.default};
+export const ProjectInfoTableFlex = styled.div`
+    margin: 100px 0; 
+    display: flex;
+    justify-content: right;
+    align-items: center;
+`
 
-    &:hover {
-        color: var(--color-text);
+export const ProjectInfoTable = styled.div`
+    width: 100%;
+
+    @media ${SITE_CONFIG.media.small} {
+        width: 700px;
     }
 `

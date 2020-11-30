@@ -52,7 +52,7 @@ export default () => {
 
     const aboutContent = [
         {id: 0, direction: 1, translate: [0.17, 0.05], text: `Hi, everyone! My name is Rodrigo Rocha. I was born in Figueira da Foz, Portugal, October 4th, 1994 where I lived and studied   until I went to college.`, image: data.figueira.childImageSharp.fluid, imgAtl: `Figueira da Foz`},
-        {id: 1, direction: -1, translate: [0.13, 0.05], text: `I attended University of Aveiro where I've graduated with an BSc in Computer and Telematics Engineering. Following that, I had my first professional experience working as a software developer for Altice Labs.`, image: data.aveiro.childImageSharp.fluid, imgAtl: `Aveiro`},
+        {id: 1, direction: -1, translate: [0.13, 0.05], text: `I attended University of Aveiro where I've graduated with a BSc in Computer and Telematics Engineering. Following that, I had my first professional experience working as a software developer for Altice Labs.`, image: data.aveiro.childImageSharp.fluid, imgAtl: `Aveiro`},
         {id: 2, direction: 1, translate: [0.2, 0.05], text: `I have a passion to design and develop software, as well as good looking websites and mobile applications. I'm eager to improve and learn something new every day.`, image: data.picture.childImageSharp.fluid, imgAtl: `My Picture`},
     ]
 

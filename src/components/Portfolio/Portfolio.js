@@ -5,8 +5,9 @@ import PortfolioItemDesktop from './PortfolioItemDesktop';
 import PortfolioItemMobile from './PortfolioItemMobile';
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { InfoContainer, PaddingContainer, SmallTitle } from '../../styles/componentsStyles';
+import { InfoContainer, PaddingContainer, NewSVGContainer, NewSVG } from '../../styles/componentsStyles';
 import { PortfolioContainer } from '../../styles/components/portfolioStyles'
+import { AboutMeSVG, PortfolioSVG } from '../../assets/svg/svg';
 
 
 export default () => {
@@ -42,14 +43,15 @@ export default () => {
 
     return(
         <PaddingContainer horizontal="10vw" vertical="100px">
-            <InfoContainer marginBottom>
-                <SmallTitle>My Work</SmallTitle>
-                <p>Bellow you can see a small section of my work. I've tried to select academic and professional projects, as well as some prototypes and case studies. I always try to deliver the best project I can and I hope you enjoy what I bring to you!</p>
+            <InfoContainer style={{marginBottom: '60px'}}>
+                {/* <SmallTitle>My Work</SmallTitle> */}
+                <h2 style={{marginBottom: '10px'}}>A little of my work.</h2>
+                <p style={{color: 'var(--color-lightText)'}}>Bellow you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it, to open the full details.</p>
             </InfoContainer>
 
-            <PortfolioContainer>
+            
                 {width < 768 && (
-                    <>
+                    <PortfolioContainer>
                         {data.allMarkdownRemark.edges.map(
                             (project, id) => {
                                 return(        
@@ -67,11 +69,26 @@ export default () => {
                                 )
                             }
                         )}
-                    </>            
+                    </PortfolioContainer>            
                 )}
                 
                 {width >= 768 && (
                     <>
+                    <div style={{position: "relative"}}>
+                        <div style={{position: 'absolute', right: 0, top: '-50%'}}>
+                        <NewSVGContainer
+                            animate={{
+                                rotate: 360,
+                                transition: { duration: 5, ease: 'linear', repeat: 'Infinity' },
+                            }} 
+                        >
+                            <NewSVG>
+                                <PortfolioSVG />
+                            </NewSVG>
+                        </NewSVGContainer>
+                        </div>
+                    </div>
+                    <PortfolioContainer>
                         {data.allMarkdownRemark.edges.map(
                             (project, id) => {
                                 return(        
@@ -82,17 +99,17 @@ export default () => {
                                         id={project.node.frontmatter.id}
                                         kind={project.node.frontmatter.kind}
                                         name={project.node.frontmatter.name} 
-                                        description={project.node.frontmatter.description} 
+                                        tech={project.node.frontmatter.description} 
                                         image={project.node.frontmatter.image.childImageSharp.fluid}
                                         url={project.node.frontmatter.url}
-                                        tech={project.node.frontmatter.tech}
+                                        // tech={project.node.frontmatter.tech}
                                     />
                                 )
                             }
                         )}
+                    </PortfolioContainer>
                     </>
                 )}
-            </PortfolioContainer>
         </PaddingContainer>
     )
 }

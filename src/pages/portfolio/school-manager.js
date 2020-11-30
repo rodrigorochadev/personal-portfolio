@@ -10,6 +10,7 @@ import Img from 'gatsby-image'
 import firebaseLogo from '../../assets/svg/firebase.svg'
 import { SITE_CONFIG } from '../../constants'
 import styled from 'styled-components'
+import NavigateProjects from '../../components/Design/NavigateProjects'
 
 const SchoolManagerPage = () => {
 
@@ -61,7 +62,7 @@ const SchoolManagerPage = () => {
             <Container>
                 <PageBannerContainer>
                     <PageBannerText>School</PageBannerText>
-                    <PageBannerText>Manager</PageBannerText>
+                    <PageBannerText outline>Manager</PageBannerText>
                     <p>Mobile Application</p>
                 </PageBannerContainer>
 
@@ -151,6 +152,10 @@ const SchoolManagerPage = () => {
                     <SMMockupImg fluid={data.timeline.childImageSharp.fluid} alt="Timeline" />
                 </LastMockupFlex>
 
+                <NavigateProjects
+                    previous="Pathfinder Desgins"
+                    previousLink="/portfolio/pathfinder-designs"
+                />
             </Container>
         </Layout>
     )

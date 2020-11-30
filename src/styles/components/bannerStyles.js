@@ -8,31 +8,35 @@ export const NewBannerContainer = styled.div`
     min-height: 99vh;
     justify-content: flex-end;
     margin-left: -15px; 
-    
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
 
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
         min-height: 100vh;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         text-align: center;
+        padding: 0 10vw;
     }
 
 `
 
 export const NewBannerText = styled.h1`
-
     
-    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-shadow: none;
     color: var(--color-text);
+
+    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
 
     ${props => props.outline && css`
         transition: all 0.1s ease-out;
-        -webkit-transition: all 0.1s ease-out;
-        -webkit-text-stroke: 2px;
-        -webkit-text-stroke-color: var(--color-text); 
-        -webkit-text-fill-color: transparent;
+        color: var(--color-background);
+        text-shadow:
+            -1px -1px 0 var(--color-text),  
+            1px -1px 0 var(--color-text),
+            -1px  1px 0 var(--color-text),
+            1px  1px 0 var(--color-text);
     `}
 
     line-height: 6.5rem;
@@ -44,24 +48,30 @@ export const NewBannerText = styled.h1`
     }
 
     @media ${SITE_CONFIG.media.small} {
-        line-height: 5rem;
-        font-size: 5rem;
+        line-height: 4rem;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
     }
 
     @media ${SITE_CONFIG.media.medium} {
         line-height: 5rem;
-        font-size: 5rem;
+        font-size: 4rem;
+        letter-spacing: 0.3rem;
     }
 
 
     @media ${SITE_CONFIG.media.large} {
         line-height: 6rem;
-        font-size: 6rem;
-        
+        font-size: 5rem;
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
         line-height: 7rem;
+        font-size: 6rem;
+    }
+
+    @media ${SITE_CONFIG.media.xxlarge} {
+        line-height: 8rem;
         font-size: 7rem;
     }
 

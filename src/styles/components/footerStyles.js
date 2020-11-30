@@ -43,6 +43,11 @@ export const FooterContent = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 72px 0; 
+    row-gap: 30px;
+
+    @media ${SITE_CONFIG.media.small} {
+        flex-direction: row;
+    }
 
 `
 

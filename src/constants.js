@@ -1,16 +1,24 @@
 export const COLORS = {
   text: {
-    light: 'hsl(0deg, 0%, 10%)',
-    dark: 'hsl(0deg, 0%, 100%)',
+    light: '#000',
+    dark: '#fff',
+  },
+  lightText: {
+    light: '#666666',
+    dark: '#b7b7b7',
   },
   background: {
-    light: 'hsl(0deg, 0%, 100%)',
+    light: '#ffffff',
     dark: 'rgb(6, 17, 28)' 
   },
   accent: {
     light: '#178555',
     dark: '#f03c7b',
   },
+  opacityText: {
+    light: 'rgba(0, 0, 0, 0.3)',
+    dark: 'rgba(255, 255, 255, 0.3)',
+  }
 };
 
 export const COLOR_MODE_KEY = 'color-mode';
@@ -24,8 +32,15 @@ export const SITE_CONFIG = {
   },
 
   fontFamilies: {
-    regular: "'Poppins', sans-serif",
-    titles: '"Canela-Thin", serif',
+    poppins: "'Poppins', sans-serif",
+    titles: {
+      thin: "'Canela Thin', serif",
+      bold: "'Canela Bold', serif"
+    },
+    text: {
+      regular: "'Plus Jakarta Display Regular', sans-serif",
+      bold: "'Plus Jakarta Display Bold', sans-serif",
+    }
   },
 
   fontSizes: {

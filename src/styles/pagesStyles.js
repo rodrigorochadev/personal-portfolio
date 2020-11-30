@@ -5,16 +5,16 @@ import Img from 'gatsby-image'
 
 export const PageBannerContainer = styled(motion.div)`
        
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
     position: relative;
     display: flex;
     flex-direction: column;
     row-gap: 25px;
     min-height: 100vh;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 `
 
@@ -22,23 +22,30 @@ export const PageBannerContainer = styled(motion.div)`
 export const PageBannerText = styled(motion.h1)`
 
     
-    text-transform: uppercase;
-    color: var(--color-text);  
-
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-shadow: none;
+    color: var(--color-text);
+    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
+    
     ${props => props.outline && css`
         transition: all 0.1s ease-out;
-        -webkit-transition: all 0.1s ease-out;
-        -webkit-text-stroke: 2px;
-        -webkit-text-stroke-color: var(--color-text); 
-        -webkit-text-fill-color: transparent;
+        color: var(--color-background);
+        text-shadow:
+            -1px -1px 0 var(--color-text),  
+            1px -1px 0 var(--color-text),
+            -1px  1px 0 var(--color-text),
+            1px  1px 0 var(--color-text);
     `}
 
-    line-height: 1.2rem;
-    font-size: 1.5rem;
+    /* line-height: 1.2rem;
+    font-size: 2.2rem; */
+    font-size: 15vw;
+    line-height: 11vw;
 
-    @media screen and (min-width: 320px) {
-        line-height: 1.6rem;
-        font-size: 1.9rem;
+    @media screen and (min-width: 480px) {
+        line-height: 3rem;
+        font-size: 4rem;
     }
 
     @media ${SITE_CONFIG.media.small} {
@@ -60,7 +67,6 @@ export const PageBannerText = styled(motion.h1)`
 
     @media ${SITE_CONFIG.media.xlarge} {
         line-height: 7rem;
-        text-transform: uppercase;
         font-size: 7rem;
     }
 
@@ -94,25 +100,22 @@ export const InfoText = styled.div`
     z-index: 2;
     width: 100%;
 
+    p {
+        line-height: 2.2rem;
+    }
+
     @media ${SITE_CONFIG.media.small} {
         width: 80%;
     }
 
-    /* @media ${SITE_CONFIG.media.medium} {
-        width: 80%;
-    } */
-
     @media ${SITE_CONFIG.media.large} {
-        /* width: 70%; */
-
-        p {
-            line-height: 2.2rem;
-        }
+        width: 70%;
     }
 
-    /* @media ${SITE_CONFIG.media.xlarge} {
-        width: 80%;
-    } */
+    @media ${SITE_CONFIG.media.xlarge} {
+        width: 60%;
+    }
+
 `
 
 export const InfoProject = styled.div`
@@ -142,7 +145,7 @@ export const InfoFlex = styled.div`
 `
 
 export const InfoTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
+    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
     font-size: 3em;
 
     @media ${SITE_CONFIG.media.small} {
@@ -163,10 +166,11 @@ export const ColorDiv = styled.div`
 `
 
 export const DesignChoicesText = styled.div`
+    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 
     ${props => props.margin && css`
         margin-bottom: 30px;
@@ -176,32 +180,95 @@ export const DesignChoicesText = styled.div`
 export const DesignChoicesFont = styled.div`
     font-size: 2rem;
 `
-export const LastMockupFlex = styled.div`
+export const PageFlex = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 100px 0;
-    row-gap: 80px;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-bottom: 50px;
+    margin-top: -50px;
+    
 
-    @media screen and (min-width: 1200px) {
+    @media ${SITE_CONFIG.media.medium} {
         flex-direction: row;
-        column-gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+        
     }
 `
 
+export const PageImage = styled.div`
+    width: 100%;
+    max-width: 500px;
 
-export const MockupImg = styled(Img)`
+    @media ${SITE_CONFIG.media.small} {
+        width: 500px;
+    }
+`
 
+export const LastMockupFlex = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 100px 0;
+    row-gap: 80px;
+    column-gap: 30px;
+
+    flex-wrap: wrap;
+
+    ${props => props.justifyLeft && css`
+        justify-content: left;
+    `}
+    /* @media screen and (min-width: 1200px) {
+        flex-direction: row;
+
+        
+    } */
+`
+
+export const CustomImg = styled(Img)`
+    
     width: 100%;
 
     @media ${SITE_CONFIG.media.small} {
-        width: 600px;
-    }
+        width: ${props => props.maxWidth};
+    } 
+`
+
+export const MockupImg = styled(Img)`
+
+    min-width: 200px;
+
+    @media ${SITE_CONFIG.media.small} {
+        width: 300px;
+
+        ${props => props.shaddow && css`        
+            filter: drop-shadow(2px 2px 2px #222);
+        `}
+        /* filter: drop-shadow(0px 0px 38px -17px red); */
+    } 
+`
+
+export const TypeImg = styled(Img)`
+
     
+    width: 100%;
+
+    @media ${SITE_CONFIG.media.small} {
+        min-width: 250px;
+        width: 600px;
+    } 
 `
 
 export const TechnologiesFlex = styled.div`
     display: flex;
     column-gap: 30px;
+`
+
+
+//
+export const ProjectSubTitle = styled.h2`
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 `

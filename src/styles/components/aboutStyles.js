@@ -22,10 +22,10 @@ export const AboutTextContainer = styled.div`
 `
 
 export const AboutText = styled.h2`
-    font-family: ${SITE_CONFIG.fontFamilies.titles};
-    font-weight: 400;
+    font-family: ${SITE_CONFIG.fontFamilies.titles.thin};
+    font-weight: 300;
     line-height: ${SITE_CONFIG.fontHeights.titleHeight};
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
     font-size: 1.5rem;
 
     ${props => props.center && css`
