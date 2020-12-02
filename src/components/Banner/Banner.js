@@ -1,7 +1,7 @@
 import React from 'react'
 import useWindowSize from '../../hooks/useWindowSize';
 import { NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
-import { Flex } from '../../styles/componentsStyles';
+import { Container, Flex } from '../../styles/componentsStyles';
 import Scroll from '../Design/Scroll';
 
 export default () => {
@@ -10,18 +10,21 @@ export default () => {
     
     return(
         <div>
-            <Scroll bottom="20%" right="20%"/>
-            <NewBannerContainer>
-                {width <= 768 && (
-                    <>
-                        <NewBannerText >EX</NewBannerText>
-                        <NewBannerText >PLO</NewBannerText>
+            <Scroll />
+            {width <= 768 && (
+                <NewBannerContainer>
+                    <NewBannerText outline>EX</NewBannerText>
+                    <NewBannerText >PLO</NewBannerText>
+                    <Flex>
                         <NewBannerText >RE</NewBannerText>
-                    </>
-                )}
-
-                {width > 768 && (
-                    <> 
+                        <NewBannerText outline>.</NewBannerText>
+                    </Flex>
+                </NewBannerContainer>
+            )}
+            
+            {width > 768 && (
+                <Container>
+                        <NewBannerContainer>
                         <Flex>
                             <NewBannerText>Software&nbsp;</NewBannerText>
                             <NewBannerText outline>Developer&nbsp;</NewBannerText>
@@ -35,11 +38,9 @@ export default () => {
                             <NewBannerText outline>Designer&nbsp;</NewBannerText>
                             <NewBannerText>;)</NewBannerText>
                         </Flex>
-                    </>
-                )}
-            </NewBannerContainer>
-        </div>
-        
-        
+                    </NewBannerContainer>
+                </Container>
+            )}
+        </div> 
     )
 }

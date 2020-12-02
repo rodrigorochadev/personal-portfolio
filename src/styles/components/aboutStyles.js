@@ -23,7 +23,7 @@ export const AboutTextContainer = styled.div`
 
 export const AboutText = styled.h2`
     font-weight: 300;
-    line-height: ${SITE_CONFIG.fontHeights.titleHeight};
+    line-height: 2.8rem;
     margin-bottom: 20px; 
     font-size: 1.5rem;
 

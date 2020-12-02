@@ -81,136 +81,11 @@ export const MoreDetails = styled.div`
     }
 `
 
-export const DesignFlex = styled.div`
-    margin: 100px 0;
-
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
-    justify-content: space-between;
-
-    @media ${SITE_CONFIG.media.small} {
-        margin: 200px 0;
-        flex-direction: row;
-        column-gap: 50px;
-    }
-`
-
-export const InfoText = styled.div`
-    z-index: 2;
-    width: 100%;
-    color: var(--color-lightText);
-
-    p {
-        line-height: 2.2rem;
-    }
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 80%;
-    }
-
-    @media ${SITE_CONFIG.media.large} {
-        width: 70%;
-    }
-
-    @media ${SITE_CONFIG.media.xlarge} {
-        width: 60%;
-    }
-
-`
-
-export const InfoProject = styled.div`
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-        text-transform: uppercase;
-        font-size: 7em;
-    }
-    
-`
-
-export const ColorFlex = styled.div`
-    display: flex;
-    column-gap: 30px;
-`
-
-export const InfoFlex = styled.div`
-    display: flex;
-    margin-bottom: 100px;
-
-`
-
-export const InfoTitle = styled.div`
-    font-size: 3em;
-
-    @media ${SITE_CONFIG.media.small} {
-        font-size: 5em;
-    }
-
-    @media ${SITE_CONFIG.media.medium} {
-        font-size: 6em;
-    }
-`
-
-export const ColorDiv = styled.div`
-
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    border: 1px solid var(--color-text);
-`
-
-export const DesignChoicesText = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: bold;
-    /* opacity: 0.8; */
-
-    ${props => props.margin && css`
-        margin-bottom: 30px;
-    `}
-`
-
-export const DesignChoicesFont = styled.div`
-    font-size: 2rem;
-`
-export const PageFlex = styled.div`
-    display: flex;
-    flex-direction: column;
-    column-gap: 50px;
-    row-gap: 50px;
-    margin-bottom: 50px;
-    margin-top: -50px;
-    
-
-    @media ${SITE_CONFIG.media.medium} {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 100px;
-        
-    }
-`
-
-export const PageImage = styled.div`
-    width: 100%;
-    max-width: 500px;
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 500px;
-    }
-`
-
 export const LastMockupFlex = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: 100px 0;
+    margin-top: 30px;
     row-gap: 80px;
     column-gap: 30px;
 
@@ -219,39 +94,28 @@ export const LastMockupFlex = styled.div`
     ${props => props.justifyLeft && css`
         justify-content: left;
     `}
-    /* @media screen and (min-width: 1200px) {
-        flex-direction: row;
-
-        
-    } */
 `
 
 export const CustomImg = styled(Img)`
     
     width: 100%;
+    
+    ${props => props.width && css`
+        width: ${props => props.width};
+    `}
+
+    ${props => props.shaddow && css`        
+        filter: drop-shadow(2px 2px 2px #222);
+    `}
 
     @media ${SITE_CONFIG.media.small} {
+        
         width: ${props => props.maxWidth};
-    } 
-`
-
-export const MockupImg = styled(Img)`
-
-    min-width: 200px;
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 300px;
-
-        ${props => props.shaddow && css`        
-            filter: drop-shadow(2px 2px 2px #222);
-        `}
-        /* filter: drop-shadow(0px 0px 38px -17px red); */
     } 
 `
 
 export const TypeImg = styled(Img)`
 
-    
     width: 100%;
 
     @media ${SITE_CONFIG.media.small} {
@@ -260,18 +124,31 @@ export const TypeImg = styled(Img)`
     } 
 `
 
-export const TechnologiesFlex = styled.div`
-    display: flex;
-    column-gap: 30px;
-`
-
-
-//
 export const ProjectSubTitle = styled.h2`
 
-    margin-bottom: 10px;
+    @media ${SITE_CONFIG.media.small} {
+        font-size: 2.1rem;
+    }
+
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 2.3rem;
+    }
+
+    @media ${SITE_CONFIG.media.large} {
+        font-size: 2.5rem;
+    }
+`
+
+export const ProjectInfoTableFlex = styled.div` 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`
+
+export const ProjectInfoTable = styled.div`
+    width: 100%;
 
     @media ${SITE_CONFIG.media.small} {
-        font-size: 2rem;
+        width: 700px;
     }
 `

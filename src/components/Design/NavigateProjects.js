@@ -58,6 +58,8 @@ export const NavigateFlex = styled.div`
     align-items: center;
     min-height: 20vh;
 
+    border-top: 1px solid var(--color-opacityText);
+    
     /* @media ${SITE_CONFIG.media.large} {
         min-height: 30vh;
     }

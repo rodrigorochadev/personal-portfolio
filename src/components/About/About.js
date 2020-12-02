@@ -58,7 +58,7 @@ export default () => {
 
     return(
         <PaddingContainer vertical="200px" horizontal="0">
-            <Container>
+            {/* <Container> */}
                 {width < 1024 && (
                     <>
                         {aboutContent.map( item => {
@@ -91,7 +91,7 @@ export default () => {
                         })}
                     </DesktopAboutContainer> 
                 )}   
-            </Container>
+            {/* </Container> */}
         </PaddingContainer>
     )
 }

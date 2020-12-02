@@ -2,14 +2,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { useContext } from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
-import { Container } from '../../styles/componentsStyles'
+import { Container, Description, DivMargin } from '../../styles/componentsStyles'
 import { motion } from 'framer-motion'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
-import { CustomImg, InfoFlex, InfoText, LastMockupFlex, MockupImg, PageBannerContainer, PageBannerText, PageFlex, PageImage, ProjectSubTitle, TypeImg } from '../../styles/pagesStyles'
+import { CustomImg, LastMockupFlex, PageBannerContainer, PageBannerText, ProjectInfoTable, ProjectInfoTableFlex, ProjectSubTitle, TypeImg } from '../../styles/pagesStyles'
 import { ThemeContext } from '../../components/ThemeContext'
-import styled from 'styled-components'
-import { SITE_CONFIG } from '../../constants'
-import Img from 'gatsby-image'
 
 import NavigateProjects from '../../components/Design/NavigateProjects'
 import Scroll from '../../components/Design/Scroll'
@@ -133,7 +130,7 @@ const WinegridPage = () => {
     return(
         <Layout>
             <SEO  title="Pathfinder Designs" />
-            <Scroll bottom="30%" right="30%"/>
+            <Scroll />
             <Container>
                 <PageBannerContainer>
                     <PageBannerText>Pathfinder</PageBannerText>
@@ -141,174 +138,176 @@ const WinegridPage = () => {
                 </PageBannerContainer>
 
                 
-                
-                <ProjectInfoTableFlex>
-                    <ProjectInfoTable>
-                        <ProjectInfo type="Project" description="Branding" />
-                        <ProjectInfo type="Role" description="Developer/Designer" />
-                        <ProjectInfo type="Year" description="2020" />
-                        <ProjectInfo type="Website" link="pathfinderdesigns.pt" />
-                    </ProjectInfoTable>
-                </ProjectInfoTableFlex>
+                <DivMargin>
+                    <ProjectInfoTableFlex>
+                        <ProjectInfoTable>
+                            <ProjectInfo type="Project" description="Branding" />
+                            <ProjectInfo type="Role" description="Developer/Designer" />
+                            <ProjectInfo type="Year" description="2020" />
+                            <ProjectInfo type="Website" link="pathfinderdesigns.pt" />
+                        </ProjectInfoTable>
+                    </ProjectInfoTableFlex>
+                </DivMargin>
 
-                <ProjectSubTitle>About the project</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>A personal project of mine. Create a brand from scratch, since the logo design, visual identity, website and social media. This project is not intended to be used in real life. The main purpose of this project was to test my design capabilities and decision making.</p>
-                    </InfoText>
-                </InfoFlex>
+                <DivMargin>
+                    <ProjectSubTitle>About the project</ProjectSubTitle>
+                    <Description>
+                        A personal project of mine. Create a brand from scratch, since the logo design, visual identity, website and social media. It is a fictional company that does Web Development and Graphic Design. This project is <b>NOT</b> intended to be used in real life, and only to test my design capabilities and decision making.
+                    </Description>
+                </DivMargin>
 
-                <ProjectSubTitle>Designing the Logo</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>I designed the logo according to Sagi Haviv's three main rules of logo design.</p>
-                        <p>01) Appropriate</p>
-                        <p>02) Distinctive</p>
-                        <p>03) Simple</p>
-                        <br />
-                        <p>I wanted the logo to be black and white, so it would fit everywhere without contrast problems. You can see why this is important in this website by switching between dark and light mode.</p>
-                        <p> Additionally, the logo should remain legible at every scale. A very small one, like the favicon of a website, or a very big one, like a billboard.</p>
-                        <br />
-                        <p>After many sketches and redraws, I've come up with the final logo: </p>
-                    </InfoText>
-                </InfoFlex>
-                
-                <LastMockupFlex>
-                    <CustomImg maxWidth="1080px" fluid={data.logo.childImageSharp.fluid} alt="Winegrid Preview" style={{marginBottom: '50px'}}/>
-                </LastMockupFlex>
-                
-                <InfoFlex>
-                    <InfoText>
-                        <p>I also designed the logo on a badge. For a more casual setting, like social media profiles pictures.</p>
-                    </InfoText>
-                </InfoFlex>
+                <DivMargin>
+                    <ProjectSubTitle>Find your path</ProjectSubTitle>
+                    <Description>
+                        Every brand deserves a platform and a place to show their potencial. Nowadays, with the Internet it's easier to show yourself to people, but is easier to get "burried" with all the competition. That means you need to stand-out.<br />
+                        We elevate your business to the next nevel, with a better visual identity and a better digital presence.
+                    </Description>
+                </DivMargin>
 
-                <LastMockupFlex>
-                    <MockupImg fluid={data.logoBadge.childImageSharp.fluid} alt="Winegrid Preview" style={{marginBottom: '50px', maxWidth: '300px'}}/>
-                </LastMockupFlex>
-                
-                <ProjectSubTitle>Typography & Colors</ProjectSubTitle>
-                <LastMockupFlex justifyLeft>
-                    {colorMode === 'light' ?
-                        <TypeImg fluid={data.colorsTypoLight.childImageSharp.fluid} alt="Colors and Typography" style={{marginBottom: '50px'}} />
-                        :
-                        <TypeImg fluid={data.colorsTypoDark.childImageSharp.fluid} alt="Colors and Typography" style={{marginBottom: '50px'}} />
-                    }
-                </LastMockupFlex>
-                
-                <div style={{marginTop: '100px'}}></div>
-                <ProjectSubTitle>Logo Applications</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>Now we can take a look at some applications, using the logo. Since the logo is very simple, applying the logo to various types of products is easy and natural.</p>
-                    </InfoText>
-                </InfoFlex>
-
-                <LastMockupFlex>
-                    <CustomImg maxWidth="500px" fluid={data.mockup01.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                    <CustomImg maxWidth="500px" fluid={data.mockup02.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                    <CustomImg maxWidth="500px" fluid={data.mockup03.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                    <CustomImg maxWidth="500px" fluid={data.mockup04.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                    <CustomImg maxWidth="500px" fluid={data.mockup05.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                </LastMockupFlex>
-                {/* <div style={{display: 'flex', marginBottom: '100px'}}>
-                    <PageBannerText>Website&nbsp;</PageBannerText>
-                    <PageBannerText outline>.</PageBannerText>
-                    <PageBannerText>.</PageBannerText>
-                </div> */}
-
-                <ProjectSubTitle>Designing and development of the website</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>For the design of the website, I did what I do almost every time I develop a website, which is to create a wireframe in a piece of paper. Later, the content of the website, the images, and so on were added into a design software. I use Figma.</p>
-                        <p>The development of the website was done in Gatsby.</p>
+                <DivMargin>
+                    <ProjectSubTitle>Designing the Logo</ProjectSubTitle>
+                    <Description>
+                        I designed the logo according to Sagi Haviv's three main rules of logo design.<br />
+                        <b>01)</b> Appropriate<br />
+                        <b>02)</b> Distinctive<br />
+                        <b>03)</b> Simple<br />
                         
-                    </InfoText>
-                </InfoFlex>
-
-                <LastMockupFlex>
-                    <CustomImg maxWidth="1080px" fluid={data.pfdShowcase.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
-                </LastMockupFlex>
-
-                <ProjectSubTitle>Website quality</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>My main focus while developing the website was implementing all the UI/UX best practices, taking into consideration, performance, accessibility, SEO. To give it a "numeric value", I used <b>GTMetrix</b> and <b>Google Lighthouse</b>.</p>
-                    </InfoText>
-                </InfoFlex>
-
-                <InfoFlex>
-                    <div>
-                        <h2>GTMetrix</h2>
-                        <InfoText>
-                            <p>The following images represent the results in GTMetrix. Those being, <b>Performance Scores</b> and <b>Page Details</b>, respectively.</p>
-                        </InfoText>
-                    </div>
-                </InfoFlex>
+                        Just like every logo I create, I like to start by doing sketches in a piece of paper. It helps me make fast and easy ideas, so in the end I can choose the one that I like the most. <br />
+                        Following the sketching phase, I use Adobe Illustrator to trace the logo in black and white, so it would fit everywhere without contrast problems. Later I add (or don't) the color. The logo should remain legible at every scale. A very small one, like the favicon of a website, or a very big one, like a billboard.<br />
+                        
+                        After many sketches and redraws, I've come up with the final logo: <br />
+                    </Description>
+                </DivMargin>
                 
-
-                <PageFlex>
-                    <PageImage>
-                        <Img fluid={data.gtmetrixSpeed.childImageSharp.fluid} alt="GTMetrix Page Speed"/>
-                    </PageImage>
-                    <PageImage>
-                        <Img fluid={data.gtmetrixDetails.childImageSharp.fluid} alt="GTMetrix Page Details"/>
-                    </PageImage>
-                </PageFlex>
-                <p>Check GTMetrix report&nbsp;<motion.a 
-                    onMouseEnter={() => onCursor('hovered')}
-                    onMouseLeave={onCursor}
-                    href="https://gtmetrix.com/reports/pathfinderdesigns.pt/oQylhy5o">here</motion.a>.
-                </p>
-                <div style={{marginBottom: '50px'}}></div>
-                <InfoFlex>
-                    <div>
-                        <h2>Google Lighthouse</h2>
-                        <InfoText>       
-                            <p>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</p>
-                        </InfoText>
-                    </div>
-                </InfoFlex>
-
-                <PageFlex>
-                    <PageImage>
-                        <Img fluid={data.perfDesktop.childImageSharp.fluid} alt="Performance on Desktop: 100"/>
-                    </PageImage>
-                    <PageImage>
-                        <Img fluid={data.perfMobile.childImageSharp.fluid} alt="Performance on Mobile: 99"/>
-                    </PageImage>
-                </PageFlex>
-
-                <p>Check Google Lighthouse report&nbsp;<motion.a 
-                    onMouseEnter={() => onCursor('hovered')}
-                    onMouseLeave={onCursor}
-                    href="https://developers.google.com/speed/pagespeed/insights/?url=https://pathfinderdesigns.pt">here</motion.a>.
-                </p>
-                <div style={{marginBottom: '50px'}}></div>
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg maxWidth="1080px" fluid={data.logo.childImageSharp.fluid} alt="Winegrid Preview" />
+                    </LastMockupFlex>
+                </DivMargin>
                 
-                
-                <ProjectSubTitle>Extra Details</ProjectSubTitle>
-                <InfoFlex>
-                    <InfoText>
-                        <p>Visit the website
-                            &nbsp;<motion.a 
-                                onMouseEnter={() => onCursor('hovered')}
-                                onMouseLeave={onCursor}
-                                href="https://pathfinderdesigns.pt">here</motion.a> or view the
-                            &nbsp;<motion.a 
-                                onMouseEnter={() => onCursor('hovered')}
-                                onMouseLeave={onCursor}
-                                href="https://winegrid.com">Behance project</motion.a> to see additional applications of the brand.</p>
-                    </InfoText>
-                </InfoFlex>
-                <NavigateProjects 
-                    previous="Winegrid Mobile App"
-                    previousLink="/portfolio/winegrid"
-                    next="School Manager"
-                    nextLink="/portfolio/under-construction"
-                />
+                <DivMargin>
+                    <Description>Since most social medias profile pictures are displayed in a circular container, I also designed the logo on a circular badge.</Description>
+                </DivMargin>
 
-            </Container>
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg width="200px" maxWidth="300px" fluid={data.logoBadge.childImageSharp.fluid} alt="Winegrid Preview" />
+                    </LastMockupFlex>    
+                </DivMargin>
+
+                <DivMargin>
+                    <ProjectSubTitle>Typography & Colors</ProjectSubTitle>
+                    <LastMockupFlex justifyLeft>
+                        {colorMode === 'light' ?
+                            <TypeImg fluid={data.colorsTypoLight.childImageSharp.fluid} alt="Colors and Typography Light" />
+                            :
+                            <TypeImg fluid={data.colorsTypoDark.childImageSharp.fluid} alt="Colors and Typography Dark" />
+                        }
+                    </LastMockupFlex>
+                </DivMargin>
+                
+                <DivMargin>
+                    <ProjectSubTitle>Logo Applications</ProjectSubTitle>
+                    <Description>Now we can take a look at some applications, using the logo. Since the logo is very simple, applying the logo to various types of products is easy and natural.</Description>
+                </DivMargin>
+
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg maxWidth="500px" fluid={data.mockup01.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                        <CustomImg maxWidth="500px" fluid={data.mockup02.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                        <CustomImg maxWidth="500px" fluid={data.mockup03.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                        <CustomImg maxWidth="500px" fluid={data.mockup04.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                        <CustomImg maxWidth="500px" fluid={data.mockup05.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    </LastMockupFlex>
+                </DivMargin>
+
+                <DivMargin>
+                    <ProjectSubTitle>Designing and development of the website</ProjectSubTitle>
+                    <Description>
+                        For the design of the website, I did what I do almost every time I develop a website, which is to create a wireframe in a piece of paper. Later, the content of the website, the images, and so on were added into a design software. I use Figma.<br />
+                        The development of the website was done in Gatsby.
+                    </Description>
+                </DivMargin>
+
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg maxWidth="1080px" fluid={data.pfdShowcase.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
+                    </LastMockupFlex>
+                </DivMargin>
+                
+                <DivMargin>
+                    <ProjectSubTitle>Website quality</ProjectSubTitle>
+                    <Description>
+                        My main focus while developing the website was implementing all the UI/UX best practices, taking into consideration, performance, accessibility and SEO. I developed a very simple website, without animations and more complex effects, just as a Proof of Concept.<br />
+                        To give it a "numeric value", I used <b>GTMetrix</b> and <b>Google Lighthouse</b>.
+                    </Description>
+                </DivMargin>
+
+                <DivMargin>
+                        <h3>GTMetrix</h3>
+                        <Description>The following images represent the results in GTMetrix. Those being, <b>Performance Scores</b> and <b>Page Details</b>, respectively.</Description>
+                </DivMargin>
+                
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg maxWidth="500px" fluid={data.gtmetrixSpeed.childImageSharp.fluid} alt="GTMetrix Page Speed" />
+                        <CustomImg maxWidth="500px" fluid={data.gtmetrixDetails.childImageSharp.fluid} alt="GTMetrix Page Details"/>
+                    </LastMockupFlex>
+                </DivMargin>
+                
+                <DivMargin>
+                    <Description>Check GTMetrix report&nbsp;<motion.a 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="https://gtmetrix.com/reports/pathfinderdesigns.pt/oQylhy5o">here</motion.a>.
+                    </Description>
+                </DivMargin>
+                
+                <DivMargin>
+                    <h3>Google Lighthouse</h3>
+                    <Description>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</Description>
+                </DivMargin>
+                
+                <DivMargin>
+                    <LastMockupFlex>
+                        <CustomImg maxWidth="500px" fluid={data.perfDesktop.childImageSharp.fluid} alt="Performance on Desktop: 100" />
+                        <CustomImg maxWidth="500px" fluid={data.perfMobile.childImageSharp.fluid} alt="Performance on Mobile: 99" />
+                    </LastMockupFlex>
+                </DivMargin>
+
+                <DivMargin>
+                    <Description>Check Google Lighthouse report&nbsp;<motion.a 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="https://developers.google.com/speed/pagespeed/insights/?url=https://pathfinderdesigns.pt">here</motion.a>.
+                    </Description>
+                </DivMargin>
+
+                <DivMargin>
+                    <ProjectSubTitle>Extra Details</ProjectSubTitle>
+                    <Description>
+                        Visit the website
+                        &nbsp;<motion.a 
+                            onMouseEnter={() => onCursor('hovered')}
+                            onMouseLeave={onCursor}
+                            href="https://pathfinderdesigns.pt">here</motion.a> or view the
+                        &nbsp;<motion.a 
+                            onMouseEnter={() => onCursor('hovered')}
+                            onMouseLeave={onCursor}
+                            href="https://winegrid.com">Behance project</motion.a> to see additional applications of the brand.
+                    </Description>
+                </DivMargin>
+
+                <DivMargin>
+                    <NavigateProjects 
+                        previous="Winegrid Mobile App"
+                        previousLink="/portfolio/winegrid"
+                        next="School Manager"
+                        nextLink="/portfolio/under-construction"
+                    />
+                </DivMargin>
+
+            </Container>    
         </Layout>
     )
 
@@ -316,25 +315,4 @@ const WinegridPage = () => {
 
 export default WinegridPage
 
-export const PathfinderLogoContainer = styled.div`
 
-    svg {
-        width: 150px;
-        fill: var(--color-text);
-    }
-`
-
-export const ProjectInfoTableFlex = styled.div`
-    margin: 100px 0; 
-    display: flex;
-    justify-content: right;
-    align-items: center;
-`
-
-export const ProjectInfoTable = styled.div`
-    width: 100%;
-
-    @media ${SITE_CONFIG.media.small} {
-        width: 700px;
-    }
-`

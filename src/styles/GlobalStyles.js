@@ -22,7 +22,6 @@ const GlobalStyles = createGlobalStyle`
     ::-moz-selection { /* Code for Firefox */
         color: var(--color-background);
         background: var(--color-accent);
-        
     }
     
     ::selection {
@@ -35,6 +34,19 @@ const GlobalStyles = createGlobalStyle`
       overflow-x: hidden;
       background: var(--color-background);
       color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+  }
+
+  p {
+
+    line-height: 1.7rem;
+    
+    @media ${SITE_CONFIG.media.small} {
+      line-height: 2.2rem;
+    }
   }
 
   body {
@@ -60,8 +72,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @media ${SITE_CONFIG.media.xxlarge} {
-        font-size: ${SITE_CONFIG.fontSizesPlus.xxlarge};
-
+        font-size: ${SITE_CONFIG.fontSizes.xxlarge};
     }
   }
 

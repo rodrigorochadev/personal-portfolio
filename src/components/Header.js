@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { UnstyledButton } from '../styles/componentsStyles'
+import { Container, UnstyledButton } from '../styles/componentsStyles'
 import { ThemeContext } from './ThemeContext';
 import { HeaderFlex, HeaderNav, Logo, ThemeText } from '../styles/components/headerStyles';
 import { Link } from 'gatsby';
@@ -14,8 +14,8 @@ export default ({onCursor}) => {
   }
 
   return (
-    
     <HeaderNav>
+      <Container>
       <HeaderFlex>
 
         <Link to='/' aria-label="Back to Homepage">
@@ -28,12 +28,13 @@ export default ({onCursor}) => {
         <UnstyledButton 
           onMouseEnter={() => onCursor('hovered')}
           onMouseLeave={onCursor}
-          onClick={onCursor}
-          aria-label="Toggle Theme" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+          aria-label="Toggle Theme" 
+          onClick={() => {onCursor(); setColorMode(colorMode === 'light' ? 'dark' : 'light')}}>
             {colorMode === 'light' ? <ThemeText>Too bright?</ThemeText> : <ThemeText>Too dark?</ThemeText>}
         </UnstyledButton>
 
       </HeaderFlex>
+    </Container>
     </HeaderNav>
   );
 };

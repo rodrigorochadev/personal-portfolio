@@ -12,7 +12,8 @@ export const COLORS = {
     dark: '#06111c' 
   },
   accent: {
-    light: '#178555',
+    // light: '#178555',
+    light: '#f03c7b',
     dark: '#f03c7b',
   },
   opacityText: {
@@ -26,10 +27,6 @@ export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
 
 // 
 export const SITE_CONFIG = {
-
-  fontHeights: {
-    titleHeight: '2.8rem',
-  },
 
   fontFamilies: {
     text: {

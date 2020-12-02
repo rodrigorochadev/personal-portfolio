@@ -29,17 +29,20 @@ export const Flex = styled.div`
     }
   `}
 
-  ${props => props.wrap && css`
+  ${props => props.about && css`
 
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    row-gap: 100px;
+    row-gap: 60px;
 
     @media ${SITE_CONFIG.media.medium} {
       flex-direction: row;
-      column-gap: 20px;
+      column-gap: 30px;
+    }
 
+    @media ${SITE_CONFIG.media.large} {
+      column-gap: 50px;
     }
   `}
 `
@@ -61,20 +64,12 @@ export const InfoContainer = styled.div`
 
   width: 100%;
   
-  p {
-    line-height: 1.7rem;
-  }
-
   ${props => props.marginBottom && css`
-    margin-bottom: 100px;
+    margin-bottom: ${props => props.marginBottom};
   `}
 
   @media ${SITE_CONFIG.media.small} {
-    width: 50%;
-
-    p {
-      line-height: 2rem;
-    }
+    width: 60%;
   }
 `
 
@@ -122,8 +117,62 @@ export const Container = styled.div`
   position: relative;
   width: auto;
   height: 100%;
+
+  @media ${SITE_CONFIG.media.large} {
+    padding: 0 14vw;
+  }
+
+  @media (min-width: 1600px) {
+    padding: 0 20vw;
+  }
+
+  /* flex-grow: 1; */
+
+  /* margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  width: auto;
+  height: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1216px) {
+    max-width: 1152px;
+  }
+  @media (min-width: 1408px) {
+    max-width: 1244px;
+  } */
+
+  ${props => props.nonRelative && css`
+      position: initial;
+  `}
+  ${props =>
+    props.fluid &&
+    css`
+      padding: 0;
+      margin: 0;
+      background: red;
+      max-width: 100% !important;
+    `}
 `
 
+export const Description = styled.p`
+  /* line-height: 2.2rem; */
+
+  ${props => props.light && css`
+    color: var(--color-lightText);
+  `}
+`
+
+export const DivMargin = styled.div`
+
+    margin-bottom: 50px;
+
+    @media ${SITE_CONFIG.media.small} {
+      margin-bottom: 100px;
+    }
+`
 
 // Rotating SVGs
 export const NewSVGContainer = styled(motion.div)`

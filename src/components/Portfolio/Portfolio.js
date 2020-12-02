@@ -5,9 +5,10 @@ import PortfolioItemDesktop from './PortfolioItemDesktop';
 import PortfolioItemMobile from './PortfolioItemMobile';
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { InfoContainer, PaddingContainer, NewSVGContainer, NewSVG } from '../../styles/componentsStyles';
+import { InfoContainer, NewSVGContainer, NewSVG, Container, Description, DivMargin } from '../../styles/componentsStyles';
 import { PortfolioContainer } from '../../styles/components/portfolioStyles'
 import { PortfolioSVG } from '../../assets/svg/svg';
+import { ProjectSubTitle } from '../../styles/pagesStyles';
 
 
 export default () => {
@@ -42,11 +43,11 @@ export default () => {
     `);
 
     return(
-        <PaddingContainer horizontal="10vw" vertical="100px">
-            <InfoContainer style={{marginBottom: '60px'}}>
-                {/* <SmallTitle>My Work</SmallTitle> */}
-                <h2 style={{marginBottom: '10px'}}>Some of my work.</h2>
-                <p style={{color: 'var(--color-lightText)'}}>Below you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it to open the full details. Some pages are still being built, but you can have an idea on I how work. Enjoy!</p>
+        <Container nonRelative>
+            <DivMargin>
+            <InfoContainer marginBottom="30px">
+                <ProjectSubTitle>Some of my work.</ProjectSubTitle>
+                <Description light>Below you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it to open the full details. Some pages are still being built, but you can have an idea on I how work. Enjoy!</Description>
             </InfoContainer>
 
                 {width < 768 && (
@@ -109,6 +110,7 @@ export default () => {
                     </PortfolioContainer>
                     </>
                 )}
-        </PaddingContainer>
+            </DivMargin>
+        </Container>
     )
 }

@@ -47,7 +47,8 @@ export const Scrolled = styled.div`
     height: 30px;
 
     fill: none;
-    stroke: var(--color-text);
+    /* stroke: var(--color-text); */
+    stroke: var(--color-accent);
     stroke-width: 4;
     stroke-dasharray: 0 1;
 `

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-import { AccordionContent, AccordionHeader, AccordionIcon } from '../../../styles/components/accordionStyles'
-import { Container, Flex } from '../../../styles/componentsStyles'
-import { useGlobalStateContext, useGlobalDispatchContext } from '../../../context/globalContext'
+import { AccordionContent, AccordionHeader, AccordionIcon } from '../styles/components/accordionStyles'
+import { Container, DivMargin, Flex } from '../styles/componentsStyles'
+import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
 
 const accordionData = [
     {
@@ -47,17 +47,19 @@ export default () => {
     return(
         <Container>
             <Flex alignRight>
-            <div style={{maxWidth: '300px'}}>
-            <h3>Skills</h3>
-                {accordionData.map((details, index) => (
-                    <Accordion 
-                        key={index}
-                        details={details}
-                        expanded={expanded}
-                        setExpanded={setExpanded}
-                    />
-                ))}
-            </div>
+            <DivMargin>
+                <div style={{maxWidth: '200px'}}>
+                    <h3>Skills</h3>
+                    {accordionData.map((details, index) => (
+                        <Accordion 
+                            key={index}
+                            details={details}
+                            expanded={expanded}
+                            setExpanded={setExpanded}
+                        />
+                    ))}
+                </div>
+            </DivMargin>
             </Flex>
             
         </Container>

@@ -22,7 +22,7 @@ export default (props) => {
                 animate={{
                     transition: { duration: 1, ease: 'easeOut' },
                     x: hoverState ? x/7 : 0,
-                    y: hoverState ? y/7  : 0,
+                    y: hoverState ? y/7 : 0,
                 }}
             >
                 <ScrollAnimate

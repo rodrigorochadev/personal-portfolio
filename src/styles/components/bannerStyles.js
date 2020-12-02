@@ -15,7 +15,7 @@ export const NewBannerContainer = styled.div`
         justify-content: center;
         align-items: flex-start;
         text-align: center;
-        padding: 0 10vw;
+        /* padding: 0 10vw; */
     }
 
 `
@@ -28,7 +28,7 @@ export const NewBannerText = styled.h1`
     color: var(--color-text);
 
     font-family: ${SITE_CONFIG.fontFamilies.text.bold};
-
+    
     ${props => props.outline && css`
         transition: all 0.1s ease-out;
         color: var(--color-background);
@@ -39,13 +39,8 @@ export const NewBannerText = styled.h1`
             1px  1px 0 var(--color-text);
     `}
 
-    line-height: 8.5rem;
+    line-height: 7.5rem;
     font-size: 9.5rem;
-
-    /* @media screen and (min-width: 28.125em) {
-        line-height: 8rem;
-        font-size: 9rem;    
-    } */
 
     @media ${SITE_CONFIG.media.small} {
         line-height: 4rem;
@@ -58,7 +53,6 @@ export const NewBannerText = styled.h1`
         font-size: 4rem;
         letter-spacing: 0.3rem;
     }
-
 
     @media ${SITE_CONFIG.media.large} {
         line-height: 6rem;

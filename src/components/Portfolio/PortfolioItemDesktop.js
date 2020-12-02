@@ -18,24 +18,27 @@ export default (props) => {
     }
 
     return(
-        <PortfolioMargin>
-            <PortfolioContainerDesktop
-                last={props.last}
-                first={props.first}
-                
-            >
-                <FloatingImage
-                    initial={{opacity: 0}}
+        <>
+        <FloatingImage
+                    initial={{opacity: 1}}
                     animate={{
                         transition: { duration: 0.5, ease: 'easeOut' },
                         display: hoverState ? 'initial' : 'none',
-                        opacity: hoverState ? 1 : 0,
-                        x: x - 380,
-                        y: y - 200,
+                        opacity: hoverState ? 1 : 1,
+                        x: x- 380,
+                        y: y- 200,
                     }}
                 >
                     <Img fluid={props.image} alt={props.name} />
                 </FloatingImage>
+
+            
+        <PortfolioMargin>
+            <PortfolioContainerDesktop
+                last={props.last}
+                first={props.first}      
+            >
+                
 
                 <div>
                     
@@ -45,6 +48,7 @@ export default (props) => {
                         onMouseEnter={() => onCursor('project')}
                         onMouseLeave={onCursor}
                     >
+                        
                         <a href={props.url}>
                             <h2>{props.name}</h2>
                         </a>
@@ -55,5 +59,6 @@ export default (props) => {
                 
             </PortfolioContainerDesktop>
         </PortfolioMargin>
+        </>
     )
 }

@@ -4,7 +4,7 @@ const { motion } = require("framer-motion");
 const { default: styled, css } = require("styled-components");
 
 export const PortfolioContainerDesktop = styled(motion.div)`
-    padding: 0 10vw;
+    /* padding: 0 20vw; */
     text-align: center;
 
     display: flex;
@@ -63,6 +63,7 @@ export const PortfolioTitle = styled(motion.div)`
     
     a {
         color: var(--color-background);
+        
         text-shadow:
             -1px -1px 0 var(--color-text),  
             1px -1px 0 var(--color-text),

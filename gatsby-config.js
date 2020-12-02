@@ -3,7 +3,7 @@ module.exports = {
     title: `Rodrigo Rocha`,
     description: `Welcome to my website. Get to know me a bit better. Take a look at my portfolio, get inspired and let's work together!`,
     author: `Rodrigo Rocha`,
-    image: `https://firebasestorage.googleapis.com/v0/b/rodrigo-rocha-website.appspot.com/o/Social%2Frr.jpg?alt=media&token=cc55477c-6d36-4ba5-a5cd-37861f79f6ca`,
+    image: `https://firebasestorage.googleapis.com/v0/b/rodrigo-rocha-website.appspot.com/o/Social%2Frr.jpg?alt=media&token=a1aede45-9d99-4b71-aab0-cdac24fc7d90`,
     keywords: `Software Developer, Software Engineer, Responsive, Mobile, Websites, Apps, Web Development, Graphic Design, UI/UX, Digital Marketing, SEO`,
     siteUrl: `https://rodrigorocha.pt`
   },

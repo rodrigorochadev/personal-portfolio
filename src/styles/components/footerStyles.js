@@ -1,6 +1,21 @@
 import styled from "styled-components"
 import { SITE_CONFIG } from "../../constants"
 
+export const FooterName = styled.div`
+    text-align: center;
+    position: relative;
+
+    @media ${SITE_CONFIG.media.small} {
+        text-align: right;
+    }
+`
+
+export const FooterTalkTitle = styled.div`
+    
+    @media ${SITE_CONFIG.media.medium} {
+        font-size: 3em;
+    }
+`
 
 export const FooterCopyright = styled.p`
     text-align: center;
