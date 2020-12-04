@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
+import { Container, Description, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
 import { FooterSocial, FooterContent, FooterSVG, SocialIcon, FooterName } from '../styles/components/footerStyles'
 import { Instagram, Dribbble, Behance, Linkedin, Github, ThankYouSVG } from '../assets/svg/svg'
 import Talk from './Talk/Talk'
@@ -34,10 +34,10 @@ export default ({onCursor}) => {
                         })}
                     </FooterSocial>
                     <FooterName>
-                        
-                        <p>40° 09' 3.06" -8° 51' 42.44"</p>
-                        <div style={{marginBottom: '10px'}}></div>
-                        <p><b>Rodrigo Rocha © {new Date().getFullYear()}.</b></p>
+                        <Description>
+                            40° 09' 3.06" -8° 51' 42.44"<br />
+                            <b>Rodrigo Rocha © {new Date().getFullYear()}.</b>
+                        </Description>
                     </FooterName>
                 </FooterContent>
             </FooterSVG>

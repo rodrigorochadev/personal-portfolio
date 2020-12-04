@@ -22,6 +22,7 @@ export default (props) => {
                 <a
                     onMouseEnter={() => onCursor('hovered')}
                     onMouseLeave={onCursor}
+                    rel="noreferrer" target="_blank"
                     href={`https://www.${props.link}`}
                 >{props.link}</a>
             </ProjectInformationDescription>

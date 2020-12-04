@@ -47,10 +47,6 @@ export const Flex = styled.div`
   `}
 `
 
-export const WidthContainer = styled.div`
-  width: ${props => props.width}; 
-`
-
 export const PaddingContainer = styled.div`
   padding: ${props => props.vertical} ${props => props.horizontal};
 `
@@ -71,14 +67,6 @@ export const InfoContainer = styled.div`
   @media ${SITE_CONFIG.media.small} {
     width: 60%;
   }
-`
-
-export const SmallTitle = styled.div`
-    font-family: ${SITE_CONFIG.fontFamilies.text.bold};
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    font-weight: bold;
-    opacity: 0.8;
 `
 
 export const UnstyledButton = styled.button`
@@ -110,7 +98,7 @@ export const SVGHolder = styled.div`
     }
 `
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   flex-grow: 1;
   margin: 0 auto;
   padding: 0 10vw;
@@ -163,6 +151,16 @@ export const Description = styled.p`
   ${props => props.light && css`
     color: var(--color-lightText);
   `}
+
+  ${props => props.alignRight && css`
+    text-align: right;
+  `}
+
+  ${props => props.marginTop && css`
+    margin-top: 30px;
+  `}
+
+
 `
 
 export const DivMargin = styled.div`
