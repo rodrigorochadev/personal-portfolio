@@ -10,6 +10,7 @@ export const HeaderNav = styled.div`
   right: 0;
   left: 0;
   z-index: 99;
+
 `
 
 export const HeaderFlex = styled.div`

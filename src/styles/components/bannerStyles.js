@@ -5,9 +5,9 @@ export const NewBannerContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 99vh;
-    justify-content: flex-end;
-    margin-left: -15px; 
+    min-height: 100vh;
+    justify-content: center;
+    
 
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
@@ -39,8 +39,14 @@ export const NewBannerText = styled.h1`
             1px  1px 0 var(--color-text);
     `}
 
-    line-height: 7.5rem;
-    font-size: 9.5rem;
+    line-height: 14vw;
+    font-size: 12vw;
+
+    @media screen and (min-width: 480px) {
+        line-height: 3rem;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+    }
 
     @media ${SITE_CONFIG.media.small} {
         line-height: 4rem;

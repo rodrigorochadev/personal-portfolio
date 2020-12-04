@@ -3,7 +3,7 @@ module.exports = {
     title: `Rodrigo Rocha`,
     description: `Welcome to my website. Get to know me a bit better. Take a look at my portfolio, get inspired and let's work together!`,
     author: `Rodrigo Rocha`,
-    image: `https://firebasestorage.googleapis.com/v0/b/rodrigo-rocha-website.appspot.com/o/Social%2Frr.jpg?alt=media&token=a1aede45-9d99-4b71-aab0-cdac24fc7d90`,
+    image: `https://firebasestorage.googleapis.com/v0/b/rodrigo-rocha-website.appspot.com/o/Social%2Frr.jpg?alt=media&token=0ad56975-ea3e-4b54-9f85-b0bdc614c502`,
     keywords: `Software Developer, Software Engineer, Responsive, Mobile, Websites, Apps, Web Development, Graphic Design, UI/UX, Digital Marketing, SEO`,
     siteUrl: `https://rodrigorocha.pt`
   },
@@ -43,6 +43,33 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: [`Plus Jakarta Display Regular`, `Plus Jakarta Display Bold`],
+          urls: [`/fonts/fonts.css`]
+        }
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 500,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-preact`,
     // {
     //   resolve: `gatsby-plugin-webfonts`,
     //     options: {
@@ -72,34 +99,7 @@ module.exports = {
     //     ],
     //   }
     // },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: [`Plus Jakarta Display Regular`, `Plus Jakarta Display Bold`],
-          urls: [`/fonts/fonts.css`]
-        }
-      }
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 500,
-            },
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-styled-components`,
     // `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-advanced-sitemap`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-preact`,
     // `gatsby-plugin-offline`,
   ],
 };
