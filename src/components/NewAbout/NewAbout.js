@@ -1,25 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { Container, NewSVGContainer, NewSVG, Flex, Description } from '../../styles/componentsStyles'
-import Img from 'gatsby-image'
-import { AboutMeSVG } from '../../assets/svg/svg'
+import { Container, Description } from '../../styles/componentsStyles'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
 import { motion } from 'framer-motion'
-import { NewAboutContainerHeadline, NewAboutContainerText, NewAboutImageContainer, NewAboutPadding } from '../../styles/components/newAboutStyles'
+import { NewAboutContainerHeadline, NewAboutContainerText, NewAboutPadding } from '../../styles/components/newAboutStyles'
+import AimHigher from '../AimHigher'
 
 export default () => {
-
-    const data = useStaticQuery(graphql`
-        query {
-            picture: file(relativePath: {eq: "portrait.jpg"}) {
-                childImageSharp {
-                    fluid(maxWidth: 400, quality: 70) {
-                        ...GatsbyImageSharpFluid_tracedSVG
-                    }  
-                }
-            }
-        }`
-    )
 
     const dispatch = useGlobalDispatchContext()
     const { cursorStyles } = useGlobalStateContext()
@@ -33,8 +19,8 @@ export default () => {
         <Container>
             <NewAboutPadding>
 
-                <Flex about>
-                    <NewAboutImageContainer>
+                {/* <Flex about> */}
+                    {/* <NewAboutImageContainer>
                         <NewSVGContainer
                             animate={{
                                 rotate: 360,
@@ -47,7 +33,7 @@ export default () => {
                         </NewSVGContainer>
                             
                         <Img fluid={data.picture.childImageSharp.fluid} alt="My Portrait" />
-                    </NewAboutImageContainer>
+                    </NewAboutImageContainer> */}
                     <NewAboutContainerText>
                         <NewAboutContainerHeadline>Hey! I'm Rodrigo Rocha, a software developer, with a passion for design. </NewAboutContainerHeadline>
                         <Description light>
@@ -63,7 +49,8 @@ export default () => {
                         </Description>
                         
                     </NewAboutContainerText>
-                </Flex>
+                    <AimHigher />
+                {/* </Flex> */}
             </NewAboutPadding>
                 
         </Container>

@@ -24,7 +24,7 @@ export default () => {
                             <NewBannerText outline>Designer&nbsp;</NewBannerText>
                             <NewBannerText>;)</NewBannerText>
                         </Flex>
-                    <div style={{position: "absolute", bottom: '20px', right: 0}}>
+                    <div style={{position: "absolute", bottom: '80px', right: 0}}>
                         <Description>Scroll for more.</Description>
                     </div>
                 </NewBannerContainer>

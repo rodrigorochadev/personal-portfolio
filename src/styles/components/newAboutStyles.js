@@ -5,6 +5,11 @@ export const NewAboutContainerText = styled.div`
 width: 100%;
 /* max-width: 1500px; */
 
+    @media ${SITE_CONFIG.media.small} {
+        width: 80%;
+    }
+
+
 `
 
 export const NewAboutImageContainer = styled.h2`
@@ -32,16 +37,16 @@ margin-bottom: 20px;
 export const NewAboutPadding = styled.div`
 
 margin-top: 150px;
-margin-bottom: 150px;
+/* margin-bottom: 150px; */
 
 @media ${SITE_CONFIG.media.medium} {
     margin-top: 250px;
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
 }
 
 @media ${SITE_CONFIG.media.xlarge} {
     margin-top: 300px;
-    margin-bottom: 250px;
+    /* margin-bottom: 250px; */
 }
 
 `
