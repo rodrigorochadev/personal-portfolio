@@ -7,14 +7,13 @@ export const NewBannerContainer = styled.div`
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
+    text-align: center;
     
-
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
         min-height: 100vh;
         justify-content: center;
         align-items: flex-start;
-        text-align: center;
         /* padding: 0 10vw; */
     }
 

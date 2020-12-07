@@ -4,7 +4,7 @@ import { rotation } from '../animations';
 import { SITE_CONFIG } from '../constants'
 
 // *********************** Global *********************** \\
-export const Flex = styled.div`
+export const Flex = styled(motion.div)`
   display: flex;
   height: auto;
 
@@ -23,10 +23,7 @@ export const Flex = styled.div`
   `}
 
   ${props => props.alignCenter && css`
-    
-    @media ${SITE_CONFIG.media.small} {
       justify-content: center;
-    }
   `}
 
   ${props => props.about && css`
@@ -145,7 +142,7 @@ export const Container = styled(motion.div)`
     `}
 `
 
-export const DescriptionHighlight = styled.p`
+export const DescriptionHighlight = styled(motion.p)`
   
   font-family: ${SITE_CONFIG.fontFamilies.text.bold};
   margin-bottom: 10px;
@@ -158,7 +155,7 @@ export const DescriptionHighlight = styled.p`
   }
 `
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   /* line-height: 2.2rem; */
 
 

@@ -14,16 +14,14 @@ export default () => {
             {width <= 768 && (
                 <Container>
                     <NewBannerContainer>
+
                         <NewBannerText>Software&nbsp;</NewBannerText>
-                            <NewBannerText outline>Developer&nbsp;</NewBannerText>
-                        <Flex>
-                            <NewBannerText>&amp;&amp;&nbsp;</NewBannerText>
-                            <NewBannerText >UI/UX</NewBannerText>
-                        </Flex>
-                        <Flex>
-                            <NewBannerText outline>Designer&nbsp;</NewBannerText>
-                            <NewBannerText>;)</NewBannerText>
-                        </Flex>
+                        <NewBannerText outline>Developer&nbsp;</NewBannerText>
+                            <NewBannerText >&amp;&amp;&nbsp;UI/UX</NewBannerText>
+                            <Flex alignCenter>
+                                <NewBannerText outline>Designer&nbsp;</NewBannerText>
+                                <NewBannerText>;)</NewBannerText>
+                            </Flex>
                     <div style={{position: "absolute", bottom: '80px', right: 0}}>
                         <Description>Scroll for more.</Description>
                     </div>

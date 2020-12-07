@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Description, InfoContainer } from '../../styles/componentsStyles'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
 import { ProjectSubTitle } from '../../styles/pagesStyles'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { variants } from '../../animations'
+import { useInView } from 'react-intersection-observer'
 
 export default () => {
 
@@ -14,8 +16,25 @@ export default () => {
       dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
     }
 
+    const animation = useAnimation()
+    const [talkRef, inView] = useInView({
+        triggerOnce: false,
+        rootMargin: "-100px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+        animation.start("visible")
+        }
+    }, [animation, inView])
+
     return(
-        <div>
+        <motion.div
+            ref={talkRef}
+            initial="hidden"
+            animate={animation}
+            variants={variants}
+        >
             <ProjectSubTitle>Let's build something together!</ProjectSubTitle>
             <InfoContainer>
                 <Description>Send me an e-mail at
@@ -26,30 +45,6 @@ export default () => {
                     , or find me at my social medias below.
                 </Description>
             </InfoContainer>
-        </div>
-            // <PaddingContainer horizontal="10vw" vertical="200px">
-            //     <TalkContainer>
-            //         {width < 768 && (
-            //             <>
-            //             <MobileTalkTitle
-            //                 onMouseEnter={() => onCursor('hovered')}
-            //                 onMouseLeave={onCursor}
-            //                 href="mailto:rodrigorochaua@gmail.com">Let's build something together!
-            //             </MobileTalkTitle>
-            //             </>
-            //         )}
-            //         {width >= 768 && (
-            //             <>
-            //                 <TalkTitle>Let's build something together!</TalkTitle>
-            //                 <TalkMail
-            //                     onMouseEnter={() => onCursor('hovered')}
-            //                     onMouseLeave={onCursor}
-            //                     href="mailto:rodrigorochaua@gmail.com">rodrigorochaua@gmail.com
-            //                 </TalkMail>  
-            //             </>
-            //         )}
-                    
-            //     </TalkContainer>
-            // </PaddingContainer>
+        </motion.div>
     )
 }

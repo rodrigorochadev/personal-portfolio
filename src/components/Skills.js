@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
 import { AccordionContent, AccordionHeader, AccordionIcon } from '../styles/components/accordionStyles'
 import { Container, DivMargin, Flex } from '../styles/componentsStyles'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
+import { variants } from '../animations'
+import { useInView } from 'react-intersection-observer'
 
 const accordionData = [
     {
@@ -39,16 +41,31 @@ const accordionData = [
 ]
 export default () => {
    
+    const animation = useAnimation()
+    const [skillsRef, inView] = useInView({
+        triggerOnce: false,
+        rootMargin: "-100px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+        animation.start("visible")
+        }
+    }, [animation, inView])
+
     const [expanded, setExpanded] = useState(1); // Oppened Accordion
 
-
-    
 
     return(
         <Container>
             <Flex alignRight>
             <DivMargin>
-                <div style={{maxWidth: '200px'}}>
+                <motion.div style={{maxWidth: '200px'}}
+                    ref={skillsRef}
+                    initial="hidden"
+                    animate={animation}
+                    variants={variants}
+                >
                     <h3>Skills</h3>
                     {accordionData.map((details, index) => (
                         <Accordion 
@@ -58,7 +75,7 @@ export default () => {
                             setExpanded={setExpanded}
                         />
                     ))}
-                </div>
+                </motion.div>
             </DivMargin>
             </Flex>
             
