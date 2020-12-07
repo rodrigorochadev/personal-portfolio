@@ -12,7 +12,7 @@ export default () => {
     const animation = useAnimation()
     const [aboutDetailsRef, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-200px",
+        rootMargin: "-150px",
     })
 
     useEffect(() => {
