@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import usePageOfssetY from '../hooks/usePageOffsetY'
 import { useInView } from 'react-intersection-observer'
 import { SITE_CONFIG } from '../constants'
-import { Container, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
+import { Container, DivMargin, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
 import { NewAboutImageContainer } from '../styles/components/newAboutStyles'
 import { AboutMeSVG } from '../assets/svg/svg'
 import useWindowSize from '../hooks/useWindowSize'
@@ -29,7 +29,7 @@ export default () => {
 
     const [isVisible, setIsVisible] = useState(1);
     
-    const [contentRef, inView] = useInView({
+    const [aimHigherRef, inView] = useInView({
         triggerOnce: true,
     })
 
@@ -46,12 +46,13 @@ export default () => {
 
     return(
         <Container>
-            <AimHigherContainer ref={contentRef}>
+            <DivMargin>
+            <AimHigherContainer ref={aimHigherRef}>
                 {width < 1000 && (
                         <>
                         <AimHigherTextContainer
                             animate={{
-                                x: isVisible * (1400 - offsetY),
+                                x: isVisible * (1200 - offsetY),
                             }}
                             transition={{ease: 'easeOut'}}
                         >
@@ -74,7 +75,7 @@ export default () => {
 
                         <AimHigherTextContainer
                         animate={{
-                            x: isVisible * (1400 - offsetY),
+                            x: isVisible * (1200 - offsetY),
                         }}
                         transition={{ease: 'easeOut'}}
                     >
@@ -93,16 +94,7 @@ export default () => {
                             <AimHigherText>AIM HIGHER</AimHigherText>
                         </AimHigherTextContainer>
                         <NewAboutImageContainer>
-                            <NewSVGContainer
-                                animate={{
-                                    rotate: 360,
-                                    transition: { duration: 5, ease: 'linear', repeat: 'Infinity' },
-                                }} 
-                            >
-                                <NewSVG>
-                                    <AboutMeSVG />
-                                </NewSVG>
-                            </NewSVGContainer>
+                            
                                 
                             <Img fluid={data.picture.childImageSharp.fluid} alt="My Portrait" />
                         </NewAboutImageContainer>
@@ -119,12 +111,13 @@ export default () => {
                 )}
                     
             </AimHigherContainer>
+            </DivMargin>
         </Container>
     )
 }
 
 export const AimHigherContainer = styled.div`
-    min-height: 90vh;
+    /* min-height: 90vh; */
     display: flex;
     align-items: center;
     justify-content: center;

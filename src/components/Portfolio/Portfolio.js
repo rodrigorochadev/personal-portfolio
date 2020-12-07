@@ -5,10 +5,10 @@ import PortfolioItemDesktop from './PortfolioItemDesktop';
 import PortfolioItemMobile from './PortfolioItemMobile';
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { InfoContainer, NewSVGContainer, NewSVG, Container, Description, DivMargin } from '../../styles/componentsStyles';
+import { NewSVGContainer, NewSVG, Container, DivMargin } from '../../styles/componentsStyles';
 import { PortfolioContainer } from '../../styles/components/portfolioStyles'
 import { PortfolioSVG } from '../../assets/svg/svg';
-import { ProjectSubTitle } from '../../styles/pagesStyles';
+import PortfolioInfo from './PortfolioInfo';
 
 
 export default () => {
@@ -45,10 +45,7 @@ export default () => {
     return(
         <Container nonRelative>
             <DivMargin>
-            <InfoContainer marginBottom="30px">
-                <ProjectSubTitle>Some of my work.</ProjectSubTitle>
-                <Description light>Below you can see a small section of my work. I always try to deliver the best project I can and I hope you enjoy what I bring to you! To see a preview, hover on the title, and click it to open the full details. Some pages are still being built, but you can have an idea on I how work. Enjoy!</Description>
-            </InfoContainer>
+            <PortfolioInfo />
 
                 {width < 768 && (
                     <PortfolioContainer>

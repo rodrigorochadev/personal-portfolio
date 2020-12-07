@@ -1,94 +1,45 @@
 import {keyframes} from 'styled-components'
 
-export const divUp = {
-    visible: {
+export const variants = {
+  visible: {
       opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
-    },
-    hidden: { opacity: 0, y: 72 }
+  },
+  hidden: { 
+      opacity: 0, 
+      y: 72 
+  },
 }
 
-export const textRight = keyframes`
-  
-    0% {
-      opacity: 0%;
-      -webkit-transform: translateX(-150px) ;
-              transform: translateX(-150px) ;
-    }
-    50% {
-      opacity: 50%;
-      -webkit-transform: translateX(60px);
-              transform: translateX(60px);
-    }
-    100% {
-      opacity: 100%;
-      -webkit-transform: translateX(0px);
-              transform: translateX(0px);
-    }
+export const parent = {
+  hidden: { opacity: 0, scale: 1 },
+  visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+          // delay: 0.3,
+          when: "beforeChildren",
+          staggerChildren: 0.3,
+      }
+  }
+}
 
-`
-
-export const textLeft = keyframes`
-  
-    0% {
-      opacity: 0%;
-      -webkit-transform: translateX(150px) ;
-              transform: translateX(150px) ;
-    }
-    50% {
-      opacity: 50%;
-      -webkit-transform: translateX(-60px);
-              transform: translateX(-60px);
-    }
-    100% {
-      opacity: 100%;
-      -webkit-transform: translateX(0px);
-              transform: translateX(0px);
-    }
-
-`
-
-export const scaleUp = keyframes`
-  
-    0% {
-      opacity: 0%;
-      scale: 0;
-    }
-    100% {
-      opacity: 100%;
-      scale: 1;
-    }
-
-`
-
-export const textUp = keyframes`
-
-    0% {
-      opacity: 0%;
-      -webkit-transform: translateY(70px) ;
-              transform: translateY(70px) ;
-    }
-    100% {
-      opacity: 100%;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-    }
-`
-
-export const textDown = keyframes`
-
-    0% {
-      opacity: 0%;
-      -webkit-transform: translateY(-30px) ;
-              transform: translateY(-30px) ;
-    }
-    100% {
-      opacity: 100%;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-    }
-`
+export const child = {
+  hidden: { 
+      // y: 70, 
+      scale: 0,
+      opacity: 0 
+  },
+  visible: {
+      // y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: {
+          ease: [0.6, 0.05, -0.01, 0.9]
+      }
+  }
+}
 
 export const grain = keyframes`
   0%, 100% { transform:translate(0, 0); }
@@ -112,19 +63,6 @@ export const rotation = keyframes`
     }
     100% {
       
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-`
-
-export const rotationUnScale = keyframes`
-    0%, 20%, 40%, 60%, 80% {  
-      transform: ;
-      -webkit-transform: rotate(-0deg) ;
-              transform: rotate(-0deg) ;
-    }
-    
-    100% {
       -webkit-transform: rotate(360deg);
               transform: rotate(360deg);
     }

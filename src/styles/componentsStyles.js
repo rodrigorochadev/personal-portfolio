@@ -56,7 +56,7 @@ export const MobileImgContainer = styled.div`
     max-width: ${props => props.maxWidth};
 `
 
-export const InfoContainer = styled.div`
+export const InfoContainer = styled(motion.div)`
 
   width: 100%;
   
@@ -145,8 +145,22 @@ export const Container = styled(motion.div)`
     `}
 `
 
+export const DescriptionHighlight = styled.p`
+  
+  font-family: ${SITE_CONFIG.fontFamilies.text.bold};
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+
+  @media ${SITE_CONFIG.media.small} {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+`
+
 export const Description = styled.p`
   /* line-height: 2.2rem; */
+
 
   ${props => props.light && css`
     color: var(--color-lightText);
