@@ -14,7 +14,14 @@ export default ({onCursor}) => {
   }
 
   return (
-    <HeaderNav>
+    <HeaderNav
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -72, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeInOut",
+      }}
+    >
       <Container>
       <HeaderFlex>
 

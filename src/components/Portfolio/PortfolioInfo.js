@@ -10,7 +10,7 @@ export default () => {
     const animation = useAnimation()
     const [portfolioInfoRef, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-100px",
+        rootMargin: "-150px",
     })
 
     useEffect(() => {

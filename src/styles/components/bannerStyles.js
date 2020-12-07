@@ -1,13 +1,15 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components"
 import {SITE_CONFIG} from '../../constants';
 
-export const NewBannerContainer = styled.div`
+export const NewBannerContainer = styled(motion.div)`
     position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     text-align: center;
+    overflow-y: hidden;
     
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
@@ -19,7 +21,7 @@ export const NewBannerContainer = styled.div`
 
 `
 
-export const NewBannerText = styled.h1`
+export const NewBannerText = styled(motion.h1)`
     
     transition: all 0.3s ease;
     text-decoration: none;

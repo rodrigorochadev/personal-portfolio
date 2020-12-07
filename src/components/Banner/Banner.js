@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import useWindowSize from '../../hooks/useWindowSize';
 import { NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
@@ -7,24 +8,51 @@ import Scroll from '../Design/Scroll';
 export default () => {
 
     const { width } = useWindowSize()
-    
+
+    const container = {
+        initial: { opacity: 0 },
+        animate: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    }
+    const item = {
+        initial: { y: 300 },
+        animate: {
+            y: 0,
+            transition: {
+                duration: 0.7,
+                ease: "easeInOut",
+            },
+        },
+    }
+
     return(
         <div>
             <Scroll />
             {width <= 768 && (
                 <Container>
-                    <NewBannerContainer>
-
-                        <NewBannerText>Software&nbsp;</NewBannerText>
-                        <NewBannerText outline>Developer&nbsp;</NewBannerText>
+                    <NewBannerContainer variants={container} initial="initial" animate="animate">
+                        <motion.div variants={item}>
+                            <NewBannerText >Software&nbsp;</NewBannerText>
+                        </motion.div>
+                        <motion.div variants={item}>
+                            <NewBannerText outline>Developer&nbsp;</NewBannerText>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <NewBannerText >&amp;&amp;&nbsp;UI/UX</NewBannerText>
+                        </motion.div>
+                        <motion.div variants={item} >
                             <Flex alignCenter>
                                 <NewBannerText outline>Designer&nbsp;</NewBannerText>
                                 <NewBannerText>;)</NewBannerText>
                             </Flex>
-                    <div style={{position: "absolute", bottom: '80px', right: 0}}>
+                        </motion.div>
+                    <motion.div variants={item} style={{position: "absolute", bottom: '80px', right: 0}}>
                         <Description>Scroll for more.</Description>
-                    </div>
+                    </motion.div>
                 </NewBannerContainer>
             </Container>
                 // <NewBannerContainer>
@@ -39,20 +67,26 @@ export default () => {
             
             {width > 768 && (
                 <Container>
-                        <NewBannerContainer>
-                        <Flex>
-                            <NewBannerText>Software&nbsp;</NewBannerText>
-                            <NewBannerText outline>Developer&nbsp;</NewBannerText>
-                        </Flex>
-                        <Flex>
-                            <NewBannerText>&amp;&amp;&nbsp;</NewBannerText>
-                            <NewBannerText outline>Wannabe&nbsp;</NewBannerText>
-                            <NewBannerText >UI/UX</NewBannerText>
-                        </Flex>
-                        <Flex>
-                            <NewBannerText outline>Designer&nbsp;</NewBannerText>
-                            <NewBannerText>;)</NewBannerText>
-                        </Flex>
+                        <NewBannerContainer variants={container} initial="initial" animate="animate">
+                        <motion.div variants={item}>
+                            <Flex>
+                                <NewBannerText>Software&nbsp;</NewBannerText>
+                                <NewBannerText outline>Developer&nbsp;</NewBannerText>
+                            </Flex>
+                        </motion.div>
+                        <motion.div variants={item}>
+                            <Flex>
+                                <NewBannerText>&amp;&amp;&nbsp;</NewBannerText>
+                                <NewBannerText outline>Wannabe&nbsp;</NewBannerText>
+                                <NewBannerText >UI/UX</NewBannerText>
+                            </Flex>
+                        </motion.div>
+                        <motion.div variants={item}>
+                            <Flex>
+                                <NewBannerText outline>Designer&nbsp;</NewBannerText>
+                                <NewBannerText>;)</NewBannerText>
+                            </Flex>
+                        </motion.div>
                     </NewBannerContainer>
                 </Container>
             )}

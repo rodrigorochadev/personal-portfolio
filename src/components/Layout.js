@@ -21,13 +21,15 @@ const Layout = ({ children }) => {
 
   return (
     <AnimatePresence exitBeforeEnter>
+      {/* <PageAnimation /> */}
         <motion.div
             key="layout"
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{ opacity: 0 }}
-            transition={{delay: 0.2}}
+            transition={{delay: 0.3}}
         >
+          
           <CustomCursor />
           <ScrollIndicator />
           <Header onCursor={onCursor} />
