@@ -10,21 +10,23 @@ export default () => {
     const { width } = useWindowSize()
 
     const container = {
-        initial: { opacity: 0 },
+        initial: { opacity: 0, y: 0 },
         animate: {
+            y: 0,
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
+                staggerChildren: 0.25,
             },
         },
     }
     const item = {
-        initial: { y: 300 },
+        initial: { rotate: 20, y: 800 },
         animate: {
             y: 0,
+            rotate: 0,
             transition: {
-                duration: 0.7,
-                ease: "easeInOut",
+                duration: 0.8,
+                ease: "easeOut",
             },
         },
     }

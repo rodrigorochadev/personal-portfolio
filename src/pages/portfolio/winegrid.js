@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { useContext } from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
-import { Container, Description, DivMargin, Flex } from '../../styles/componentsStyles'
+import { Container, Description, Flex } from '../../styles/componentsStyles'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
 import { LastMockupFlex, TypeImg, PageBannerContainer, PageBannerText, ProjectSubTitle, ProjectInfoTableFlex, ProjectInfoTable, CustomImg } from '../../styles/pagesStyles'
 import ProjectInfo from '../../components/Design/ProjectInfo'
@@ -12,6 +12,8 @@ import NavigateProjects from '../../components/Design/NavigateProjects'
 import { ThemeContext } from '../../components/ThemeContext'
 
 import Scroll from '../../components/Design/Scroll'
+import SectionAnimUp from '../../components/SectionAnimUp'
+import { motion } from 'framer-motion'
 
 const WinegridPage = () => {
 
@@ -101,23 +103,48 @@ const WinegridPage = () => {
         }
     `);
 
+    const container = {
+        initial: { opacity: 0, y: 0 },
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    }
+    const item = {
+        initial: { rotate: 20, y: 800 },
+        animate: {
+            y: 0,
+            rotate: 0,
+            transition: {
+                duration: 0.7,
+                ease: "easeOut",
+            },
+        },
+    }
+
     return(
         <Layout>
         <SEO  title="Winegrid Mobile App" />
         
             <Scroll bottom="300px" right="450px"/>
             <Container>
-                <PageBannerContainer>
-                    
-                    <PageBannerText>Winegrid</PageBannerText>
-                    <Flex>
-                        <PageBannerText outline>Mobile&nbsp;</PageBannerText>
-                        <PageBannerText outline>App</PageBannerText>
-                    </Flex>
+                <PageBannerContainer variants={container} initial="initial" animate="animate">
+                    <motion.div variants={item}>
+                        <PageBannerText>Winegrid</PageBannerText>
+                    </motion.div>
+                    <motion.div variants={item}>
+                        <Flex>
+                            <PageBannerText outline>Mobile&nbsp;</PageBannerText>
+                            <PageBannerText outline>App</PageBannerText>
+                        </Flex>
+                    </motion.div>
                     
                 </PageBannerContainer>
 
-                <DivMargin>
+                <SectionAnimUp title="" description={[]}>
                     <ProjectInfoTableFlex>
                         <ProjectInfoTable>
                             <ProjectInfo type="Project" description="Mobile Application" />
@@ -126,71 +153,69 @@ const WinegridPage = () => {
                             <ProjectInfo type="Website" link="winegrid.com" />
                         </ProjectInfoTable>
                     </ProjectInfoTableFlex>
-                </DivMargin>
+                </SectionAnimUp>
                     
-                <DivMargin>
+            
+                <SectionAnimUp>
                     <ProjectSubTitle>Background</ProjectSubTitle>
-                    <Description>
-                        WINEGRID Mobile App was my BSc project. It was proposed by the company with the same name. It was a group project, and I was responsible for the development of the mobile application. Since then, WINEGRID had gone through some visual changes, but the concept remains the same.
-                    </Description>
-                </DivMargin>
+                    <Description>WINEGRID Mobile App was my BSc project. It was proposed by the company with the same name. It was a group project, and I was responsible for the development of the mobile application. Since then, WINEGRID had gone through some visual changes, but the concept remains the same.</Description>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>A Winemaker's unique tool</ProjectSubTitle>
                     <Description>
-                        WINEGRID delivers a fully integrated remote and real-time solution for smart monitoring of the winemaking process.
-                        <br />With WINEGRID’s proprietary technology, hardware, software, computational platform and visualization interface, the winemaker has the opportunity to use precise and accurate solutions to improve wine production. The technology already helped the production of 150 million wine bottles by monitoring and optimizing the wine production.
-                        <br />All data is available on the WINEGRID Dashboard which can be accessed online through any device, at any time.
+                        WINEGRID delivers a fully integrated remote and real-time solution for smart monitoring of the winemaking process.<br />
+                        With WINEGRID’s proprietary technology, hardware, software, computational platform and visualization interface, the winemaker has the opportunity to use precise and accurate solutions to improve wine production. The technology already helped the production of 150 million wine bottles by monitoring and optimizing the wine production.<br />
+                        All data is available on the WINEGRID Dashboard which can be accessed online through any device, at any time.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <Img fluid={data.website.childImageSharp.fluid} alt="Winegrid Preview"/>
-                </DivMargin>
+                </SectionAnimUp>
           
-                <DivMargin>
-                    <ProjectSubTitle>The problem</ProjectSubTitle>
-                    <Description>
-                        Monitoring the winemaking process manually is very time and resource consuming. A late reaction and lose monitoring, leads to lower wine quality, and therefore revenue loss. WINEGRID is a company that does real time vinification monitoring and bring the digital to the cellar, providing producers with real time, remote and reliable data of five main productions variables, available in an online dashboard. To make the job of the cellar worker easier, we've developed a mobile application, with all the available options in the dashboard (and more!) one smartphone away.
-                    </Description>
-                </DivMargin>
+                <SectionAnimUp>
+                    <ProjectSubTitle>The Problem</ProjectSubTitle>
+                    <Description>Monitoring the winemaking process manually is very time and resource consuming. A late reaction and lose monitoring, leads to lower wine quality, and therefore revenue loss. WINEGRID is a company that does real time vinification monitoring and bring the digital to the cellar, providing producers with real time, remote and reliable data of five main productions variables, available in an online dashboard. To make the job of the cellar worker easier, we've developed a mobile application, with all the available options in the dashboard (and more!) one smartphone away.</Description>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.login.childImageSharp.fluid} alt="WINEGRID Login" />
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.sensors.childImageSharp.fluid} alt="WINEGRID Sensors"/>
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
-                    <ProjectSubTitle>The goal</ProjectSubTitle>
+                <SectionAnimUp>
+                    <ProjectSubTitle>The Goal</ProjectSubTitle>
                     <Description>
-                        Our goal was to create a mobile application (Android and iOS) with a few capabilities. <br />
+                        Our goal was to create a mobile application (Android and iOS) with a few capabilities<br />
                         01) Access sensor's data via Bluetooth Low Energy.<br />
                         02) Connection to a sensor via QR Code for a quick connection (alternatively through a list of available devices).<br />
                         03) Graphical display of the sensor's data.<br />
                         04) Check process details and control the state (start or stop).<br />
                         05) Note taking capabilities.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>More Screenshots</ProjectSubTitle>
                     <LastMockupFlex>
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.qrScanner.childImageSharp.fluid} alt="WINEGRID Sensors" style={{marginBottom: '50px'}} />
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.noteCreate.childImageSharp.fluid} alt="WINEGRID Login" style={{marginBottom: '50px'}} />
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.noteList.childImageSharp.fluid} alt="WINEGRID Sensors" style={{marginBottom: '50px'}} />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.processList.childImageSharp.fluid} alt="WINEGRID Sensors" />
                         <CustomImg width="200px" maxWidth="300px" shaddow fluid={data.processDetails.childImageSharp.fluid} alt="WINEGRID Sensors" />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Typography & Colors</ProjectSubTitle>
                     <LastMockupFlex justifyLeft>
                         {colorMode === 'light' ?
@@ -199,38 +224,37 @@ const WinegridPage = () => {
                             <TypeImg fluid={data.colorsTypoDark.childImageSharp.fluid} alt="Colors and Typography" />
                         }
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Why Flutter?</ProjectSubTitle>
                     <Description>
                         Since I was an absolute beginner at Mobile Development and UI/UX Design, I chose this framework for two main reasons. The first one is that it has a very detailed documentation and online examples, so it's easy to get started. The second was the fact that Flutter generates both Android and iOS applications, which was required for the project.<br />
-                            So why include this project, being a beginner in both fields? Well, this project opened my view on UI/UX Design, as well as development of Mobile Applications. Even though it's not my best project, it's very important for me, since it helped me learn and get more interested in what I love to do.
+                        So why include this project, being a beginner in both fields? Well, this project opened my view on UI/UX Design, as well as development of Mobile Applications. Even though it's not my best project, it's very important for me, since it helped me learn and get more interested in what I love to do.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Extra Details</ProjectSubTitle>
-                    
                     <Description>
-                        Read the project full technical report&nbsp;
-                        <a 
-                            onMouseEnter={() => onCursor('hovered')}
-                            onMouseLeave={onCursor}
-                            href="https://shorturl.at/jtwDL">here</a> or visit&nbsp;
-                        <a 
-                            onMouseEnter={() => onCursor('hovered')}
-                            onMouseLeave={onCursor}
-                            href="https://winegrid.com">WINEGRID website</a> to learn more about their work!
+                    Read the project full technical report&nbsp;
+                    <a 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="https://shorturl.at/jtwDL">here</a> or visit&nbsp;
+                    <a 
+                        onMouseEnter={() => onCursor('hovered')}
+                        onMouseLeave={onCursor}
+                        href="https://winegrid.com">WINEGRID website</a> to learn more about their work!
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <NavigateProjects 
                         next="Pathfinder Desgins"
                         nextLink="/portfolio/pathfinder-designs"
                     />
-                </DivMargin>
+                </SectionAnimUp>
 
             </Container>
         </Layout>

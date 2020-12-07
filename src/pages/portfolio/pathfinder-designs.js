@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { useContext } from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
-import { Container, Description, DivMargin } from '../../styles/componentsStyles'
+import { Container, Description } from '../../styles/componentsStyles'
 import { motion } from 'framer-motion'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
 import { CustomImg, LastMockupFlex, PageBannerContainer, PageBannerText, ProjectInfoTable, ProjectInfoTableFlex, ProjectSubTitle, TypeImg } from '../../styles/pagesStyles'
@@ -11,6 +11,7 @@ import { ThemeContext } from '../../components/ThemeContext'
 import NavigateProjects from '../../components/Design/NavigateProjects'
 import Scroll from '../../components/Design/Scroll'
 import ProjectInfo from '../../components/Design/ProjectInfo'
+import SectionAnimUp from '../../components/SectionAnimUp'
 
 const WinegridPage = () => {
 
@@ -127,18 +128,43 @@ const WinegridPage = () => {
 
     const { colorMode } = useContext(ThemeContext);
  
+    const container = {
+        initial: { opacity: 0, y: 0 },
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    }
+    const item = {
+        initial: { rotate: 20, y: 800 },
+        animate: {
+            y: 0,
+            rotate: 0,
+            transition: {
+                duration: 0.7,
+                ease: "easeOut",
+            },
+        },
+    }
+
     return(
         <Layout>
             <SEO  title="Pathfinder Designs" />
             <Scroll />
             <Container>
-                <PageBannerContainer>
-                    <PageBannerText>Pathfinder</PageBannerText>
-                    <PageBannerText outline>Designs</PageBannerText>
+                <PageBannerContainer variants={container} initial="initial" animate="animate">
+                    <motion.div variants={item}>
+                        <PageBannerText>Pathfinder</PageBannerText>
+                    </motion.div>
+                    <motion.div variants={item}>
+                        <PageBannerText variants={item} outline>Designs</PageBannerText>
+                    </motion.div>
                 </PageBannerContainer>
 
-                
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectInfoTableFlex>
                         <ProjectInfoTable>
                             <ProjectInfo type="Project" description="Branding" />
@@ -147,24 +173,24 @@ const WinegridPage = () => {
                             <ProjectInfo type="Website" link="pathfinderdesigns.pt" />
                         </ProjectInfoTable>
                     </ProjectInfoTableFlex>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>About the project</ProjectSubTitle>
                     <Description>
                         A personal project of mine. Create a brand from scratch, since the logo design, visual identity, website and social media. It is a fictional company that does Web Development and Graphic Design. This project is <b>NOT</b> intended to be used in real life, and only to test my design capabilities and decision making.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Find your path</ProjectSubTitle>
                     <Description>
                         Every brand deserves a platform and a place to show their potencial. Nowadays, with the Internet it's easier to show yourself to people, but is easier to get "burried" with all the competition. That means you need to stand-out.<br />
                         We elevate your business to the next nevel, with a better visual identity and a better digital presence.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Designing the Logo</ProjectSubTitle>
                     <Description>
                         I designed the logo according to Sagi Haviv's three main rules of logo design.<br />
@@ -177,25 +203,25 @@ const WinegridPage = () => {
                         
                         After many sketches and redraws, I've come up with the final logo: <br />
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg maxWidth="1080px" fluid={data.logo.childImageSharp.fluid} alt="Winegrid Preview" />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <Description>Since most social medias profile pictures are displayed in a circular container, I also designed the logo on a circular badge.</Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg width="200px" maxWidth="300px" fluid={data.logoBadge.childImageSharp.fluid} alt="Winegrid Preview" />
                     </LastMockupFlex>    
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Typography & Colors</ProjectSubTitle>
                     <LastMockupFlex justifyLeft>
                         {colorMode === 'light' ?
@@ -204,14 +230,14 @@ const WinegridPage = () => {
                             <TypeImg fluid={data.colorsTypoDark.childImageSharp.fluid} alt="Colors and Typography Dark" />
                         }
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Logo Applications</ProjectSubTitle>
                     <Description>Now we can take a look at some applications, using the logo. Since the logo is very simple, applying the logo to various types of products is easy and natural.</Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg maxWidth="500px" fluid={data.mockup01.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
                         <CustomImg maxWidth="500px" fluid={data.mockup02.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
@@ -219,72 +245,71 @@ const WinegridPage = () => {
                         <CustomImg maxWidth="500px" fluid={data.mockup04.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
                         <CustomImg maxWidth="500px" fluid={data.mockup05.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Designing and development of the website</ProjectSubTitle>
                     <Description>
                         For the design of the website, I did what I do almost every time I develop a website, which is to create a wireframe in a piece of paper. Later, the content of the website, the images, and so on were added into a design software. I use Figma.<br />
                         The development of the website was done in Gatsby.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg maxWidth="1080px" fluid={data.pfdShowcase.childImageSharp.fluid} alt="Responsive Pathfinder Designs Showcase" />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <ProjectSubTitle>Website quality</ProjectSubTitle>
                     <Description>
                         My main focus while developing the website was implementing all the UI/UX best practices, taking into consideration, performance, accessibility and SEO. I developed a very simple website, without animations and more complex effects, just as a Proof of Concept.<br />
                         To give it a "numeric value", I used <b>GTMetrix</b> and <b>Google Lighthouse</b>.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                         <h3>GTMetrix</h3>
                         <Description>The following images represent the results in GTMetrix. Those being, <b>Performance Scores</b> and <b>Page Details</b>, respectively.</Description>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg maxWidth="500px" fluid={data.gtmetrixSpeed.childImageSharp.fluid} alt="GTMetrix Page Speed" />
                         <CustomImg maxWidth="500px" fluid={data.gtmetrixDetails.childImageSharp.fluid} alt="GTMetrix Page Details"/>
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <Description>Check GTMetrix report&nbsp;<motion.a 
                         onMouseEnter={() => onCursor('hovered')}
                         onMouseLeave={onCursor}
                         href="https://gtmetrix.com/reports/pathfinderdesigns.pt/oQylhy5o">here</motion.a>.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <h3>Google Lighthouse</h3>
                     <Description>Bellow, are the Google Lighthouse performance results, on <b>mobile</b> and <b>desktop</b>, respectively.</Description>
-                </DivMargin>
+                </SectionAnimUp>
                 
-                <DivMargin>
+                <SectionAnimUp>
                     <LastMockupFlex>
                         <CustomImg maxWidth="500px" fluid={data.perfDesktop.childImageSharp.fluid} alt="Performance on Desktop: 100" />
                         <CustomImg maxWidth="500px" fluid={data.perfMobile.childImageSharp.fluid} alt="Performance on Mobile: 99" />
                     </LastMockupFlex>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <Description>Check Google Lighthouse report&nbsp;<motion.a 
                         onMouseEnter={() => onCursor('hovered')}
                         onMouseLeave={onCursor}
                         href="https://developers.google.com/speed/pagespeed/insights/?url=https://pathfinderdesigns.pt">here</motion.a>.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
-                    <ProjectSubTitle>Extra Details</ProjectSubTitle>
+                <SectionAnimUp>
                     <Description>
                         Visit the website
                         &nbsp;<motion.a 
@@ -296,16 +321,16 @@ const WinegridPage = () => {
                             onMouseLeave={onCursor}
                             href="https://winegrid.com">Behance project</motion.a> to see additional applications of the brand.
                     </Description>
-                </DivMargin>
+                </SectionAnimUp>
 
-                <DivMargin>
+                <SectionAnimUp>
                     <NavigateProjects 
                         previous="Winegrid Mobile App"
                         previousLink="/portfolio/winegrid"
                         next="School Manager"
                         nextLink="/portfolio/under-construction"
                     />
-                </DivMargin>
+                </SectionAnimUp>
 
             </Container>    
         </Layout>

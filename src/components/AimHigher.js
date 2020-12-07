@@ -87,7 +87,7 @@ export default () => {
                         <>
                         <AimHigherTextContainer
                             animate={{
-                                x: isVisible * (width - offsetY),
+                                x: isVisible * (width-100 - offsetY),
                             }}
                             transition={{ease: 'easeOut'}}
                         >
@@ -101,7 +101,7 @@ export default () => {
 
                         <AimHigherTextContainer
                         animate={{
-                            x: isVisible * (width - offsetY),
+                            x: isVisible * (width-100 - offsetY),
                         }}
                         transition={{ease: 'easeOut'}}
                     >

@@ -9,7 +9,7 @@ export const NewBannerContainer = styled(motion.div)`
     min-height: 100vh;
     justify-content: center;
     text-align: center;
-    overflow-y: hidden;
+    overflow: hidden;
     
     @media ${SITE_CONFIG.media.small} {
         margin-left: 0px;    
@@ -33,11 +33,12 @@ export const NewBannerText = styled(motion.h1)`
     ${props => props.outline && css`
         transition: all 0.1s ease-out;
         color: var(--color-background);
-        text-shadow:
+        -webkit-text-stroke: 1.5px var(--color-text);
+        /* text-shadow:
             -1px -1px 0 var(--color-text),  
             1px -1px 0 var(--color-text),
             -1px  1px 0 var(--color-text),
-            1px  1px 0 var(--color-text);
+            1px  1px 0 var(--color-text); */
     `}
 
     line-height: 14vw;

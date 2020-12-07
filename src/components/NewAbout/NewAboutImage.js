@@ -10,7 +10,7 @@ export default () => {
     const animation = useAnimation()
     const [aboutImageRef, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-150px",
+        rootMargin: "-200px",
     })
 
     useEffect(() => {

@@ -12,9 +12,9 @@ export const NewAboutAimHigherContainer = styled(motion.div)`
 
 export const NewAboutContainerText = styled(motion.div)`
     width: 100%;
-    position: relative;
-
+    
     @media ${SITE_CONFIG.media.small} {
+        position: relative;
         width: 65%;
         
         ${props => props.smaller && css`

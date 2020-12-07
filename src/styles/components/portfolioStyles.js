@@ -63,18 +63,13 @@ export const PortfolioTitle = styled(motion.div)`
     
     a {
         color: var(--color-background);
-        
-        text-shadow:
-            -1px -1px 0 var(--color-text),  
-            1px -1px 0 var(--color-text),
-            -1px  1px 0 var(--color-text),
-            1px  1px 0 var(--color-text);
+        -webkit-text-stroke: 1.5px var(--color-text);
                  
         transition: all 0.3s ease;
         text-decoration: none;
         
         &:hover {
-            text-shadow: none;
+            
             color: var(--color-text);
             
         }
@@ -97,7 +92,10 @@ export const PortfolioTitle = styled(motion.div)`
     }
 
     h2 {
-        font-family: 'Metropolis Bold', sans-serif;
+        @media ${SITE_CONFIG.media.medium} {
+            letter-spacing: 0.2rem;
+        }
+        /* font-family: 'Metropolis Bold', sans-serif; */
         
     }
 `
