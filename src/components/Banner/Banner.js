@@ -4,40 +4,17 @@ import useWindowSize from '../../hooks/useWindowSize';
 import { BannerWelcome, BannerWelcomeContainer, MobileBanerContainer, NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
 import { Container, Flex } from '../../styles/componentsStyles';
 import Scroll from '../Design/Scroll';
+import {container, item} from '../../animations'
 
 export default () => {
 
     const { width } = useWindowSize()
-
-    const container = {
-        initial: { opacity: 0, y: 0 },
-        animate: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-            },
-        },
-    }
-
-    const item = {
-        initial: { rotate: 50, y: 800 },
-        animate: {
-            y: 0,
-            rotate: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut",
-            },
-        },
-    }
 
     return(
         <MobileBanerContainer>
             <BannerWelcomeContainer>
                 <BannerWelcome>WELCOME</BannerWelcome>
             </BannerWelcomeContainer>
-
             {width <= 768 && (
                 <motion.div 
                     variants={container} initial="initial" animate="animate"

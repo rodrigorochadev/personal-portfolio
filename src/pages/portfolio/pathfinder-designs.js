@@ -13,6 +13,9 @@ import Scroll from '../../components/Design/Scroll'
 import ProjectInfo from '../../components/Design/ProjectInfo'
 import SectionAnimUp from '../../components/SectionAnimUp'
 
+import { container, item } from '../../animations'
+import { BannerWelcome, BannerWelcomeContainer, MobileBanerContainer } from '../../styles/components/bannerStyles'
+
 const WinegridPage = () => {
 
     const { cursorStyles } = useGlobalStateContext()
@@ -127,41 +130,27 @@ const WinegridPage = () => {
     `);
 
     const { colorMode } = useContext(ThemeContext);
- 
-    const container = {
-        initial: { opacity: 0, y: 0 },
-        animate: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    }
-    const item = {
-        initial: { rotate: 20, y: 800 },
-        animate: {
-            y: 0,
-            rotate: 0,
-            transition: {
-                duration: 0.7,
-                ease: "easeOut",
-            },
-        },
-    }
 
     return(
         <Layout>
             <SEO  title="Pathfinder Designs" />
+            <MobileBanerContainer>
+                <BannerWelcomeContainer pfd>
+                    <BannerWelcome>BRANDING</BannerWelcome>
+                </BannerWelcomeContainer>
             <Scroll />
             <Container>
                 <PageBannerContainer variants={container} initial="initial" animate="animate">
-                    <motion.div variants={item}>
-                        <PageBannerText>Pathfinder</PageBannerText>
-                    </motion.div>
-                    <motion.div variants={item}>
-                        <PageBannerText variants={item} outline>Designs</PageBannerText>
-                    </motion.div>
+                    <div style={{paddingBottom: '10px', overflow: 'hidden'}}>
+                        <motion.div variants={item}>
+                            <PageBannerText>Pathfinder</PageBannerText>
+                        </motion.div>
+                    </div>
+                    <div style={{paddingBottom: '10px', overflow: 'hidden'}}>
+                        <motion.div variants={item}>
+                            <PageBannerText variants={item} outline>Designs</PageBannerText>
+                        </motion.div>
+                    </div>
                 </PageBannerContainer>
 
                 <SectionAnimUp>
@@ -332,7 +321,8 @@ const WinegridPage = () => {
                     />
                 </SectionAnimUp>
 
-            </Container>    
+            </Container>   
+            </MobileBanerContainer> 
         </Layout>
     )
 

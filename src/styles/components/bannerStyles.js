@@ -96,13 +96,39 @@ export const BannerWelcomeContainer = styled.div`
 
     @media ${SITE_CONFIG.media.medium} {
         font-size: 10rem;
-        transform: rotate(90deg) translate(45%, -210%);
+        transform: rotate(90deg) translate(50%, -210%);
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
         font-size: 11rem;
         transform: rotate(90deg) translate(50%, -210%);
     } 
+
+    ${props => props.winegrid && css`
+        display: none;
+
+        @media ${SITE_CONFIG.media.medium} {
+            display: initial;
+            transform: rotate(90deg) translate(55%, -150%);
+        }
+
+        @media ${SITE_CONFIG.media.xlarge} {
+            transform: rotate(90deg) translate(60%, -150%);
+        } 
+    `}
+
+    ${props => props.pfd && css`
+        display: none;
+
+        @media ${SITE_CONFIG.media.medium} {
+            display: initial;
+            transform: rotate(90deg) translate(55%, -210%);
+        }
+
+        @media ${SITE_CONFIG.media.xlarge} {
+            transform: rotate(90deg) translate(60%, -220%);
+        } 
+    `}
 `
 
 export const BannerWelcome = styled.h2`
@@ -114,7 +140,12 @@ export const BannerWelcome = styled.h2`
     /* filter: drop-shadow(4px 2px 2px black); */
 
     @media ${SITE_CONFIG.media.medium} {
+        font-size: 8.5rem;
+        letter-spacing: 0.9rem;
+    }
+
+    @media ${SITE_CONFIG.media.xlarge} {
         font-size: 10rem;
-        letter-spacing: 1.1rem;
+        letter-spacing: 1rem;
     } 
 `

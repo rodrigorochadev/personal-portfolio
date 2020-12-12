@@ -40,13 +40,17 @@ export default (props) => {
 
 export const ScrollForMoreAbsolute = styled(motion.div)`
 
-    /* display: none; */
-    position: absolute;
-    padding: 0 10vw;
-    z-index: 90;
-    top: 0;
-    height: 100vh;
-    width: 100%;
+    display: none;
+
+    @media ${SITE_CONFIG.media.small} {
+        display: initial;
+        position: absolute;
+        padding: 0 10vw;
+        z-index: 90;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+    }
 `
 
 export const ScrollAnimate = styled(motion.div)`

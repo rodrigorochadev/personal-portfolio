@@ -29,6 +29,7 @@ export default ({onCursor}) => {
           <Logo 
             onMouseEnter={() => onCursor('hovered')}
             onMouseLeave={onCursor}
+            onClick={onCursor}
           />
         </Link>
 

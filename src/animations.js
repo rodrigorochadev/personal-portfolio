@@ -12,34 +12,57 @@ export const variants = {
   },
 }
 
-export const parent = {
-  hidden: { opacity: 0, scale: 1 },
-  visible: {
+export const container = {
+  initial: { opacity: 0, y: 0 },
+  animate: {
+      y: 0,
       opacity: 1,
-      scale: 1,
       transition: {
-          // delay: 0.3,
-          when: "beforeChildren",
-          staggerChildren: 0.3,
-      }
-  }
+          staggerChildren: 0.15,
+      },
+  },
 }
 
-export const child = {
-  hidden: { 
-      // y: 70, 
-      scale: 0,
-      opacity: 0 
-  },
-  visible: {
-      // y: 0,
-      scale: 1,
-      opacity: 1,
+export const item = {
+  initial: { rotate: 50, y: 800 },
+  animate: {
+      y: 0,
+      rotate: 0,
       transition: {
-          ease: [0.6, 0.05, -0.01, 0.9]
-      }
-  }
+          duration: 0.8,
+          ease: "easeOut",
+      },
+  },
 }
+
+// export const parent = {
+//   hidden: { opacity: 0, scale: 1 },
+//   visible: {
+//       opacity: 1,
+//       scale: 1,
+//       transition: {
+//           // delay: 0.3,
+//           when: "beforeChildren",
+//           staggerChildren: 0.3,
+//       }
+//   }
+// }
+
+// export const child = {
+//   hidden: { 
+//       // y: 70, 
+//       scale: 0,
+//       opacity: 0 
+//   },
+//   visible: {
+//       // y: 0,
+//       scale: 1,
+//       opacity: 1,
+//       transition: {
+//           ease: [0.6, 0.05, -0.01, 0.9]
+//       }
+//   }
+// }
 
 export const grain = keyframes`
   0%, 100% { transform:translate(0, 0); }

@@ -14,6 +14,8 @@ import { ThemeContext } from '../../components/ThemeContext'
 import Scroll from '../../components/Design/Scroll'
 import SectionAnimUp from '../../components/SectionAnimUp'
 import { motion } from 'framer-motion'
+import { container, item } from '../../animations'
+import { BannerWelcome, BannerWelcomeContainer, MobileBanerContainer } from '../../styles/components/bannerStyles'
 
 const WinegridPage = () => {
 
@@ -103,45 +105,29 @@ const WinegridPage = () => {
         }
     `);
 
-    const container = {
-        initial: { opacity: 0, y: 0 },
-        animate: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    }
-    const item = {
-        initial: { rotate: 20, y: 800 },
-        animate: {
-            y: 0,
-            rotate: 0,
-            transition: {
-                duration: 0.7,
-                ease: "easeOut",
-            },
-        },
-    }
-
     return(
         <Layout>
         <SEO  title="Winegrid Mobile App" />
-        
-            <Scroll bottom="300px" right="450px"/>
+        <MobileBanerContainer>
+            <BannerWelcomeContainer winegrid>
+                <BannerWelcome>MOBILE</BannerWelcome>
+            </BannerWelcomeContainer>
+            <Scroll />
             <Container>
                 <PageBannerContainer variants={container} initial="initial" animate="animate">
-                    <motion.div variants={item}>
-                        <PageBannerText>Winegrid</PageBannerText>
-                    </motion.div>
-                    <motion.div variants={item}>
-                        <Flex>
-                            <PageBannerText outline>Mobile&nbsp;</PageBannerText>
-                            <PageBannerText outline>App</PageBannerText>
-                        </Flex>
-                    </motion.div>
-                    
+                    <div style={{paddingBottom: '10px', overflow: 'hidden'}}>
+                        <motion.div variants={item}>
+                            <PageBannerText>Winegrid</PageBannerText>
+                        </motion.div>
+                    </div>
+                    <div style={{paddingBottom: '10px', overflow: 'hidden'}}>
+                        <motion.div variants={item}>
+                            <Flex>
+                                <PageBannerText outline>Mobile&nbsp;</PageBannerText>
+                                <PageBannerText outline>App</PageBannerText>
+                            </Flex>
+                        </motion.div>
+                    </div>
                 </PageBannerContainer>
 
                 <SectionAnimUp title="" description={[]}>
@@ -257,6 +243,7 @@ const WinegridPage = () => {
                 </SectionAnimUp>
 
             </Container>
+            </MobileBanerContainer>
         </Layout>
     )
 
