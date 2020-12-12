@@ -9,16 +9,20 @@ export default () => {
     const animation = useAnimation()
     const [aboutIntroRef, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-150px",
+        rootMargin: "0px",
+        threshold: 0.65,
     })
 
     useEffect(() => {
         if (inView) {
-        animation.start("visible")
+            animation.start("visible")
+            console.log(inView)
         }
     }, [animation, inView])
 
     return(
+
+        
         <NewAboutContainerText 
             ref={aboutIntroRef}
             animate={animation}

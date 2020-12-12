@@ -26,6 +26,10 @@ export const Flex = styled(motion.div)`
       justify-content: center;
   `}
 
+  ${props => props.alignItemsCenter && css`
+      align-items: center;
+  `}
+
   ${props => props.about && css`
 
     flex-direction: column-reverse;
@@ -255,17 +259,19 @@ export const Scroll4More = styled.div`
 `
 
 export const Scroll4MoreContainer = styled(motion.div)`
-  position: absolute;
-  right: 15%;
-  bottom: 15%;
+  
   /* right: ${props => props.right};
   bottom: ${props => props.bottom}; */
 
-  /* @media ${SITE_CONFIG.media.small} {
-    right: 20%;
-    bottom: 20%;
+  
+  @media ${SITE_CONFIG.media.small} {
+    display: initial;
+    position: absolute;
+    right: 15%;
+    bottom: 15%;
   }
-  @media ${SITE_CONFIG.media.medium} {
+  
+  /* @media ${SITE_CONFIG.media.medium} {
     right: 20%;
     bottom: 20%;
   }*/

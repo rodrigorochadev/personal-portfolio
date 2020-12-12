@@ -9,6 +9,7 @@ import Skills from '../components/Skills'
 const IndexPage = () => (
   <Layout>
     <SEO title="Software Developer" />
+    {/* <div style={{height: '100vh'}}></div> */}
     <Banner />
     <NewAbout />
     <Portfolio />

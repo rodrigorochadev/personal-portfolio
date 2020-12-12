@@ -12,7 +12,8 @@ export default () => {
     const animation = useAnimation()
     const [aboutDetailsRef, inView] = useInView({
         triggerOnce: false,
-        rootMargin: "-150px",
+        rootMargin: '0px',
+        threshold: 0.5,
     })
 
     useEffect(() => {

@@ -9,16 +9,14 @@ import { SITE_CONFIG } from '../../constants'
 export default (props) => {
 
     const {x, y} = useMousePosition()
-    const [hoverState, setHoverState] = useState(false)
+    const [hoverState, setHoverState] = useState(true)
 
     return (
         <ScrollForMoreAbsolute
             onHoverStart={() => setHoverState(true)}
             onHoverEnd={() => setHoverState(false)}
-        >   
+        >
             <Scroll4MoreContainer
-                right={props.right}
-                bottom={props.bottom}
                 animate={{
                     transition: { duration: 1, ease: 'easeOut' },
                     x: hoverState ? x/7 : 0,
@@ -42,26 +40,30 @@ export default (props) => {
 
 export const ScrollForMoreAbsolute = styled(motion.div)`
 
-    display: none;
-
-    @media ${SITE_CONFIG.media.small} {
-        padding: 0 10vw;
-        display: initial;
-        z-index: 90;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        width: 100%;
-    }
+    /* display: none; */
+    position: absolute;
+    padding: 0 10vw;
+    z-index: 90;
+    top: 0;
+    height: 100vh;
+    width: 100%;
 `
+
 export const ScrollAnimate = styled(motion.div)`
 
 `
 
 export const ScrollSVG = styled.div`
     svg {
-        width: 180px;
         transition: all 0.2s ease-out;
         fill: var(--color-text);
+
+        @media ${SITE_CONFIG.media.small} {
+            width: 140px;
+        }
+
+        @media ${SITE_CONFIG.media.medium} {
+            width: 180px;
+        }
     }
 `

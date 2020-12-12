@@ -7,9 +7,6 @@ import NewAboutImage from './NewAboutImage'
 
 export default () => {
 
-    
-
-    
     return(
         <Container>
             
@@ -23,12 +20,10 @@ export default () => {
                 <DivMargin>
                     <NewAboutDetails />
                 </DivMargin>
-                    
                         
             </NewAboutPadding>
         </Container>
-        
-        
+            
     )
 
 }

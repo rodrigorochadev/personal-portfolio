@@ -3,18 +3,19 @@ import styled, { css } from "styled-components"
 import { SITE_CONFIG } from "../../constants"
 
 export const NewAboutAimHigherContainer = styled(motion.div)`
-    padding: 50px 0;
+    margin: 50px 0;
 
     @media ${SITE_CONFIG.media.small} {
-        padding: 150px 0;
+        margin: 150px 0;
     }
 `
 
 export const NewAboutContainerText = styled(motion.div)`
     width: 100%;
-    
+    position: relative;
+
     @media ${SITE_CONFIG.media.small} {
-        position: relative;
+        
         width: 65%;
         
         ${props => props.smaller && css`
@@ -31,7 +32,7 @@ width: 100%;
 position: relative;
 `
 
-export const NewAboutContainerHeadline = styled.h2`
+export const NewAboutContainerHeadline = styled(motion.h2)`
 font-size: 1.3rem;
 line-height: 2.5rem;
 margin-bottom: 20px;
@@ -54,7 +55,7 @@ margin: 150px 0;
 /* margin-bottom: 150px; */
 
 @media ${SITE_CONFIG.media.medium} {
-    margin: 250px 0;
+    margin: 270px 0;
     /* margin-bottom: 200px; */
 }
 
