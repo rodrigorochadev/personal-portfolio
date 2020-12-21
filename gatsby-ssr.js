@@ -7,7 +7,7 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from './src/constants';
 
-import App from './src/components/App';
+import App from './src/components/App/App';
 
 function setColorsByTheme() {
   const colors = '🌈';

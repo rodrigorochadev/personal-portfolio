@@ -58,7 +58,7 @@ export default () => {
                         >
                             <AimHigherText>AIM HIGHER</AimHigherText>
                         </AimHigherTextContainer>
-                        <NewAboutImageContainer>
+                        <NewAboutImageContainer >
                             <NewSVGContainer
                                 animate={{
                                     rotate: 360,

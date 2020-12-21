@@ -1,7 +1,7 @@
 import React from 'react'
-import useMousePosition from '../hooks/useMousePosition'
-import { useGlobalStateContext } from '../context/globalContext'
-import { Cursor, CursorFollower } from '../styles/components/cursorStyles'
+import useMousePosition from '../../hooks/useMousePosition'
+import { useGlobalStateContext } from '../../context/globalContext'
+import { Cursor, CursorFollower } from '../../styles/components/cursorStyles'
 
 
 export default () => {

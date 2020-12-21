@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Container, Description, NewSVG, NewSVGContainer } from '../styles/componentsStyles'
-import { FooterSocial, FooterContent, FooterSVG, SocialIcon, FooterName } from '../styles/components/footerStyles'
-import { Instagram, Dribbble, Behance, Linkedin, Github, ThankYouSVG } from '../assets/svg/svg'
-import Talk from './Talk/Talk'
+import { Container, Description, NewSVG, NewSVGContainer } from '../../styles/componentsStyles'
+import { FooterSocial, FooterContent, FooterSVG, SocialIcon, FooterName } from '../../styles/components/footerStyles'
+import { Instagram, Dribbble, Behance, Linkedin, Github, ThankYouSVG } from '../../assets/svg/svg'
+import Talk from '../Talk/Talk'
 
 export default ({onCursor}) => {
 

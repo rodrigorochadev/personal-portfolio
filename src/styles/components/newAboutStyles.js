@@ -27,9 +27,9 @@ export const NewAboutContainerText = styled(motion.div)`
 `
 
 export const NewAboutImageContainer = styled.h2`
-max-width: 400px;
-width: 100%;
-position: relative;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
 `
 
 export const NewAboutContainerHeadline = styled(motion.h2)`

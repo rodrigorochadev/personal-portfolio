@@ -1,19 +1,26 @@
 import React from 'react'
-import Banner from '../components/Banner/Banner'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import Portfolio from '../components/Portfolio/Portfolio'
 import NewAbout from '../components/NewAbout/NewAbout'
-import Skills from '../components/Skills'
+import NewBanner from '../components/Banner/NewBanner'
+import { Container } from '../styles/componentsStyles'
+import SectionAnimUp from '../components/SectionAnimUp'
+
+import { FinalText } from '../styles/componentsStyles'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Software Developer" />
-    {/* <div style={{height: '100vh'}}></div> */}
-    <Banner />
+    <NewBanner />
     <NewAbout />
     <Portfolio />
-    <Skills />
+    <SectionAnimUp>
+
+      <Container>
+          <FinalText>That's all... For now!</FinalText>
+      </Container>
+    </SectionAnimUp>
   </Layout>
 
 );

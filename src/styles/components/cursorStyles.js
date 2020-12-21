@@ -20,12 +20,20 @@ export const Cursor = styled(motion.div)`
 
 
         
-        transition: 0.25s ease;;
+        transition: 0.25s ease;
         transition-property: width, height, border;
         will-change: width, height, transform, border;
 
         pointer-events: none;
         z-index: 999;
+
+        &.banner {
+            width: 200px !important;
+            height: 200px !important;
+            background: var(--color-background) !important;
+            border: 2px solid var(--color-text) !important;
+            z-index: 998;
+        }
         
         &.project {
             background: transparent !important;
@@ -76,7 +84,7 @@ export const CursorFollower = styled(motion.div)`
         pointer-events: none;
         z-index: 999;
 
-        &.hovered, &.project {
+        &.hovered, &.project, &.banner {
             border: 0px;
             background: transparent;
             height: 0px;

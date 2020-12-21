@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import { Container, UnstyledButton } from '../styles/componentsStyles'
-import { ThemeContext } from './ThemeContext';
-import { HeaderFlex, HeaderNav, Logo, ThemeText } from '../styles/components/headerStyles';
+import { Container, UnstyledButton } from '../../styles/componentsStyles'
+import { ThemeContext } from '../App/ThemeContext';
+import { HeaderFlex, HeaderNav, Logo, ThemeText } from '../../styles/components/headerStyles';
 import { Link } from 'gatsby';
 
 
@@ -37,7 +37,7 @@ export default ({onCursor}) => {
           onMouseEnter={() => onCursor('hovered')}
           onMouseLeave={onCursor}
           aria-label="Toggle Theme" 
-          onClick={() => {onCursor(); setColorMode(colorMode === 'light' ? 'dark' : 'light')}}>
+          onClick={() => {setColorMode(colorMode === 'light' ? 'dark' : 'light')}}>
             {colorMode === 'light' ? <ThemeText>Too bright?</ThemeText> : <ThemeText>Too dark?</ThemeText>}
         </UnstyledButton>
 

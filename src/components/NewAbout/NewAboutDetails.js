@@ -2,10 +2,10 @@ import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { variants } from '../../animations'
-import { AboutMeSVG } from '../../assets/svg/svg'
+// import { AboutMeSVG } from '../../assets/svg/svg'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext'
 import { NewAboutContainerText } from '../../styles/components/newAboutStyles'
-import { Description, DescriptionHighlight, Flex, NewSVG, NewSVGContainer } from '../../styles/componentsStyles'
+import { Description, DescriptionHighlight, Flex } from '../../styles/componentsStyles'
 
 export default () => {
 
@@ -38,7 +38,7 @@ export default () => {
                 variants={variants}
                 smaller
             >
-                <div style={{position: 'absolute', left: '-30px', top: '-20px'}}>
+                {/* <div style={{position: 'absolute', left: '-30px', top: '-20px'}}>
                 <NewSVGContainer
                     animate={{
                         rotate: 360,
@@ -49,7 +49,7 @@ export default () => {
                         <AboutMeSVG />
                     </NewSVG>
                 </NewSVGContainer>
-                </div>
+                </div> */}
                 <DescriptionHighlight>
                     I was born in Figueira da Foz, where I lived and studied, until I went to college, in Aveiro.
                 </DescriptionHighlight>

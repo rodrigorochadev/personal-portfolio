@@ -8,7 +8,7 @@ import { LastMockupFlex, PageBannerContainer, PageBannerText } from '../../style
 import Img from 'gatsby-image'
 import { SITE_CONFIG } from '../../constants'
 import styled from 'styled-components'
-import NavigateProjects from '../../components/Design/NavigateProjects'
+import NavigateProjects from '../../components/PortfolioPages/NavigateProjects'
 
 const SchoolManagerPage = () => {
 

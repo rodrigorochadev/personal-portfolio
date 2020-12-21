@@ -1,8 +1,8 @@
 import React from 'react';
-import GlobalStyles from '../styles/GlobalStyles';
+import GlobalStyles from '../../styles/GlobalStyles';
 
 import { ThemeProvider } from './ThemeContext';
-import {GlobalProvider} from '../context/globalContext'
+import {GlobalProvider} from '../../context/globalContext'
 
 function App({ children }) {
   return (

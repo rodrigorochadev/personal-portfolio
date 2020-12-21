@@ -14,9 +14,17 @@ export default () => {
                 <DivMargin>
                     <NewAboutIntro />
                 </DivMargin>
+
                     
                 <NewAboutImage />
 
+                {/* <div style={{display: 'flex', justifyContent: 'center', height: '100%'}}> */}
+                    {/* <div style={{position: 'relative', maxWidth: '400px', width: '100%', background: 'lightblue', overflow: 'visible'}}> */}
+                        {/* <div style={{position: 'absolute'}}> */}
+
+                        {/* </div> */}
+                    {/* </div> */}
+                {/* </div> */}
                 <DivMargin>
                     <NewAboutDetails />
                 </DivMargin>

@@ -99,6 +99,36 @@ export const SVGHolder = styled.div`
     }
 `
 
+export const FinalText = styled.p`
+
+  font-size: 3.3rem;
+  line-height: 4.5rem;
+  margin-bottom: 20px;
+  
+  @media ${SITE_CONFIG.media.small} {
+    font-size: 7rem;
+    line-height: 8.3rem;
+    margin-top: 170px;
+    margin-bottom: 180px;
+  }
+
+
+  @media ${SITE_CONFIG.media.large} {
+    font-size: 9rem;
+    line-height: 10.5rem;
+    margin-top: 170px;
+    margin-bottom: 180px;
+  }
+
+  @media ${SITE_CONFIG.media.xlarge} {
+    font-size: 10.5rem;
+    line-height: 12rem;
+    margin-top: 190px;
+    margin-bottom: 200px;
+  }
+  /* font-family: 'Plus Jakarta Display Bold', sans-serif; */
+`
+
 export const Container = styled(motion.div)`
   flex-grow: 1;
   margin: 0 auto;
