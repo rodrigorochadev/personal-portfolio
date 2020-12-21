@@ -20,17 +20,17 @@ export default (props) => {
     return(
         <>
         <FloatingImage
-                    initial={{opacity: 1}}
-                    animate={{
-                        transition: { duration: 0.5, ease: 'easeOut' },
-                        display: hoverState ? 'initial' : 'none',
-                        opacity: hoverState ? 1 : 1,
-                        x: x- 380,
-                        y: y- 200,
-                    }}
-                >
-                    <Img fluid={props.image} alt={props.name} />
-                </FloatingImage>
+            initial={{opacity: 0, height: '0px'}}
+            animate={{
+                transition: { duration: 0.5, ease: 'easeOut' },
+                display: hoverState ? 'initial' : 'none',
+                opacity: hoverState ? 1 : 0,
+                x: x- 380,
+                y: y- 200,
+            }}
+        >
+            <Img fluid={props.image} alt={props.name} />
+        </FloatingImage>
 
             
         <PortfolioMargin>
@@ -53,7 +53,7 @@ export default (props) => {
                             <h2>{props.name}</h2>
                         </a>
                     </PortfolioTitle>
-                    <p style={{padding: '0 10vw', textAlign: "center", marginTop: '30px'}}>{props.tech}</p>
+                    {/* <p style={{padding: '0 10vw', textAlign: "center", marginTop: '30px'}}>{props.tech}</p> */}
                 </div>
 
                 

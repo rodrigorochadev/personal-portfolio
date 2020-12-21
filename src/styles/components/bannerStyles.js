@@ -47,20 +47,21 @@ export const NewBannerText = styled(motion.h1)`
     }
 
     @media ${SITE_CONFIG.media.small} {
-        line-height: 4rem;
-        font-size: 3rem;
+        line-height: 5rem;
+        font-size: 4rem;
         /* letter-spacing: 0.2rem; */
+        font-family: ${SITE_CONFIG.fontFamilies.text.regular};
     }
 
     @media ${SITE_CONFIG.media.medium} {
-        line-height: 5rem;
-        font-size: 4rem;
+        line-height: 6rem;
+        font-size: 5rem;
         /* letter-spacing: 0.3rem; */
     }
 
     @media ${SITE_CONFIG.media.large} {
-        line-height: 6rem;
-        font-size: 5rem;
+        line-height: 7rem;
+        font-size: 6rem;
         -webkit-text-stroke: 1.5px var(--color-text);
 
         ${props => props.outline && css`
@@ -70,8 +71,8 @@ export const NewBannerText = styled(motion.h1)`
     }
 
     @media ${SITE_CONFIG.media.xlarge} {
-        line-height: 7rem;
-        font-size: 6rem;
+        line-height: 8rem;
+        font-size: 7rem;
     }
 
     @media ${SITE_CONFIG.media.xxlarge} {

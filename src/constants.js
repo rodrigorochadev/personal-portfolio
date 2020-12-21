@@ -9,6 +9,7 @@ export const COLORS = {
   },
   background: {
     light: '#ffffff',
+    // dark: '#000000',
     dark: '#06111c' 
   },
   accent: {

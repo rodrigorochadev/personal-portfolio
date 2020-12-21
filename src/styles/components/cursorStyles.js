@@ -17,8 +17,6 @@ export const Cursor = styled(motion.div)`
         
         border-radius: 100%;
         transform: translate3d(-50%, -50%, 0);
-
-
         
         transition: 0.25s ease;
         transition-property: width, height, border;
@@ -28,11 +26,15 @@ export const Cursor = styled(motion.div)`
         z-index: 999;
 
         &.banner {
-            width: 200px !important;
-            height: 200px !important;
+            
+            width: 150px !important;
+            height: 150px !important;
             background: var(--color-background) !important;
             border: 2px solid var(--color-text) !important;
-            z-index: 998;
+            border-radius: 100% !important;
+            z-index: 999;
+
+
         }
         
         &.project {

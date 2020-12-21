@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { variants } from '../../animations'
 import { NewAboutAimHigherContainer } from '../../styles/components/newAboutStyles'
-import AimHigher from '../AimHigher'
+import AimHigher from './AimHigher'
 
 export default () => {
 

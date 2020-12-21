@@ -13,8 +13,8 @@ export const PortfolioContainerDesktop = styled(motion.div)`
     justify-content: center;
 
     width: 100%;
-    min-height: 30vh;
-    padding: 80px 0;
+    /* min-height: 30vh; */
+    padding: 45px 0;
     transition: ${SITE_CONFIG.transitions.defautls};
     border-top: 1px solid var(--color-opacityText);
     
