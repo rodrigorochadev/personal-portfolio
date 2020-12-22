@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion';
 import React from 'react'
 import useWindowSize from '../../hooks/useWindowSize';
-import { NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
+import { MobileBanerContainer, NewBannerContainer, NewBannerText } from '../../styles/components/bannerStyles';
 import { Container, Flex } from '../../styles/componentsStyles';
 import {container, item} from '../../animations'
 import { useGlobalDispatchContext, useGlobalStateContext } from '../../context/globalContext';
+import { DownArrow } from '../../assets/svg/svg';
+import styled from 'styled-components';
 // import useMousePosition from '../../hooks/useMousePosition';
 
 export default () => {
 
     const { width } = useWindowSize()
-    // const {x, y} = useMousePosition()
-    // const [hoverState, setHoverState] = useState(false)
-
     const dispatch = useGlobalDispatchContext()
     const { cursorStyles } = useGlobalStateContext()
   
@@ -22,10 +21,10 @@ export default () => {
     }
 
     return(
-        // <MobileBanerContainer>
-        //     <BannerWelcomeContainer>
-        //         <BannerWelcome>WELCOME</BannerWelcome>
-        //     </BannerWelcomeContainer>
+        <MobileBanerContainer>
+            {/* <BannerWelcomeContainer>
+                <BannerWelcome>WELCOME</BannerWelcome>
+            </BannerWelcomeContainer> */}
             <>
             {width <= 768 && (
                 <NewBannerContainer
@@ -60,10 +59,26 @@ export default () => {
                         </div>
                     </Container>
                     <motion.div 
-                        variants={item}
-                        style={{position: 'absolute', left: '10vw', bottom: '75px'}}
+                        transition={{delay: 1}}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        style={{position: 'absolute', right: '10vw', bottom: '75px'}}
                     >
-                        <p>Scroll for more.</p>
+                        <motion.div
+                            
+                            initial={{y: -50}}
+                            animate={{y: 30}}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: 'reverse',
+                                duration: 1.5,
+                            }}
+                        >
+
+                            <ArrowSVG>
+                                <DownArrow />
+                            </ArrowSVG>
+                        </motion.div>
                         
                     </motion.div>
                 </NewBannerContainer>
@@ -72,13 +87,31 @@ export default () => {
             
             {width > 768 && (
                 <>
-                <div style={{position: 'absolute', bottom: '36px', left: 0, zIndex: '60'}}>
-                    <Container>
-                        <p>Scroll for more.</p>
-                    </Container>
-                </div>
-
+            
                     <NewBannerContainer>
+                        <motion.div style={{position: 'absolute', bottom: '36px', zIndex: '60'}} 
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            transition={{delay: 1, duration: 1}}
+                        >
+                                <motion.div
+                                
+                                    initial={{y: -50}}
+                                    animate={{
+                                        y: 50,
+                                    }}
+                                    transition={{
+                                        repeat: Infinity,
+                                        repeatType: 'reverse',
+                                        duration: 1.5,
+                                    }}
+                                >
+
+                                    <ArrowSVG>
+                                        <DownArrow />
+                                    </ArrowSVG>
+                                </motion.div>
+                        </motion.div>
                         <motion.div 
                             style={{position: 'absolute'}} 
                             variants={container} 
@@ -92,7 +125,7 @@ export default () => {
                             </div>
                             <div style={{overflow: 'hidden', width: '100%'}}>
                                 <motion.div variants={item}>
-                                    <NewBannerText>& UI/UX Designer.</NewBannerText>
+                                    <NewBannerText>& UI/UX Designer</NewBannerText>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -113,7 +146,7 @@ export default () => {
                             <div style={{overflow: 'hidden', width: '100%'}}> 
                             {/*  paddingLeft: '10em' */}
                                 <motion.div variants={item}>
-                                    <NewBannerText outline>& UI/UX Designer.</NewBannerText>
+                                    <NewBannerText outline>& UI/UX Designer</NewBannerText>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -122,6 +155,13 @@ export default () => {
                 </>
             )}
             </>
-        // </MobileBanerContainer>
+        </MobileBanerContainer>
     )
 }
+
+export const ArrowSVG = styled.div`
+    svg {
+        height: 100px;
+        fill: var(--color-text);
+    }
+`

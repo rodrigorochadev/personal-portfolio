@@ -9,7 +9,6 @@ export const NewBannerContainer = styled(motion.div)`
     min-height: 100vh;
     align-items: center;
     /* text-align: center; */
-    overflow: hidden;
     
     
     @media ${SITE_CONFIG.media.small} {

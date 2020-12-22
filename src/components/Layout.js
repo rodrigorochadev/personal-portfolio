@@ -6,7 +6,6 @@ import Footer from './Navigation/Footer';
 import CustomCursor from './DesignUtils/CustomCursor';
 import ScrollIndicator from './DesignUtils/ScrollIndicator';
 import { useGlobalDispatchContext, useGlobalStateContext } from '../context/globalContext';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
 
@@ -20,24 +19,25 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <>
+    {/* <AnimatePresence exitBeforeEnter> */}
       {/* <PageAnimation /> */}
-        <motion.div
+        {/* <motion.div
             key="layout"
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{ opacity: 0 }}
             transition={{delay: 0.3}}
-        >
+        > */}
           
           <CustomCursor />
           <ScrollIndicator />
           <Header onCursor={onCursor} />
           <main>{children}</main>
           <Footer onCursor={onCursor} />   
-        </motion.div>
-    </AnimatePresence>
-    
+        {/* </motion.div> */}
+    {/* </AnimatePresence> */}
+    </>
   );
 };
 

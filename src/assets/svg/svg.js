@@ -1,5 +1,13 @@
 import React from 'react'
 
+export const DownArrow = () => (
+	<svg x="0px" y="0px" viewBox="0 0 20 151" >
+		<path d="M9.1,0h2v148h-2V0z"/>
+		<rect x="7.3" y="143.4" transform="matrix(0.7177 -0.6964 0.6964 0.7177 -96.5341 50.7224)" width="13.9" height="2"/>
+		<rect x="4.7" y="137.4" transform="matrix(0.6964 -0.7177 0.7177 0.6964 -101.9174 47.9499)" width="2" height="13.9"/>
+	</svg>
+)
+
 export const ThankYouSVG = () => (
 
 	<svg x="0px" y="0px" viewBox="0 0 251 126">
